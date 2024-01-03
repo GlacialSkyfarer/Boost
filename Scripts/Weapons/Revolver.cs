@@ -74,10 +74,10 @@ public partial class Revolver : Gun
 
 	}
 
-    public override void _Process(double delta)
-    {
+	public override void _Process(double delta)
+	{
 
-        base._Process(delta);
+		base._Process(delta);
 
 		if (overheated) {
 
@@ -99,9 +99,9 @@ public partial class Revolver : Gun
 
 		}
 
-    }
+	}
 
-    public override void Fire(Player player) {
+	public override void Fire(Player player) {
 
 		base.Fire(player);
 
@@ -159,9 +159,9 @@ public partial class Revolver : Gun
 
 	}
 
-    public override void AltFire(Player player)
-    {
-        
+	public override void AltFire(Player player)
+	{
+		
 		base.AltFire(player);
 
 		animator.Play("WarpFire");
@@ -193,6 +193,6 @@ public partial class Revolver : Gun
 
 		currentVoid = warpVoid;
 
-    }
+	}
 
 }

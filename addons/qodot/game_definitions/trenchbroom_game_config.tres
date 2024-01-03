@@ -15,7 +15,7 @@
 [resource]
 script = ExtResource("3_8vw40")
 export_file = false
-trenchbroom_games_folder = "C:\\Users\\Runic\\Desktop\\Games\\TrenchBroom\\games"
+trenchbroom_games_folder = "C:/Users/student/Downloads/Trenchbroom/games/Boost"
 game_name = "Boost"
 icon = ExtResource("2_jej4n")
 map_formats = Array[Dictionary]([{

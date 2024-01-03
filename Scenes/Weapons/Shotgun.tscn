@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cm223efwmwvxq"]
+[gd_scene load_steps=41 format=3 uid="uid://cm223efwmwvxq"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Shotgun.cs" id="1_6tguw"]
 [ext_resource type="PackedScene" uid="uid://dhhv26xkgf5vr" path="res://Models/Guns/Shotgun.blend" id="1_qpnft"]
@@ -7,6 +7,57 @@
 [ext_resource type="AudioStream" uid="uid://dpxeln5gvyqq4" path="res://Sounds/HL2 Weapons/shotgun_cock_first.wav" id="4_udpjw"]
 [ext_resource type="AudioStream" uid="uid://d22odqcdcxbvc" path="res://Sounds/HL2 Weapons/shotgun_cock_last.wav" id="5_baw4a"]
 [ext_resource type="Texture2D" uid="uid://cj42k8bsabck5" path="res://Textures/Entity/Utility/Flash.png" id="6_wy125"]
+
+[sub_resource type="Animation" id="Animation_wu614"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shotgun:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shotgun/Body/Pump:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.00980163, 0.234765)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CockPlayer1:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CockPlayer2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_j2nxu"]
 resource_name = "SwapIn"
@@ -61,8 +112,15 @@ tracks/3/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_wu614"]
-length = 0.001
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jd2uc"]
+_data = {
+"RESET": SubResource("Animation_wu614"),
+"SwapIn": SubResource("Animation_j2nxu")
+}
+
+[sub_resource type="Animation" id="Animation_180qb"]
+resource_name = "AltFire"
+step = 0.05
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -70,10 +128,10 @@ tracks/0/path = NodePath("Shotgun:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.7, 0.8, 1),
+"transitions": PackedFloat32Array(0.594604, 0.5, 2.73208, 1, 2.73208, 2.46229, 2.46229, 2.07053),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0.373134, 0, 0), Vector3(0.373134, 0, 0), Vector3(0.269985, 0, 0), Vector3(0.269985, 0, 0), Vector3(0.373134, 0, 0), Vector3(0.373134, 0, 0), Vector3(0, 0, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -82,10 +140,10 @@ tracks/1/path = NodePath("Shotgun/Body/Pump:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0.3, 0.45, 0.6, 0.7),
+"transitions": PackedFloat32Array(2.21914, 1, 0.392292, 1),
 "update": 0,
-"values": [Vector3(0, 0.00980163, 0.234765)]
+"values": [Vector3(0, 0.00980163, 0.234765), Vector3(-7.45058e-09, 0.00980163, 0.20174), Vector3(-7.45058e-09, 0.00980163, 0.20174), Vector3(0, 0.00980163, 0.234765)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -94,10 +152,10 @@ tracks/2/path = NodePath("CockPlayer1:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.45),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -106,16 +164,10 @@ tracks/3/path = NodePath("CockPlayer2:playing")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.7),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jd2uc"]
-_data = {
-"RESET": SubResource("Animation_wu614"),
-"SwapIn": SubResource("Animation_j2nxu")
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_glo7e"]
@@ -341,58 +393,6 @@ tracks/8/keys = {
 "values": [false]
 }
 
-[sub_resource type="Animation" id="Animation_180qb"]
-resource_name = "AltFire"
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shotgun:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6, 0.7, 0.8, 1),
-"transitions": PackedFloat32Array(0.594604, 0.5, 2.73208, 1, 2.73208, 2.46229, 2.46229, 2.07053),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0.373134, 0, 0), Vector3(0.373134, 0, 0), Vector3(0.269985, 0, 0), Vector3(0.269985, 0, 0), Vector3(0.373134, 0, 0), Vector3(0.373134, 0, 0), Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Shotgun/Body/Pump:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3, 0.45, 0.6, 0.7),
-"transitions": PackedFloat32Array(2.21914, 1, 0.392292, 1),
-"update": 0,
-"values": [Vector3(0, 0.00980163, 0.234765), Vector3(-7.45058e-09, 0.00980163, 0.20174), Vector3(-7.45058e-09, 0.00980163, 0.20174), Vector3(0, 0.00980163, 0.234765)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("CockPlayer1:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.45),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("CockPlayer2:playing")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0.7),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cfd5s"]
 _data = {
 "AltFire": SubResource("Animation_180qb"),
@@ -441,45 +441,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 1.5708)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Shotgun/Body/Fuse/Fuse_001:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_j8n0h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shotgun/Body/BigRing:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 3.14159, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Shotgun/Body/BigRing/SmallRing:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -3.14159, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -574,6 +535,45 @@ tracks/2/keys = {
 "values": [Vector3(0, -0.024, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_j8n0h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shotgun/Body/BigRing:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shotgun/Body/BigRing/SmallRing:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shotgun/Body/Fuse/Fuse_001:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_igst1"]
 resource_name = "Transition1"
 tracks/0/type = "value"
@@ -628,6 +628,70 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -0.004, 0), Vector3(0, -0.004, 0), Vector3(0, -0.009, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shotgun/Body/BigRing:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.73208, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, -3.14159)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shotgun/Body/BigRing/SmallRing:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.37841, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 3.14159)]
+}
+
+[sub_resource type="Animation" id="Animation_lma2m"]
+resource_name = "Transition3"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shotgun/Body/Fuse/Fuse_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.55, 0.65, 0.9),
+"transitions": PackedFloat32Array(1, 1.8025, 1, 3.86375, 1),
+"update": 0,
+"values": [Vector3(-2.23517e-08, -0.00917374, 0.000409197), Vector3(-2.23517e-08, -0.00917374, 0.000409197), Vector3(0, -0.018, 0), Vector3(0, -0.018, 0), Vector3(0, -0.024, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shotgun/Body/BigRing:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.2974, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, -6.28319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shotgun/Body/BigRing/SmallRing:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(2.07053, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 6.28319)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3oi0k"]
 _data = {
@@ -636,11 +700,72 @@ _data = {
 "Idle3": SubResource("Animation_7t0vi"),
 "RESET": SubResource("Animation_j8n0h"),
 "Transition1": SubResource("Animation_igst1"),
-"Transition2": SubResource("Animation_agie8")
+"Transition2": SubResource("Animation_agie8"),
+"Transition3": SubResource("Animation_lma2m")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5eatn"]
+animation = &"Idle1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d2cec"]
+animation = &"Idle2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xex2o"]
+animation = &"Idle3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e1706"]
+animation = &"Transition1"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rps2s"]
+animation = &"Transition2"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6sikb"]
+animation = &"Transition3"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o7m1v"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4jl4l"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ho0ap"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ei5p"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j77k1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ollrc"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d6leu"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gkc4j"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o5nir"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8o0m2"]
+states/Idle1/node = SubResource("AnimationNodeAnimation_5eatn")
+states/Idle1/position = Vector2(280, 144)
+states/Idle2/node = SubResource("AnimationNodeAnimation_d2cec")
+states/Idle2/position = Vector2(509, 62)
+states/Idle3/node = SubResource("AnimationNodeAnimation_xex2o")
+states/Idle3/position = Vector2(768, 136)
+states/Start/position = Vector2(140, 80)
+states/Transition1/node = SubResource("AnimationNodeAnimation_e1706")
+states/Transition1/position = Vector2(509, 207)
+states/Transition2/node = SubResource("AnimationNodeAnimation_rps2s")
+states/Transition2/position = Vector2(376, 62)
+states/Transition3/node = SubResource("AnimationNodeAnimation_6sikb")
+states/Transition3/position = Vector2(646, 62)
+transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_o7m1v"), "Idle1", "Transition2", SubResource("AnimationNodeStateMachineTransition_4jl4l"), "Idle2", "Transition3", SubResource("AnimationNodeStateMachineTransition_ho0ap"), "Idle3", "Transition1", SubResource("AnimationNodeStateMachineTransition_2ei5p"), "Transition1", "Idle1", SubResource("AnimationNodeStateMachineTransition_j77k1"), "Transition2", "Idle2", SubResource("AnimationNodeStateMachineTransition_ollrc"), "Transition3", "Idle3", SubResource("AnimationNodeStateMachineTransition_d6leu"), "Idle1", "Transition1", SubResource("AnimationNodeStateMachineTransition_gkc4j"), "Idle2", "Transition1", SubResource("AnimationNodeStateMachineTransition_o5nir")]
 
 [node name="Shotgun" type="Node3D"]
 script = ExtResource("1_6tguw")
+chargeAnimatorPath = NodePath("ChargeTree")
 bulletScene = ExtResource("2_rhvnt")
 bulletSpeed = 20.0
 bulletSpread = 10.0
@@ -660,10 +785,10 @@ transform = Transform3D(0.71024, 0, 0, 0, 0.710239, 0, 0, 0, 0.710239, 0.063479,
 transform = Transform3D(-1, -1.52855e-14, 8.74228e-08, 0, 1, 1.74846e-07, -8.74228e-08, 1.74846e-07, -1, 0, 0, 0)
 
 [node name="BigRing" parent="Shotgun/Body" index="0"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.0371651, 0.284456)
+transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0, 0.0371651, 0.284456)
 
 [node name="SmallRing" parent="Shotgun/Body/BigRing" index="0"]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0.0284896)
+transform = Transform3D(-1, 0, -2.53518e-06, 0, 1, 0, 2.53518e-06, 0, -1, 0, 0, 0.0284896)
 
 [node name="Cube" parent="Shotgun/Body" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00581162, 0.0158204)
@@ -725,5 +850,12 @@ mesh = SubResource("QuadMesh_b1yk7")
 libraries = {
 "": SubResource("AnimationLibrary_3oi0k")
 }
+
+[node name="ChargeTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3oi0k")
+}
+tree_root = SubResource("AnimationNodeStateMachine_8o0m2")
+anim_player = NodePath("../ChargeAnimator")
 
 [editable path="Shotgun"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://dnn2tpoqq8phb"]
+[gd_scene load_steps=85 format=3 uid="uid://dnn2tpoqq8phb"]
 
 [ext_resource type="Shader" path="res://Shaders/ColorDegredation.gdshader" id="1_e80sx"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_w4meb"]
@@ -13,6 +13,7 @@
 [ext_resource type="Material" uid="uid://667adr4m80rw" path="res://Models/Characters/Materials/Player/GoobieSkin.tres" id="11_msax5"]
 [ext_resource type="Material" uid="uid://bq8nai01t7mv6" path="res://Models/Characters/Materials/Player/GoobieCloth.tres" id="12_ohvdj"]
 [ext_resource type="Material" uid="uid://bo6sgm7kp2brp" path="res://Models/Characters/Materials/Player/GoobieEye.tres" id="13_05jjp"]
+[ext_resource type="Script" path="res://addons/Mirror/Mirror/Mirror.gd" id="14_xq0un"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6h425"]
 shader = ExtResource("1_e80sx")
@@ -1038,63 +1039,56 @@ shape = SubResource("ConvexPolygonShape3D_8awsr")
 [node name="entity_1_player_spawn" parent="SubViewportContainer/SubViewport/QodotMap" instance=ExtResource("3_uqs3k")]
 transform = Transform3D(1.39071e-07, 0, 1, 0, 1, 0, -1, 0, 1.39071e-07, 0, 1.125, 0)
 
-[node name="BoostGoob" parent="SubViewportContainer/SubViewport/QodotMap/entity_1_player_spawn" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
-
 [node name="Skeleton3D" parent="SubViewportContainer/SubViewport/QodotMap/entity_1_player_spawn/BoostGoob/Armature" index="0"]
 bones/0/rest = Transform3D(-1, 7.10543e-15, -1.50996e-07, 1.5098e-07, -0.0145397, -0.999894, -2.19544e-09, -0.999894, 0.0145397, 6.35131e-09, -0.497284, 0.0768481)
 bones/0/position = Vector3(6.35131e-09, -0.497284, 0.0768481)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/rest = Transform3D(1, 3.93038e-09, 4.76888e-07, -1.63423e-08, 0.999661, 0.0260298, -4.76624e-07, -0.0260298, 0.999661, 8.47402e-08, -0.290995, -0.519146)
-bones/1/position = Vector3(8.61526e-08, -0.290952, -0.516184)
+bones/1/position = Vector3(8.22623e-08, -0.290873, -0.510757)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06859e-09, 0.999915)
 bones/2/rest = Transform3D(1, 6.25035e-07, 4.4862e-07, -3.87679e-07, -0.0943015, 0.995544, 6.64555e-07, -0.995544, -0.0943015, -2.36269e-14, 0.284855, -3.00279e-08)
 bones/2/position = Vector3(-2.36269e-14, 0.284855, -3.00279e-08)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
 bones/3/rest = Transform3D(1, -8.37556e-08, 9.11382e-09, 8.37556e-08, 0.976596, -0.215081, 9.11371e-09, 0.215081, 0.976596, 4.44089e-16, 0.151358, 2.79397e-09)
 bones/3/position = Vector3(4.44089e-16, 0.151358, 2.79397e-09)
-bones/3/rotation = Quaternion(0.11316, 2.11265e-10, 4.21245e-08, 0.993577)
+bones/3/rotation = Quaternion(0.122401, -1.35764e-10, 4.89124e-08, 0.992481)
 bones/3/scale = Vector3(1, 1, 1)
 bones/4/rest = Transform3D(1, 4.30746e-08, 2.38969e-09, -4.30746e-08, 0.993863, 0.110614, 2.3896e-09, -0.110614, 0.993863, -2.22045e-15, 0.19595, 1.21072e-08)
 bones/4/position = Vector3(-2.22045e-15, 0.19595, 1.21072e-08)
-bones/4/rotation = Quaternion(-0.0962937, 1.01764e-10, -3.56642e-08, 0.995353)
+bones/4/rotation = Quaternion(-0.105009, -6.5391e-11, -4.20708e-08, 0.994471)
 bones/5/rest = Transform3D(1, -6.23139e-07, 4.66047e-07, 3.86503e-07, -0.122058, -0.992523, 6.75364e-07, 0.992523, -0.122058, -2.36269e-14, 0.284855, -3.00279e-08)
 bones/5/position = Vector3(-2.36269e-14, 0.284855, -3.00279e-08)
 bones/5/rotation = Quaternion(0.749019, -7.89818e-08, 3.80969e-07, 0.662549)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/rest = Transform3D(-0.999558, -0.0296482, -0.00220063, -0.028494, 0.9765, -0.213625, 0.0084825, -0.213467, -0.976913, -0.0704726, 0.193565, -0.00355582)
 bones/6/position = Vector3(-0.0704726, 0.193565, -0.00355582)
-bones/6/rotation = Quaternion(-0.0483405, 0.96561, -0.160212, -0.198977)
+bones/6/rotation = Quaternion(-0.0571771, 0.959967, -0.189587, -0.198117)
 bones/7/rest = Transform3D(0.99962, -0.0266437, 0.00702743, 0.0220399, 0.926183, 0.376431, -0.0165382, -0.376133, 0.926418, -6.91944e-09, 0.159584, 1.20781e-09)
 bones/7/position = Vector3(-6.91944e-09, 0.159584, 1.20781e-09)
-bones/7/rotation = Quaternion(-0.243229, 0.00593281, 0.0157346, 0.969823)
+bones/7/rotation = Quaternion(-0.30341, 0.00582769, 0.0196277, 0.95264)
 bones/8/rest = Transform3D(0.999796, -0.0200789, -0.00231147, -0.0046962, -0.119547, -0.992817, 0.0196583, 0.992625, -0.119617, 7.24685e-09, 0.158715, -3.25963e-09)
 bones/8/position = Vector3(7.24685e-09, 0.158715, -3.25963e-09)
-bones/8/rotation = Quaternion(0.736733, 0.0749494, -0.0262483, 0.671504)
+bones/8/rotation = Quaternion(0.757634, 0.0742662, -0.0244373, 0.64798)
 bones/9/rest = Transform3D(-0.999558, 0.0296484, 0.0022018, 0.0284939, 0.9765, -0.213625, -0.00848369, -0.213467, -0.976913, 0.0704726, 0.193565, -0.00355577)
 bones/9/position = Vector3(0.0704726, 0.193565, -0.00355577)
-bones/9/rotation = Quaternion(0.0420009, 0.939665, -0.0941707, 0.326185)
+bones/9/rotation = Quaternion(0.0555852, 0.935795, -0.123895, 0.325343)
 bones/10/rest = Transform3D(0.99962, 0.0266435, -0.00702728, -0.0220399, 0.926182, 0.376431, 0.016538, -0.376133, 0.926418, 1.032e-08, 0.159584, 4.07454e-09)
 bones/10/position = Vector3(1.032e-08, 0.159584, 4.07454e-09)
-bones/10/rotation = Quaternion(-0.218891, -0.00596824, -0.0141601, 0.975628)
+bones/10/rotation = Quaternion(-0.284272, -0.00586377, -0.0183895, 0.958549)
 bones/10/scale = Vector3(1, 0.999999, 1)
 bones/11/rest = Transform3D(0.999796, 0.0200791, 0.00231149, 0.00469624, -0.119547, -0.992817, -0.0196586, 0.992625, -0.119617, -3.55067e-09, 0.158715, 1.97906e-09)
 bones/11/position = Vector3(-3.55067e-09, 0.158715, 1.97906e-09)
-bones/11/rotation = Quaternion(0.761167, 0.0317874, -0.0510543, 0.645761)
+bones/11/rotation = Quaternion(0.783074, 0.0352124, -0.0495332, 0.618952)
 bones/12/rest = Transform3D(-0.999795, -1.77883e-07, -0.020224, -0.0202036, -0.0448983, 0.998787, -0.000908201, 0.998991, 0.0448891, -0.075204, -0.0442196, -0.0220583)
-bones/12/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
 bones/12/rotation = Quaternion(-0.00730946, 0.691015, 0.722769, -0.0069882)
 bones/12/scale = Vector3(1, 0.999999, 1)
 bones/13/rest = Transform3D(0.999579, -0.0202148, 0.0208307, 0.0202147, -0.0302144, -0.999339, 0.0208308, 0.999339, -0.029793, -0.00277237, -0.15753, 0.137056)
-bones/13/position = Vector3(0.0564802, -0.158425, 0.153285)
 bones/13/rotation = Quaternion(0.717563, -2.6749e-08, 0.0145149, 0.696342)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/rest = Transform3D(-0.999795, -1.76951e-07, 0.0202239, 0.0202035, -0.0448983, 0.998787, 0.00090784, 0.998991, 0.0448891, 0.0752041, -0.0442196, -0.0220583)
-bones/14/position = Vector3(0.068243, -0.0549507, -0.0219023)
 bones/14/rotation = Quaternion(0.00730929, 0.691015, 0.722769, 0.00698829)
 bones/14/scale = Vector3(1, 0.999999, 1)
 bones/15/rest = Transform3D(0.999579, 0.0202147, -0.0208307, -0.0202146, -0.0302144, -0.999339, -0.0208307, 0.999339, -0.029793, 0.00277237, -0.15753, 0.137056)
-bones/15/position = Vector3(-0.101319, -0.157769, 0.143175)
 bones/15/rotation = Quaternion(0.717563, 2.6749e-08, -0.0145149, 0.696342)
 bones/15/scale = Vector3(1, 1, 1)
 
@@ -1122,6 +1116,13 @@ directional_shadow_max_distance = 16.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_4pgaf")
+
+[node name="Mirror" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.57452, -1.27265)
+script = ExtResource("14_xq0un")
+ResolutionPerUnit = 200
+MainCamPath = NodePath("../SubViewportContainer/SubViewport/QodotMap/entity_1_player_spawn/CameraHolder/Camera")
+cullMask = Array[int]([19])
 
 [editable path="SubViewportContainer/SubViewport/QodotMap/entity_1_player_spawn"]
 [editable path="SubViewportContainer/SubViewport/QodotMap/entity_1_player_spawn/BoostGoob"]

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/npc_smg1_fire1.wav-318cbe015d528b12a58ea6b015
 [params]
 
 force/8_bit=false
-force/mono=false
+force/mono=true
 force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
