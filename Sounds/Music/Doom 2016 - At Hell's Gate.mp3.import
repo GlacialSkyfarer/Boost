@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cd1ca5rqhc82g"
+path="res://.godot/imported/Doom 2016 - At Hell's Gate.mp3-6331a848dae59833a768fe1166b71368.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Doom 2016 - At Hell's Gate.mp3"
+dest_files=["res://.godot/imported/Doom 2016 - At Hell's Gate.mp3-6331a848dae59833a768fe1166b71368.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

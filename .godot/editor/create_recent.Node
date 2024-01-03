@@ -1,0 +1,14 @@
+AnimationPlayer
+GPUParticles3D
+ShapeCast3D
+Node3D
+AudioStreamPlayer
+TextureProgressBar
+Area3D
+CollisionShape3D
+MeshInstance3D
+TrailEmitter
+CharacterBody3D
+Mirror
+Node
+CanvasLayer

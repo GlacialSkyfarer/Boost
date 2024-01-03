@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cp3eudawjb0wc"
+path="res://.godot/imported/physgun_off.wav-c23c2ea7b8948e4117951c9efd3bef51.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/physgun_off.wav"
+dest_files=["res://.godot/imported/physgun_off.wav-c23c2ea7b8948e4117951c9efd3bef51.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

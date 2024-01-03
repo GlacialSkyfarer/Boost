@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://liowdi7h6d4y"
+path="res://.godot/imported/debris3.wav-f3447a47ebe3ddc951768d4b99cc4554.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/debris3.wav"
+dest_files=["res://.godot/imported/debris3.wav-f3447a47ebe3ddc951768d4b99cc4554.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dsugt0k2uvgjn"
+path="res://.godot/imported/shotgun_dbl_fire.wav-fb1c8bbc0beb756763b4d373a692c2e0.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/shotgun_dbl_fire.wav"
+dest_files=["res://.godot/imported/shotgun_dbl_fire.wav-fb1c8bbc0beb756763b4d373a692c2e0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

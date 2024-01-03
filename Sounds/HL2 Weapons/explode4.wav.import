@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ds5if2a8mflto"
+path="res://.godot/imported/explode4.wav-8ee3759bdbc2ed0a1acd9bdb436c1100.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/explode4.wav"
+dest_files=["res://.godot/imported/explode4.wav-8ee3759bdbc2ed0a1acd9bdb436c1100.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

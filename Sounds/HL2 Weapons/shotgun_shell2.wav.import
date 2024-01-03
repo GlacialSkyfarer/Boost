@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://clbchbi1dyh4f"
+path="res://.godot/imported/shotgun_shell2.wav-861eaa28719a7d87ee74329333ca173c.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/shotgun_shell2.wav"
+dest_files=["res://.godot/imported/shotgun_shell2.wav-861eaa28719a7d87ee74329333ca173c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

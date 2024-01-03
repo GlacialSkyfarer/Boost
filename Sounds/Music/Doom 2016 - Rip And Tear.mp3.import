@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bf0he5fg6tqrn"
+path="res://.godot/imported/Doom 2016 - Rip And Tear.mp3-9916d6b72394bcb590790495ada8f06a.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Music/Doom 2016 - Rip And Tear.mp3"
+dest_files=["res://.godot/imported/Doom 2016 - Rip And Tear.mp3-9916d6b72394bcb590790495ada8f06a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

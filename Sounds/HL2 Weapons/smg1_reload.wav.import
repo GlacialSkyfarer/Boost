@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c637espq2kb0i"
+path="res://.godot/imported/smg1_reload.wav-70c5c69c8fd9159a8f340f9033528be4.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/smg1_reload.wav"
+dest_files=["res://.godot/imported/smg1_reload.wav-70c5c69c8fd9159a8f340f9033528be4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qhj2arg08g1c"
+path="res://.godot/imported/crossbow_hitbod1.wav-573e9fa9a0f369e5c99dfc24e89920cb.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/crossbow_hitbod1.wav"
+dest_files=["res://.godot/imported/crossbow_hitbod1.wav-573e9fa9a0f369e5c99dfc24e89920cb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

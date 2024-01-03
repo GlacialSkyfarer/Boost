@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpxeln5gvyqq4"
+path="res://.godot/imported/shotgun_cock_first.wav-7490d9166df4969be143aaeca9626cb4.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/shotgun_cock_first.wav"
+dest_files=["res://.godot/imported/shotgun_cock_first.wav-7490d9166df4969be143aaeca9626cb4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

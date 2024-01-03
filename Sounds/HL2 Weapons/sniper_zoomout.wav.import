@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gs5c3gpxwlmk"
+path="res://.godot/imported/sniper_zoomout.wav-145e55fb254cd93e87b6724f7b34f899.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/sniper_zoomout.wav"
+dest_files=["res://.godot/imported/sniper_zoomout.wav-145e55fb254cd93e87b6724f7b34f899.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cgjcv2flcql00"
+path="res://.godot/imported/shotgun_empty.wav-531f0e0f0ba8844d6cb9553772b7cd60.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/shotgun_empty.wav"
+dest_files=["res://.godot/imported/shotgun_empty.wav-531f0e0f0ba8844d6cb9553772b7cd60.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

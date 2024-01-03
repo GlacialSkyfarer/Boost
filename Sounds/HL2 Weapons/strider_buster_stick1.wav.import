@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://67nkqgyj7o5n"
+path="res://.godot/imported/strider_buster_stick1.wav-9c81d6ee6c787ae0b666386f196a35c5.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/strider_buster_stick1.wav"
+dest_files=["res://.godot/imported/strider_buster_stick1.wav-9c81d6ee6c787ae0b666386f196a35c5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dv2x76vmyc3bk"]
+
+[ext_resource type="Script" path="res://Scripts/Utility/SoundManager.cs" id="1_85pbv"]
+
+[node name="SoundManager" type="Node3D" groups=["SoundManager"]]
+script = ExtResource("1_85pbv")
+directionlessPlayerCount = 32

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://y02c8f2ojxyq"
+path="res://.godot/imported/mortar_explode2.wav-0f6f5a68bb5c23b0a2658b3dfc7f12e6.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/mortar_explode2.wav"
+dest_files=["res://.godot/imported/mortar_explode2.wav-0f6f5a68bb5c23b0a2658b3dfc7f12e6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cpprd347p6eyl"
+path="res://.godot/imported/irifle_fire2.wav-293d9f38a459a3cd28620ea314f14fef.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/irifle_fire2.wav"
+dest_files=["res://.godot/imported/irifle_fire2.wav-293d9f38a459a3cd28620ea314f14fef.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

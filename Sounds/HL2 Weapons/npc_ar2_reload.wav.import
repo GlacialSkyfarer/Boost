@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dafug6jmwp132"
+path="res://.godot/imported/npc_ar2_reload.wav-04e18ba3677640fb7835766e010e6374.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/npc_ar2_reload.wav"
+dest_files=["res://.godot/imported/npc_ar2_reload.wav-04e18ba3677640fb7835766e010e6374.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

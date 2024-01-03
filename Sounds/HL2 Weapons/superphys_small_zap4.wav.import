@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cvv73as0cae5q"
+path="res://.godot/imported/superphys_small_zap4.wav-0472480bf7e6c6c76a113e3a9b2914a0.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/superphys_small_zap4.wav"
+dest_files=["res://.godot/imported/superphys_small_zap4.wav-0472480bf7e6c6c76a113e3a9b2914a0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

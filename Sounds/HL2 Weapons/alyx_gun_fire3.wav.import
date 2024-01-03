@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://2r6h5webrfpp"
+path="res://.godot/imported/alyx_gun_fire3.wav-c74e5de80b48b54cfb4fe3d0bb7020c1.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/alyx_gun_fire3.wav"
+dest_files=["res://.godot/imported/alyx_gun_fire3.wav-c74e5de80b48b54cfb4fe3d0bb7020c1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

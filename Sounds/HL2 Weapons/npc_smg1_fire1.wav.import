@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://crrascjeycdjy"
+path="res://.godot/imported/npc_smg1_fire1.wav-318cbe015d528b12a58ea6b0157d9450.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/npc_smg1_fire1.wav"
+dest_files=["res://.godot/imported/npc_smg1_fire1.wav-318cbe015d528b12a58ea6b0157d9450.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

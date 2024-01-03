@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8qrg0mfhyopm"
+path="res://.godot/imported/physcannon_drop.wav-3b329677842d2704ecb6d3697357ec47.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/physcannon_drop.wav"
+dest_files=["res://.godot/imported/physcannon_drop.wav-3b329677842d2704ecb6d3697357ec47.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

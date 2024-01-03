@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wmqqfqbtc5g3"
+path="res://.godot/imported/energy_sing_explosion2.wav-33e095c50825a0866fbe6bd1dafe7253.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/energy_sing_explosion2.wav"
+dest_files=["res://.godot/imported/energy_sing_explosion2.wav-33e095c50825a0866fbe6bd1dafe7253.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drms4c6hw6nhm"
+path="res://.godot/imported/npc_ar2_altfire.wav-4ecb8e852d95710874fb1a03393c80b2.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/npc_ar2_altfire.wav"
+dest_files=["res://.godot/imported/npc_ar2_altfire.wav-4ecb8e852d95710874fb1a03393c80b2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

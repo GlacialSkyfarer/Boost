@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c3vumbuufpaiw"]
+
+[ext_resource type="Texture2D" uid="uid://4fs8ewtcvb0y" path="res://Textures/Guns/RevolverAccent.png" id="1_43jpi"]
+
+[resource]
+albedo_texture = ExtResource("1_43jpi")
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true

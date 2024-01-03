@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3 uid="uid://cthpvl7v3helb"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Utility/Explosion.cs" id="1_b0edo"]
+
+[sub_resource type="Gradient" id="Gradient_txfid"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_uxape"]
+gradient = SubResource("Gradient_txfid")
+
+[sub_resource type="Curve" id="Curve_hu83s"]
+max_value = 10.0
+_data = [Vector2(0.00724638, 0), 0.0, 26.7615, 0, 0, Vector2(1, 10), 0.151648, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_j4naf"]
+curve = SubResource("Curve_hu83s")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y04mc"]
+resource_local_to_scene = true
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_j4naf")
+color_ramp = SubResource("GradientTexture1D_uxape")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yu6l"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="SphereMesh" id="SphereMesh_0rwgf"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_1yu6l")
+radial_segments = 12
+rings = 6
+
+[sub_resource type="Curve" id="Curve_v0e7a"]
+min_value = 0.1
+max_value = 20.0
+_data = [Vector2(0, 0.1), 0.0, 42.4533, 0, 0, Vector2(1, 20), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_k2ktq"]
+curve = SubResource("Curve_v0e7a")
+
+[node name="GPUParticles3D" type="GPUParticles3D"]
+emitting = false
+amount = 1
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_y04mc")
+draw_pass_1 = SubResource("SphereMesh_0rwgf")
+script = ExtResource("1_b0edo")
+scaleCurve = SubResource("CurveTexture_k2ktq")

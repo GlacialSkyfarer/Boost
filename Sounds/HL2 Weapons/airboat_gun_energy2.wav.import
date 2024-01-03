@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b70e65m0vwlab"
+path="res://.godot/imported/airboat_gun_energy2.wav-3ca8c92ad749f1a9d2f4bbb506b9654a.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/airboat_gun_energy2.wav"
+dest_files=["res://.godot/imported/airboat_gun_energy2.wav-3ca8c92ad749f1a9d2f4bbb506b9654a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dae206r0ultpm"
+path="res://.godot/imported/tripmine_activate.wav-324c7f7e3f2d1852247389a7dad6601f.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/tripmine_activate.wav"
+dest_files=["res://.godot/imported/tripmine_activate.wav-324c7f7e3f2d1852247389a7dad6601f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

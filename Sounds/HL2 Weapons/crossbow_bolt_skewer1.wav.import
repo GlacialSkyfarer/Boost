@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bv6dtxtaym7cp"
+path="res://.godot/imported/crossbow_bolt_skewer1.wav-a062e2362c081f091ff352e5bd8df7e1.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/crossbow_bolt_skewer1.wav"
+dest_files=["res://.godot/imported/crossbow_bolt_skewer1.wav-a062e2362c081f091ff352e5bd8df7e1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b6k7qgmqjgs3t"]
+
+[ext_resource type="Texture2D" uid="uid://dax7jiql16o5v" path="res://Textures/Entity/Characters/Demons/DemonCloth-S.png" id="1_2gjox"]
+
+[resource]
+albedo_texture = ExtResource("1_2gjox")
+uv1_scale = Vector3(2.5, 2.5, 2.5)
+uv1_triplanar = true
+texture_filter = 1

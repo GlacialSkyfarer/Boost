@@ -1,0 +1,4 @@
+StandardMaterial3D
+QodotFGDPointClass
+QodotFGDFile
+Shader

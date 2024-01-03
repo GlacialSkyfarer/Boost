@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brox4vegyv7wc"
+path="res://.godot/imported/flaregun_fire.wav-6c35d538ada7c05f72220a7f5c327b80.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/flaregun_fire.wav"
+dest_files=["res://.godot/imported/flaregun_fire.wav-6c35d538ada7c05f72220a7f5c327b80.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

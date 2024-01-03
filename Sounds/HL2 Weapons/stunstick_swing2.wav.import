@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://du4q3jwo1d3ts"
+path="res://.godot/imported/stunstick_swing2.wav-629a2c31bb901e2464835936909a8e17.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/stunstick_swing2.wav"
+dest_files=["res://.godot/imported/stunstick_swing2.wav-629a2c31bb901e2464835936909a8e17.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

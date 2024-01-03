@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6soq1wq6hdr5"
+path="res://.godot/imported/sniper_zoomin.wav-4234221700f5dcb4497a4989920290ac.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/sniper_zoomin.wav"
+dest_files=["res://.godot/imported/sniper_zoomin.wav-4234221700f5dcb4497a4989920290ac.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

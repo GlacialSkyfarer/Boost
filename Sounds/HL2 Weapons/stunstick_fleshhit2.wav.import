@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ylnkj2y0spbj"
+path="res://.godot/imported/stunstick_fleshhit2.wav-8cc8beaad891a7ffece26e5ffae4d1d1.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/stunstick_fleshhit2.wav"
+dest_files=["res://.godot/imported/stunstick_fleshhit2.wav-8cc8beaad891a7ffece26e5ffae4d1d1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

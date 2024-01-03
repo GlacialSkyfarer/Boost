@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://coa01p1m5qppx"
+path="res://.godot/imported/crossbow_bolt_load2.wav-d254116acfe0ab04b4bf88d5e410ba20.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/crossbow_bolt_load2.wav"
+dest_files=["res://.godot/imported/crossbow_bolt_load2.wav-d254116acfe0ab04b4bf88d5e410ba20.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

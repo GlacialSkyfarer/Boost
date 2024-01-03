@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c5fi8qhlnpo78"
+path="res://.godot/imported/slam_click.wav-0ff351918ba3fa140fa8022f0ba8fc05.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/slam_click.wav"
+dest_files=["res://.godot/imported/slam_click.wav-0ff351918ba3fa140fa8022f0ba8fc05.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

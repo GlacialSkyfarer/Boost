@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwrqj8nxl3phm"
+path="res://.godot/imported/alyx_stunner2.wav-c9bff8e6ba39d4a5675f0d9e283932e3.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/alyx_stunner2.wav"
+dest_files=["res://.godot/imported/alyx_stunner2.wav-c9bff8e6ba39d4a5675f0d9e283932e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

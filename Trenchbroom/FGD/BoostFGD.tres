@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QodotFGDFile" load_steps=4 format=3 uid="uid://cdohruw7e15cw"]
+
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_file.gd" id="1_7b53x"]
+[ext_resource type="Resource" uid="uid://c36hv0o6g0udo" path="res://addons/qodot/game_definitions/fgd/qodot_fgd.tres" id="1_r6p7j"]
+[ext_resource type="Resource" uid="uid://03awdh8oxf5s" path="res://Trenchbroom/Entities/Player.tres" id="2_5kgfa"]
+
+[resource]
+script = ExtResource("1_7b53x")
+export_file = false
+target_folder = ""
+fgd_name = "Boost"
+base_fgd_files = Array[Resource]([ExtResource("1_r6p7j")])
+entity_definitions = Array[Resource]([ExtResource("2_5kgfa")])

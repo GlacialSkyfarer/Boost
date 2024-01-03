@@ -1,0 +1,25 @@
+// Game: Generic
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures;textures/Test;textures/special"
+// brush 0
+{
+( -64 16 40 ) ( -64 17 40 ) ( -64 16 41 ) Test/TestRoom-W 0 0 0 1 1
+( 120 -64 8 ) ( 56 -64 8 ) ( 56 -64 136 ) Test/TestRoom-W 0 0 180 1 -1
+( -16 -32 0 ) ( -16 -31 0 ) ( -17 -32 0 ) Test/TestRoom-W 0 0 180 1 -1
+( -80 16 8 ) ( -81 16 8 ) ( -80 17 8 ) Test/TestRoom-W 0 0 180 1 -1
+( -80 64 40 ) ( -80 64 41 ) ( -81 64 40 ) Test/TestRoom-W 0 0 180 1 -1
+( 64 -32 -8 ) ( 64 -32 -7 ) ( 64 -31 -8 ) Test/TestRoom-W 0 0 0 1 1
+}
+// brush 1
+{
+( 64 -16 -8 ) ( 64 -15 -8 ) ( 64 -16 -7 ) Test/TestRoom-W 0 0 0 1 1
+( 64 -16 -8 ) ( 64 -16 -7 ) ( 65 -16 -8 ) Test/TestRoom-W 0 0 0 1 1
+( 64 -16 0 ) ( 65 -16 0 ) ( 64 -15 0 ) Test/TestRoom-W 0 0 0 1 1
+( 128 16 8 ) ( 128 17 8 ) ( 129 16 8 ) Test/TestRoom-W 0 0 0 1 1
+( 128 16 8 ) ( 129 16 8 ) ( 128 16 9 ) Test/TestRoom-W 0 0 0 1 1
+( 112 16 8 ) ( 112 16 9 ) ( 112 17 8 ) Test/TestRoom-W 0 0 0 1 1
+}
+}

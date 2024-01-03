@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://uyywk1tks6b4"
+path="res://.godot/imported/ar2_reload_push.wav-5c6aba54b31ad529a6c9431c228ad674.sample"
+
+[deps]
+
+source_file="res://Sounds/HL2 Weapons/ar2_reload_push.wav"
+dest_files=["res://.godot/imported/ar2_reload_push.wav-5c6aba54b31ad529a6c9431c228ad674.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
