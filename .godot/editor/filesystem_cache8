@@ -1,5 +1,5 @@
 f2b985f967f0bdb1e3adfa033ebc58fb
-::res://::1704300078
+::res://::1704384763
 icon.svg::CompressedTexture2D::5220855938499488965::1704299140::1704299140::1::::<><>::
 LICENSE.md::TextFile::-1::1704299088::0::1::::<><>::
 README.md::TextFile::-1::1704299090::0::1::::<><>::
@@ -20,8 +20,8 @@ icon.png::CompressedTexture2D::4303817965049754646::1704299133::1704299133::1:::
 palette.lmp::Resource::4215014223586875623::1704299134::1704299134::1::::<><>::
 plugin.cfg::TextFile::-1::1704299134::0::1::::<><>::
 qodot_project_config.tres::Resource/Resource::817744215239847104::1704299134::0::1::::<><>::res://addons/qodot/src/util/qodot_project_config.gd
-::res://addons/qodot/game_definitions/::1704299132
-trenchbroom_game_config.tres::Resource/Resource::5580684544040128417::1704299132::0::1::::<><>::res://addons/qodot/game_definitions/brush_tags/detail_tag.tres<>uid://b2k2iutnsgjfy::::res://addons/qodot/icon.png<>uid://bd23tengu5m5u::::res://addons/qodot/game_definitions/brush_tags/trigger_tag.tres<>res://addons/qodot/src/resources/game-definitions/trenchbroom_game_config.gd<>uid://dpjjh0hst6xj::::res://addons/qodot/game_definitions/face_tags/clip_tag.tres<>uid://b3ec6041xnoec::::res://addons/qodot/game_definitions/face_tags/skip_tag.tres<>uid://blnk7qwd7u1ls::::res://addons/qodot/game_definitions/fgd/quake_compat_fgd.tres<>uid://dtrwmwppklvpw::::res://addons/qodot/game_definitions/fgd/essentials_fgd.tres<>uid://c6c7ca1bms133::::res://addons/qodot/game_definitions/fgd/demo_entities_fgd.tres<>uid://bkmh5qlqkolvt::::res://addons/qodot/game_definitions/fgd/reciever_signal_fgd.tres<>uid://cdohruw7e15cw::::res://Trenchbroom/FGD/BoostFGD.tres
+::res://addons/qodot/game_definitions/::1704301029
+trenchbroom_game_config.tres::Resource/TrenchBroomGameConfig::5580684544040128417::1704301029::0::1::::<><>::res://addons/qodot/game_definitions/brush_tags/detail_tag.tres<>uid://b2k2iutnsgjfy::::res://addons/qodot/icon.png<>uid://bd23tengu5m5u::::res://addons/qodot/game_definitions/brush_tags/trigger_tag.tres<>res://addons/qodot/src/resources/game-definitions/trenchbroom_game_config.gd<>uid://dpjjh0hst6xj::::res://addons/qodot/game_definitions/face_tags/clip_tag.tres<>uid://b3ec6041xnoec::::res://addons/qodot/game_definitions/face_tags/skip_tag.tres<>uid://blnk7qwd7u1ls::::res://addons/qodot/game_definitions/fgd/quake_compat_fgd.tres<>uid://dtrwmwppklvpw::::res://addons/qodot/game_definitions/fgd/essentials_fgd.tres<>uid://c6c7ca1bms133::::res://addons/qodot/game_definitions/fgd/demo_entities_fgd.tres<>uid://bkmh5qlqkolvt::::res://addons/qodot/game_definitions/fgd/reciever_signal_fgd.tres<>uid://cdohruw7e15cw::::res://Trenchbroom/FGD/BoostFGD.tres
 ::res://addons/qodot/game_definitions/brush_tags/::1704299129
 detail_tag.tres::Resource::-1::1704299129::0::1::::<><>::res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd
 trigger_tag.tres::Resource/Resource::2654459650324857456::1704299129::0::1::::<><>::res://addons/qodot/src/resources/game-definitions/trenchbroom/trenchbroom_tag.gd
@@ -119,7 +119,7 @@ qodot_util.gd::GDScript::-1::1704299138::0::1::::QodotUtil<>RefCounted<>::
 ::res://addons/trailmesh/::1704299140
 README.md::TextFile::-1::1704299138::0::1::::<><>::
 trailmesh.gdextension::GDExtension::-1::1704299140::0::1::::<><>::
-::res://addons/trailmesh/bin/::1704300065
+::res://addons/trailmesh/bin/::1704384735
 ::res://addons/trailmesh/bin/libtrailmesh.macos.debug.framework/::1704299139
 ::res://addons/trailmesh/bin/libtrailmesh.macos.release.framework/::1704299139
 ::res://addons/trailmesh/example/::1704299140
@@ -165,28 +165,28 @@ RevolverFuse.tres::StandardMaterial3D::4379602171809996986::1704300151::0::1::::
 RevolverWarpFuse.tres::StandardMaterial3D::454840291760970484::1704300151::0::1::::<><>::uid://ccnt5s30nry4f::::res://Textures/Guns/RevolverWarpFuse.png<>uid://bjt0ucckne5xf::::res://Textures/Guns/RevolverWarpFuseEmission.png
 ::res://Scenes/::1704299090
 ::res://Scenes/Entities/::1704299090
-::res://Scenes/Entities/Core/::1704300152
-Player.tscn::PackedScene::922541164129694201::1704300152::0::1::::<><>::res://Scripts/Entities/Core/Player.cs<>res://Scripts/Entities/Core/PlayerCamera.cs<>uid://8fbyvsrsg1bk::::res://Textures/Entity/Utility/CircleShadow.png<>res://Scripts/Utility/MatchTransform.cs<>uid://crck65i8ig0fi::::res://Textures/UI/Cursor.png<>uid://dysogfiamu7gc::::res://Models/Characters/BoostGoob.blend<>res://Scripts/Entities/Core/PlayerAnimator.cs
-::res://Scenes/Entities/Core/Projectiles/::1704300154
-ShotgunBullet.tscn::PackedScene::2521230277646260092::1704300154::0::1::::<><>::res://Scripts/Entities/Projectiles/PlayerBullet.cs<>uid://cbajjhcwpllbm::::res://Textures/Particles/Circle.png<>uid://b54ilaggmsgaw::::res://Scenes/Entities/Effects/HitParticles.tscn
-WarpVoid.tscn::PackedScene::4910873197806563071::1704300154::0::1::::<><>::res://Scripts/Entities/Projectiles/WarpVoid.cs<>uid://cthpvl7v3helb::::res://Scenes/Entities/Effects/Explosion.tscn
-::res://Scenes/Entities/Effects/::1704300153
+::res://Scenes/Entities/Core/::1704303358
+Player.tscn::PackedScene::922541164129694201::1704303358::0::1::::<><>::res://Scripts/Entities/Core/Player.cs<>res://Scripts/Entities/Core/PlayerCamera.cs<>uid://8fbyvsrsg1bk::::res://Textures/Entity/Utility/CircleShadow.png<>res://Scripts/Utility/MatchTransform.cs<>uid://crck65i8ig0fi::::res://Textures/UI/Cursor.png<>uid://dysogfiamu7gc::::res://Models/Characters/BoostGoob.blend<>res://Scripts/Entities/Core/PlayerAnimator.cs
+::res://Scenes/Entities/Core/Projectiles/::1704303360
+ShotgunBullet.tscn::PackedScene::2521230277646260092::1704303359::0::1::::<><>::res://Scripts/Entities/Projectiles/PlayerBullet.cs<>uid://cbajjhcwpllbm::::res://Textures/Particles/Circle.png<>uid://b54ilaggmsgaw::::res://Scenes/Entities/Effects/HitParticles.tscn
+WarpVoid.tscn::PackedScene::4910873197806563071::1704303359::0::1::::<><>::res://Scripts/Entities/Projectiles/WarpVoid.cs<>uid://cthpvl7v3helb::::res://Scenes/Entities/Effects/Explosion.tscn
+::res://Scenes/Entities/Effects/::1704303359
 Explosion.tscn::PackedScene::6121828925533169951::1704299090::0::1::::<><>::res://Scripts/Entities/Utility/Explosion.cs
-HitParticles.tscn::PackedScene::4552458336935081150::1704300153::0::1::::<><>::
-Line3D.tscn::PackedScene::1055193467016177550::1704300152::0::1::::<><>::res://Scripts/Entities/Utility/Line3D.cs
+HitParticles.tscn::PackedScene::4552458336935081150::1704303359::0::1::::<><>::
+Line3D.tscn::PackedScene::1055193467016177550::1704303358::0::1::::<><>::res://Scripts/Entities/Utility/Line3D.cs
 ::res://Scenes/Entities/Enemies/::1704299090
 Demon-S.tscn::PackedScene::1705546196942919191::1704299090::0::1::::<><>::uid://egioqry8vm1g::::res://Models/Characters/LittleDemon.blend<>res://Scripts/Entities/Enemies/Demon.cs
-::res://Scenes/Maps/::1704300152
+::res://Scenes/Maps/::1704303358
 TestMap-01.exr::CompressedTexture2DArray::2762037321743432892::1704299090::1704299090::1::::<><>::
 TestMap-01.lmbake::LightmapGIData::5181980129777527310::1704299090::0::1::::<><>::uid://bfl7l66u63eim::::res://Scenes/Maps/TestMap-01.exr
-TestMap-01.tscn::PackedScene::8100228028292565555::1704300152::0::1::::<><>::res://Shaders/ColorDegredation.gdshader<>res://addons/qodot/src/nodes/qodot_map.gd<>uid://cdohruw7e15cw::::res://Trenchbroom/FGD/BoostFGD.tres<>uid://ne5eavjh66m4::::res://Scenes/Entities/Core/Player.tscn<>uid://bp0g8nwctor36::::res://Trenchbroom/Textures/Test/TestRoom-W.png<>uid://bao08g27bbp30::::res://Trenchbroom/Textures/Test/TestRoom-G.png<>uid://ch46hsbvfspx3::::res://Trenchbroom/Textures/Test/TestRoom-Y.png<>uid://3m1fia08ax7p::::res://Trenchbroom/Textures/Test/TestRoom-B.png<>uid://oot7ryv4bkbj::::res://Trenchbroom/Textures/Test/TestRoom-R.png<>uid://cs31xxwh3ua4e::::res://Trenchbroom/Textures/Test/TestRoom-P.png<>uid://667adr4m80rw::::res://Models/Characters/Materials/Player/GoobieSkin.tres<>uid://bq8nai01t7mv6::::res://Models/Characters/Materials/Player/GoobieCloth.tres<>uid://bo6sgm7kp2brp::::res://Models/Characters/Materials/Player/GoobieEye.tres
+TestMap-01.tscn::PackedScene::8100228028292565555::1704303358::0::1::::<><>::res://Shaders/ColorDegredation.gdshader<>res://addons/qodot/src/nodes/qodot_map.gd<>uid://cdohruw7e15cw::::res://Trenchbroom/FGD/BoostFGD.tres<>uid://ne5eavjh66m4::::res://Scenes/Entities/Core/Player.tscn<>uid://bp0g8nwctor36::::res://Trenchbroom/Textures/Test/TestRoom-W.png<>uid://bao08g27bbp30::::res://Trenchbroom/Textures/Test/TestRoom-G.png<>uid://ch46hsbvfspx3::::res://Trenchbroom/Textures/Test/TestRoom-Y.png<>uid://3m1fia08ax7p::::res://Trenchbroom/Textures/Test/TestRoom-B.png<>uid://oot7ryv4bkbj::::res://Trenchbroom/Textures/Test/TestRoom-R.png<>uid://cs31xxwh3ua4e::::res://Trenchbroom/Textures/Test/TestRoom-P.png<>uid://667adr4m80rw::::res://Models/Characters/Materials/Player/GoobieSkin.tres<>uid://bq8nai01t7mv6::::res://Models/Characters/Materials/Player/GoobieCloth.tres<>uid://bo6sgm7kp2brp::::res://Models/Characters/Materials/Player/GoobieEye.tres<>res://addons/Mirror/Mirror/Mirror.gd
 ::res://Scenes/Utility/::1704299090
 FlashOverlay.tscn::PackedScene::2956055323768437206::1704299090::0::1::::<><>::res://Scripts/Utility/FlashOverlay.cs
 SoundManager.tscn::PackedScene::8690421264318337900::1704299090::0::1::::<><>::res://Scripts/Utility/SoundManager.cs
-::res://Scenes/Weapons/::1704300154
-Revolver.tscn::PackedScene::6364107690251120129::1704300152::0::1::::<><>::res://Scripts/Weapons/Revolver.cs<>uid://cb74mm42vy67t::::res://Scenes/Entities/Core/Projectiles/WarpVoid.tscn<>uid://pbe484n2r2lu::::res://Scenes/Entities/Effects/Line3D.tscn<>uid://b54ilaggmsgaw::::res://Scenes/Entities/Effects/HitParticles.tscn<>uid://b5w2hbobgvhxl::::res://Models/Guns/Novalver.blend<>uid://cj42k8bsabck5::::res://Textures/Entity/Utility/Flash.png<>uid://cq27ag5f3bel6::::res://Textures/UI/RevolverHeatCursor.png
+::res://Scenes/Weapons/::1704303359
+Revolver.tscn::PackedScene::6364107690251120129::1704303358::0::1::::<><>::res://Scripts/Weapons/Revolver.cs<>uid://cb74mm42vy67t::::res://Scenes/Entities/Core/Projectiles/WarpVoid.tscn<>uid://pbe484n2r2lu::::res://Scenes/Entities/Effects/Line3D.tscn<>uid://b54ilaggmsgaw::::res://Scenes/Entities/Effects/HitParticles.tscn<>uid://b5w2hbobgvhxl::::res://Models/Guns/Novalver.blend<>uid://cj42k8bsabck5::::res://Textures/Entity/Utility/Flash.png<>uid://cq27ag5f3bel6::::res://Textures/UI/RevolverHeatCursor.png
 Revonter.tscn::PackedScene::6392560272970121016::1704299090::0::1::::<><>::res://Scripts/Weapons/Revolver.cs<>uid://cb74mm42vy67t::::res://Scenes/Entities/Core/Projectiles/WarpVoid.tscn<>uid://pbe484n2r2lu::::res://Scenes/Entities/Effects/Line3D.tscn<>uid://b54ilaggmsgaw::::res://Scenes/Entities/Effects/HitParticles.tscn<>uid://b5w2hbobgvhxl::::res://Models/Guns/Novalver.blend<>uid://dw7v0ygf8eqhs::::res://Textures/Guns/Revolvermain.png<>uid://cj42k8bsabck5::::res://Textures/Entity/Utility/Flash.png<>uid://b2umbyycs0i1n::::res://Textures/Guns/RevolverGrip.png<>uid://cq27ag5f3bel6::::res://Textures/UI/RevolverHeatCursor.png<>uid://4fs8ewtcvb0y::::res://Textures/Guns/RevolverAccent.png
-Shotgun.tscn::PackedScene::5672535270270164066::1704300154::0::1::::<><>::res://Scripts/Weapons/Shotgun.cs<>uid://dhhv26xkgf5vr::::res://Models/Guns/Shotgun.blend<>uid://bb6kkah2yctaa::::res://Scenes/Entities/Core/Projectiles/ShotgunBullet.tscn<>uid://dw1ovjru4p15::::res://Textures/UI/ShotgunHeatCursor.png<>uid://dpxeln5gvyqq4::::res://Sounds/HL2 Weapons/shotgun_cock_first.wav<>uid://d22odqcdcxbvc::::res://Sounds/HL2 Weapons/shotgun_cock_last.wav<>uid://cj42k8bsabck5::::res://Textures/Entity/Utility/Flash.png
+Shotgun.tscn::PackedScene::5672535270270164066::1704303359::0::1::::<><>::res://Scripts/Weapons/Shotgun.cs<>uid://dhhv26xkgf5vr::::res://Models/Guns/Shotgun.blend<>uid://bb6kkah2yctaa::::res://Scenes/Entities/Core/Projectiles/ShotgunBullet.tscn<>uid://dw1ovjru4p15::::res://Textures/UI/ShotgunHeatCursor.png<>uid://dpxeln5gvyqq4::::res://Sounds/HL2 Weapons/shotgun_cock_first.wav<>uid://d22odqcdcxbvc::::res://Sounds/HL2 Weapons/shotgun_cock_last.wav<>uid://cj42k8bsabck5::::res://Textures/Entity/Utility/Flash.png
 ::res://Scripts/::1704299091
 ::res://Scripts/Entities/::1704299091
 ::res://Scripts/Entities/Core/::1704299090
@@ -209,14 +209,14 @@ MatchTransform.cs::CSharpScript::-1::1704299091::0::1::::<>Node3D<>::
 MusicTrigger.cs::CSharpScript::-1::1704299091::0::1::::<>Node<>::
 SoundManager.cs::CSharpScript::-1::1704299091::0::1::::<>Node3D<>::
 ViewportShareWorld.cs::CSharpScript::-1::1704299091::0::1::::<>SubViewport<>::
-::res://Scripts/Weapons/::1704300060
+::res://Scripts/Weapons/::1704300472
 Gun.cs::CSharpScript::-1::1704299091::0::1::::<>Node3D<>::
-Revolver.cs::CSharpScript::-1::1704299091::0::1::::<>Node3D<>::
-Shotgun.cs::CSharpScript::-1::1704300060::0::1::::<>Node3D<>::
+Revolver.cs::CSharpScript::-1::1704300472::0::1::::<>Node3D<>::
+Shotgun.cs::CSharpScript::-1::1704303386::0::1::::<>Node3D<>::
 ::res://Shaders/::1704299091
 ColorDegredation.gdshader::Shader::-1::1704299091::0::1::::<><>::
 ::res://Sounds/::1704299126
-::res://Sounds/HL2 Weapons/::1704299126
+::res://Sounds/HL2 Weapons/::1704300462
 357_fire2.wav::AudioStreamWAV::4477967699776231191::1704299091::1704299091::1::::<><>::
 357_fire3.wav::AudioStreamWAV::2354159180411114835::1704299091::1704299091::1::::<><>::
 357_reload1.wav::AudioStreamWAV::4101978730026953811::1704299091::1704299091::1::::<><>::
