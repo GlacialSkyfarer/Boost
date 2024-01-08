@@ -770,13 +770,15 @@ bulletScene = ExtResource("2_rhvnt")
 bulletSpeed = 20.0
 bulletSpread = 10.0
 fireSound = "res://Sounds/HL2 Weapons/shotgun_fire6.wav"
-fireHeat = 2.0
+overheatSound = "res://Sounds/HL2 Weapons/crossbow_bolt_load1.wav"
+fireHeat = 1.5
+thirdLevelKickback = 12.0
 animatorPath = NodePath("MainAnimator")
 heatMeterPath = NodePath("HeatMeter")
 swapAnimatorPath = NodePath("SwapAnimator")
 fireCooldown = 1.0
 altFireCooldown = 1.0
-maxHeat = 8.0
+maxHeat = 6.0
 
 [node name="Shotgun" parent="." instance=ExtResource("1_qpnft")]
 transform = Transform3D(0.71024, 0, 0, 0, 0.710239, 0, 0, 0, 0.710239, 0.063479, -0.0768991, -0.00104777)

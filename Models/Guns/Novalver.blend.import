@@ -47,6 +47,10 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Models/Guns/Materials/Metal.tres"
 },
+"Trim": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Guns/Materials/Trim.tres"
+},
 "WarpFuse": {
 "use_external/enabled": true,
 "use_external/path": "res://Models/Guns/Materials/RevolverWarpFuse.tres"

@@ -26,12 +26,18 @@ public partial class Shotgun : Gun
 
 	[Export(PropertyHint.File)]
 	public string fireSound;
+	[Export(PropertyHint.File)]
+	public string overheatSound;
 
 	[Export]
 	public float fireHeat = 5f;
 
 	[Export]
 	public float baseKickback = 5f;
+	[Export]
+	public float secondLevelKickback = 10f;
+	[Export]
+	public float thirdLevelKickback = 15f;
 
 	SoundManager soundManager;
 
@@ -55,9 +61,10 @@ public partial class Shotgun : Gun
 		{
 			heat = maxHeat;
 			overheated = true;
+			soundManager.PlayDirectionlessSound(new Sound(overheatSound, 0, GlobalPosition));
 		}
 
-		for (int i = 0; i < bulletCount; i++)
+		for (int i = 0; i < (bulletCount + (chargeLevel - 1) * (bulletCount / 2)); i++)
 		{
 
 			PlayerBullet p = bulletScene.Instantiate<PlayerBullet>();
@@ -70,7 +77,29 @@ public partial class Shotgun : Gun
 
 		}
 
-		player.Velocity += GlobalTransform.Basis.Z * baseKickback * Mathf.Pow(1.6f, chargeLevel - 1);
+		float kickback = 0;
+
+			switch (chargeLevel)
+			{
+
+				case 1:
+
+					kickback = baseKickback;
+					break;
+
+				case 2:
+
+					kickback = secondLevelKickback;
+					break;
+
+				case 3:
+
+					kickback = thirdLevelKickback;
+					break;
+
+			}
+
+		player.Velocity += GlobalTransform.Basis.Z * kickback;
 
 		chargeLevel = 1;
 
@@ -87,6 +116,7 @@ public partial class Shotgun : Gun
 			base.AltFire(player);
 
 			animator.Play("AltFire");
+			animator.Seek(0);
 
 			chargeLevel++;
 
@@ -117,5 +147,20 @@ public partial class Shotgun : Gun
 		chargeSM.Travel("Idle1");
 		chargeLevel = 1;
 	}
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+
+		if (overheated) {
+
+			heatMeter.TintProgress = Colors.Red;
+
+		} else {
+
+			heatMeter.TintProgress = Colors.White;
+
+		}
+    }
 
 }

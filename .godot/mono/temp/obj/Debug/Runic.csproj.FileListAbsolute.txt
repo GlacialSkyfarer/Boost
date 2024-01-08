@@ -49,3 +49,4 @@ C:\Users\student\Documents\Lumi\GitHub\Boost\.godot\mono\temp\obj\Debug\refint\R
 C:\Users\student\Documents\Lumi\GitHub\Boost\.godot\mono\temp\obj\Debug\Runic.pdb
 C:\Users\student\Documents\Lumi\GitHub\Boost\.godot\mono\temp\obj\Debug\Runic.genruntimeconfig.cache
 C:\Users\student\Documents\Lumi\GitHub\Boost\.godot\mono\temp\obj\Debug\ref\Runic.dll
+C:\Users\Runic\Documents\GitHub\Boost\.godot\mono\temp\obj\Debug\Runic.sourcelink.json

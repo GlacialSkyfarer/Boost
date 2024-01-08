@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dw7v0ygf8eqhs" path="res://Textures/Guns/Revolvermain.png" id="1_xhhhu"]
 
 [resource]
+albedo_color = Color(0.227451, 0.227451, 0.227451, 1)
 albedo_texture = ExtResource("1_xhhhu")
 uv1_scale = Vector3(10, 10, 10)
 uv1_triplanar = true

@@ -1,14 +1,17 @@
-res://Scenes/Maps/TestMap-01.tscn
+res://Scenes/Weapons/Revolver.tscn
 res://addons/Mirror/Mirror/MirrorMaterial.tres
 res://addons/qodot/game_definitions/fgd/qodot_fgd.tres
 res://Models/Characters/Materials/Player/GoobieSkin.tres
 res://Models/Characters/Materials/Player/GoobieEye.tres
 res://Trenchbroom/Entities/Player.tres
 res://Trenchbroom/FGD/BoostFGD.tres
+res://Models/Guns/Materials/Grip.tres
+res://Models/Guns/Materials/MetalAccent.tres
 res://Models/Guns/Materials/RevolverFuse.tres
 res://Models/Guns/Materials/RevolverWarpFuse.tres
+res://Models/Guns/Materials/Trim.tres
+res://Scenes/Maps/TestMap-01.tscn
 res://Scenes/Entities/Core/Player.tscn
-res://Scenes/Weapons/Revolver.tscn
 res://Scenes/Entities/Effects/Line3D.tscn
 res://Scenes/Entities/Effects/HitParticles.tscn
 res://Scenes/Weapons/Shotgun.tscn
@@ -32,3 +35,4 @@ res://Scripts/Utility/ViewportShareWorld.cs
 res://Scripts/Weapons/Gun.cs
 res://Scripts/Weapons/Revolver.cs
 res://Scripts/Weapons/Shotgun.cs
+res://Models/Guns/Materials/Metal.tres
