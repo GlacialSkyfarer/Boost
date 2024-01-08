@@ -88,24 +88,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Runic\\.nuget\\packages\\": {},
-    "C:\\Users\\Runic\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder": {}
+    "C:\\Users\\student\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
+      "projectUniqueName": "C:\\Users\\student\\Documents\\Lumi\\GitHub\\Boost\\Runic.csproj",
       "projectName": "Runic",
-      "projectPath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
-      "packagesPath": "C:\\Users\\Runic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\.godot\\mono\\temp\\obj\\",
+      "projectPath": "C:\\Users\\student\\Documents\\Lumi\\GitHub\\Boost\\Runic.csproj",
+      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\student\\Documents\\Lumi\\GitHub\\Boost\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Users\\Runic\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Runic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Users\\Runic\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
+        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -155,26 +150,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[6.0.25, 6.0.25]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

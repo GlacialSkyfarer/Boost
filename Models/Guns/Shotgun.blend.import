@@ -35,13 +35,25 @@ _subresources={
 "use_external/enabled": true,
 "use_external/path": "res://Models/Guns/Materials/MetalAccent.tres"
 },
+"FuseEmission": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Guns/Materials/ShotgunWater.tres"
+},
 "Grip": {
 "use_external/enabled": true,
 "use_external/path": "res://Models/Guns/Materials/Grip.tres"
 },
+"Hole.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Guns/Materials/ShotgunGlass.tres"
+},
 "Metal": {
 "use_external/enabled": true,
 "use_external/path": "res://Models/Guns/Materials/Metal.tres"
+},
+"Trim": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Guns/Materials/Trim.tres"
 }
 },
 "nodes": {
