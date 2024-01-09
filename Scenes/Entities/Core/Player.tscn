@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://ne5eavjh66m4"]
+[gd_scene load_steps=35 format=3 uid="uid://ne5eavjh66m4"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Core/Player.cs" id="1_33jtk"]
 [ext_resource type="Script" path="res://Scripts/Entities/Core/PlayerCamera.cs" id="2_lhodl"]
 [ext_resource type="Texture2D" uid="uid://8fbyvsrsg1bk" path="res://Textures/Entity/Utility/CircleShadow.png" id="3_f5mng"]
+[ext_resource type="Script" path="res://Scenes/Entities/Core/CameraEffects.cs" id="3_nnu8a"]
 [ext_resource type="Script" path="res://Scripts/Utility/MatchTransform.cs" id="5_ep5ff"]
 [ext_resource type="Texture2D" uid="uid://crck65i8ig0fi" path="res://Textures/UI/Cursor.png" id="6_wehoa"]
 [ext_resource type="PackedScene" uid="uid://dysogfiamu7gc" path="res://Models/Characters/BoostGoob.blend" id="7_jc517"]
@@ -11,6 +12,85 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhsiv"]
 radius = 0.2
 height = 1.15226
+
+[sub_resource type="Animation" id="Animation_0k3fl"]
+resource_name = "LeftWalk"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0.0452389)]
+}
+
+[sub_resource type="Animation" id="Animation_u4jhp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_505qe"]
+resource_name = "RightWalk"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.0453786)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3c42k"]
+_data = {
+"LeftWalk": SubResource("Animation_0k3fl"),
+"RESET": SubResource("Animation_u4jhp"),
+"RightWalk": SubResource("Animation_505qe")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l2we8"]
+animation = &"RightWalk"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1pces"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_prgq7"]
+animation = &"LeftWalk"
+
+[sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_4on8o"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_d2iuo"]
+graph_offset = Vector2(-347.727, 1.34709)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_prgq7")
+nodes/Animation/position = Vector2(-200, 40)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_l2we8")
+"nodes/Animation 2/position" = Vector2(-200, 220)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_1pces")
+"nodes/Animation 3/position" = Vector2(-320, 120)
+nodes/Blend3/node = SubResource("AnimationNodeBlend3_4on8o")
+nodes/Blend3/position = Vector2(140, 80)
+node_connections = [&"Blend3", 0, &"Animation", &"Blend3", 1, &"Animation 3", &"Blend3", 2, &"Animation 2", &"output", 0, &"Blend3"]
 
 [sub_resource type="Animation" id="Animation_x8fmo"]
 resource_name = "Idle"
@@ -527,8 +607,7 @@ script = ExtResource("1_33jtk")
 vmAnimatorPath = NodePath("VMAnimator")
 vmHolderPath = NodePath("VMDisplay/VMViewport/CamFollow")
 movementSpeed = 7.0
-groundTraction = 1.5
-airTraction = 1.0
+airTraction = 0.5
 jumpHeight = 6.0
 gunsOwned = Array[String](["Shotgun", "Revolver"])
 
@@ -547,6 +626,20 @@ angleLimit = 75.0
 cull_mask = 524285
 fov = 100.0
 near = 0.001
+script = ExtResource("3_nnu8a")
+
+[node name="CameraAnimator" type="AnimationTree" parent="CameraHolder/Camera"]
+libraries = {
+"": SubResource("AnimationLibrary_3c42k")
+}
+tree_root = SubResource("AnimationNodeBlendTree_d2iuo")
+anim_player = NodePath("../camernimator")
+parameters/Blend3/blend_amount = 0.0
+
+[node name="camernimator" type="AnimationPlayer" parent="CameraHolder/Camera"]
+libraries = {
+"": SubResource("AnimationLibrary_3c42k")
+}
 
 [node name="Shadow" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00041157, -1.50292, 0.000136435)
@@ -607,23 +700,23 @@ transform = Transform3D(0.917717, 0, 0, 0, 0.917717, 0, 0, 0, 0.917717, 0, -0.62
 
 [node name="Skeleton3D" parent="BoostGoob/Armature" index="0"]
 bones/0/rotation = Quaternion(-5.37718e-08, -0.701947, 0.712229, 5.29956e-08)
-bones/1/position = Vector3(8.65021e-08, -0.290941, -0.515451)
+bones/1/position = Vector3(8.50847e-08, -0.290985, -0.518424)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06861e-09, 0.999915)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
-bones/3/rotation = Quaternion(0.114423, 2.6482e-10, 4.21242e-08, 0.993432)
-bones/4/rotation = Quaternion(-0.0974847, 1.27551e-10, -3.56632e-08, 0.995237)
+bones/3/rotation = Quaternion(0.109149, 4.12582e-11, 4.2125e-08, 0.994025)
+bones/4/rotation = Quaternion(-0.0925117, 1.98926e-11, -3.56671e-08, 0.995712)
 bones/5/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
-bones/6/rotation = Quaternion(-0.0496428, 0.964835, -0.164573, -0.198859)
+bones/6/rotation = Quaternion(-0.0436122, 0.968261, -0.144266, -0.19939)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.252201, 0.00591872, 0.016315, 0.967519)
+bones/7/rotation = Quaternion(-0.210336, 0.00597987, 0.0136067, 0.977516)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.739872, 0.0748568, -0.0259911, 0.668065)
+bones/8/rotation = Quaternion(0.725153, 0.0752612, -0.0271477, 0.683924)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.0440413, 0.939148, -0.0986685, 0.326075)
+bones/9/rotation = Quaternion(0.0343911, 0.941389, -0.0772603, 0.326551)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.228802, -0.00595425, -0.0148012, 0.973342)
-bones/11/rotation = Quaternion(0.764516, 0.0322993, -0.0508163, 0.641787)
+bones/10/rotation = Quaternion(-0.181634, -0.00601503, -0.0117499, 0.983278)
+bones/11/rotation = Quaternion(0.748496, 0.0298879, -0.0519853, 0.660423)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
 bones/12/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)

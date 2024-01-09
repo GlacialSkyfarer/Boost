@@ -95,7 +95,7 @@ public partial class Gun : Node3D
 
     public virtual void Fire(Player player) {
 
-		altFCool = fireCooldown;
+		altFCool = Mathf.Max(altFCool, fireCooldown);
 		fCool = fireCooldown;
 		animator.Seek(0);
 		animator.Play("Fire");
