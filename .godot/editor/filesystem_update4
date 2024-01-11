@@ -1,4 +1,4 @@
-res://Scenes/Maps/TestMap-01.tscn
+res://Scenes/Entities/Core/Player.tscn
 res://addons/Mirror/Mirror/MirrorMaterial.tres
 res://addons/qodot/game_definitions/fgd/qodot_fgd.tres
 res://Models/Characters/Materials/Player/GoobieSkin.tres
@@ -13,13 +13,14 @@ res://Models/Guns/Materials/RevolverFuse.tres
 res://Models/Guns/Materials/RevolverWarpFuse.tres
 res://Models/Guns/Materials/ShotgunGlass.tres
 res://Models/Guns/Materials/ShotgunWater.tres
-res://Scenes/Entities/Core/Player.tscn
+res://Scenes/Maps/TestMap-01.tscn
 res://Scenes/Weapons/Revolver.tscn
 res://Scenes/Entities/Effects/Line3D.tscn
 res://Scenes/Entities/Effects/HitParticles.tscn
 res://Scenes/Weapons/Shotgun.tscn
 res://Scenes/Entities/Core/Projectiles/ShotgunBullet.tscn
 res://Scenes/Entities/Core/Projectiles/WarpVoid.tscn
+res://Scenes/Entities/Core/CameraEffects.cs
 res://Scripts/Entities/Core/Actor.cs
 res://Scripts/Entities/Core/Player.cs
 res://Scripts/Entities/Core/PlayerAnimator.cs
@@ -38,3 +39,4 @@ res://Scripts/Utility/ViewportShareWorld.cs
 res://Scripts/Weapons/Gun.cs
 res://Scripts/Weapons/Revolver.cs
 res://Scripts/Weapons/Shotgun.cs
+res://Scripts/Entities/Core/CameraEffects.cs

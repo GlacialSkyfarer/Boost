@@ -18,10 +18,6 @@ public partial class Player : Actor
 	[ExportCategory("References")]
 
 	[Export]
-	public NodePath vmAnimatorPath;
-	public AnimationPlayer vmAnimator;
-
-	[Export]
 	public NodePath vmHolderPath;
 	public Node3D vmHolder;
 
@@ -71,7 +67,6 @@ public partial class Player : Actor
 		coyoteTime = 0f;
 		jumpBuffer = 0f;
 		Velocity = Vector3.Zero;
-		vmAnimator = GetNode<AnimationPlayer>(vmAnimatorPath);
 		vmHolder = GetNode<Node3D>(vmHolderPath);
 		gunsSpawned = new();
 		guns = new();
@@ -150,8 +145,6 @@ public partial class Player : Actor
 		Vector2 inputVector = Input.GetVector("Left", "Right", "Forward", "Back").Normalized();
 
 		Vector3 movementDirection = inputVector.X * Transform.Basis.X + inputVector.Y * Transform.Basis.Z;
-
-		vmAnimator.Play(inputVector == Vector2.Zero ? "Idle" : "Walk");
 
 		switch(currentState) {
 

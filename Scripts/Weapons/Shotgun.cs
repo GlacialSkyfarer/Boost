@@ -11,6 +11,10 @@ public partial class Shotgun : Gun
 	public AnimationTree chargeAnimator;
 	public AnimationNodeStateMachinePlayback chargeSM;
 
+	[ExportGroup("Animation")]
+
+	bool hasOverheatTransitionPlayed = false;
+
 	[ExportGroup("Practical")]
 
 	public int chargeLevel = 1;
@@ -154,9 +158,22 @@ public partial class Shotgun : Gun
 
 		if (overheated) {
 
+			if (heat <= 1 && !hasOverheatTransitionPlayed) {
+
+				chargeSM.Travel("OverheatTransition");
+
+				hasOverheatTransitionPlayed = true;
+
+			} else if (!hasOverheatTransitionPlayed) {
+
+				chargeSM.Travel("Overheated");
+
+			}
 			heatMeter.TintProgress = Colors.Red;
 
 		} else {
+
+			hasOverheatTransitionPlayed = false;
 
 			heatMeter.TintProgress = Colors.White;
 

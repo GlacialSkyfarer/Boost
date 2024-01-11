@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cm223efwmwvxq"]
+[gd_scene load_steps=47 format=3 uid="uid://cm223efwmwvxq"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Shotgun.cs" id="1_6tguw"]
 [ext_resource type="PackedScene" uid="uid://dhhv26xkgf5vr" path="res://Models/Guns/Shotgun.blend" id="1_qpnft"]
@@ -573,6 +573,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shotgun/Body/Pump:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.00980163, 0.234765)]
+}
 
 [sub_resource type="Animation" id="Animation_igst1"]
 resource_name = "Transition1"
@@ -693,11 +705,106 @@ tracks/2/keys = {
 "values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 6.28319)]
 }
 
+[sub_resource type="Animation" id="Animation_ucwyb"]
+resource_name = "Overheated"
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shotgun/Body/BigRing:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25, 0.4, 0.5, 0.65, 0.75, 0.9, 1),
+"transitions": PackedFloat32Array(0.466516, 1, 0.420448, 1, 0.420448, 1, 0.450625, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0, 3.14159, -0.392699), Vector3(0, 3.14159, -0.392699), Vector3(0, 3.14159, -0.785398), Vector3(0, 3.14159, -0.785398), Vector3(0, 3.14159, -1.1781), Vector3(0, 3.14159, -1.1781), Vector3(0, 3.14159, -1.5708), Vector3(0, 3.14159, -1.5708)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shotgun/Body/BigRing/SmallRing:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.25, 0.4, 0.5, 0.65, 0.75, 0.9, 1),
+"transitions": PackedFloat32Array(0.466517, 1, 0.466517, 1, 0.34151, 1, 0.392292, 1, 1),
+"update": 0,
+"values": [Vector3(0, -3.14159, 0), Vector3(0, -3.14159, 0.392699), Vector3(0, -3.14159, 0.392699), Vector3(0, -3.14159, 0.785398), Vector3(0, -3.14159, 0.785398), Vector3(0, -3.14159, 1.1781), Vector3(0, -3.14159, 1.1781), Vector3(0, -3.14159, 1.5708), Vector3(0, -3.14159, 1.5708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shotgun/Body/Pump:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-7.45058e-09, 0.00980165, 0.168724)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Shotgun/Body/Fuse/Fuse_001:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.02, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cgbqi"]
+resource_name = "OverheatTransition"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shotgun/Body/Fuse/Fuse_001:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.450625, 1),
+"update": 0,
+"values": [Vector3(0, -0.02, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Shotgun:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.65, 0.75, 1),
+"transitions": PackedFloat32Array(0.5, 1.8025, 0.574349, 0.574349, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(6.45772, 0, 0), Vector3(6.19592, 0, 0), Vector3(6.19592, 0, 0), Vector3(6.28319, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Shotgun/Body/Pump:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 0.517632, 1),
+"update": 0,
+"values": [Vector3(-7.45058e-09, 0.00980165, 0.168724), Vector3(-7.45058e-09, 0.00980165, 0.168724), Vector3(0, 0.00980163, 0.234765)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3oi0k"]
 _data = {
 "Idle1": SubResource("Animation_jyu5h"),
 "Idle2": SubResource("Animation_m7f5m"),
 "Idle3": SubResource("Animation_7t0vi"),
+"OverheatTransition": SubResource("Animation_cgbqi"),
+"Overheated": SubResource("Animation_ucwyb"),
 "RESET": SubResource("Animation_j8n0h"),
 "Transition1": SubResource("Animation_igst1"),
 "Transition2": SubResource("Animation_agie8"),
@@ -712,6 +819,12 @@ animation = &"Idle2"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xex2o"]
 animation = &"Idle3"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_41jrb"]
+animation = &"OverheatTransition"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lby1f"]
+animation = &"Overheated"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e1706"]
 animation = &"Transition1"
@@ -747,6 +860,12 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o5nir"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_70ex3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l14i2"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_8o0m2"]
 states/Idle1/node = SubResource("AnimationNodeAnimation_5eatn")
 states/Idle1/position = Vector2(280, 144)
@@ -754,6 +873,10 @@ states/Idle2/node = SubResource("AnimationNodeAnimation_d2cec")
 states/Idle2/position = Vector2(509, 62)
 states/Idle3/node = SubResource("AnimationNodeAnimation_xex2o")
 states/Idle3/position = Vector2(768, 136)
+states/OverheatTransition/node = SubResource("AnimationNodeAnimation_41jrb")
+states/OverheatTransition/position = Vector2(268, 249)
+states/Overheated/node = SubResource("AnimationNodeAnimation_lby1f")
+states/Overheated/position = Vector2(482, 290)
 states/Start/position = Vector2(140, 80)
 states/Transition1/node = SubResource("AnimationNodeAnimation_e1706")
 states/Transition1/position = Vector2(509, 207)
@@ -761,7 +884,8 @@ states/Transition2/node = SubResource("AnimationNodeAnimation_rps2s")
 states/Transition2/position = Vector2(376, 62)
 states/Transition3/node = SubResource("AnimationNodeAnimation_6sikb")
 states/Transition3/position = Vector2(646, 62)
-transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_o7m1v"), "Idle1", "Transition2", SubResource("AnimationNodeStateMachineTransition_4jl4l"), "Idle2", "Transition3", SubResource("AnimationNodeStateMachineTransition_ho0ap"), "Idle3", "Transition1", SubResource("AnimationNodeStateMachineTransition_2ei5p"), "Transition1", "Idle1", SubResource("AnimationNodeStateMachineTransition_j77k1"), "Transition2", "Idle2", SubResource("AnimationNodeStateMachineTransition_ollrc"), "Transition3", "Idle3", SubResource("AnimationNodeStateMachineTransition_d6leu"), "Idle1", "Transition1", SubResource("AnimationNodeStateMachineTransition_gkc4j"), "Idle2", "Transition1", SubResource("AnimationNodeStateMachineTransition_o5nir")]
+transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_o7m1v"), "Idle1", "Transition2", SubResource("AnimationNodeStateMachineTransition_4jl4l"), "Idle2", "Transition3", SubResource("AnimationNodeStateMachineTransition_ho0ap"), "Idle3", "Transition1", SubResource("AnimationNodeStateMachineTransition_2ei5p"), "Transition1", "Idle1", SubResource("AnimationNodeStateMachineTransition_j77k1"), "Transition2", "Idle2", SubResource("AnimationNodeStateMachineTransition_ollrc"), "Transition3", "Idle3", SubResource("AnimationNodeStateMachineTransition_d6leu"), "Idle1", "Transition1", SubResource("AnimationNodeStateMachineTransition_gkc4j"), "Idle2", "Transition1", SubResource("AnimationNodeStateMachineTransition_o5nir"), "Overheated", "OverheatTransition", SubResource("AnimationNodeStateMachineTransition_70ex3"), "OverheatTransition", "Idle1", SubResource("AnimationNodeStateMachineTransition_l14i2")]
+graph_offset = Vector2(-18, 75)
 
 [node name="Shotgun" type="Node3D"]
 script = ExtResource("1_6tguw")
@@ -784,7 +908,7 @@ maxHeat = 6.0
 transform = Transform3D(0.71024, 0, 0, 0, 0.710239, 0, 0, 0, 0.710239, 0.063479, -0.0768991, -0.00104777)
 
 [node name="Body" parent="Shotgun" index="0"]
-transform = Transform3D(-1, -1.52855e-14, 8.74228e-08, 0, 1, 1.74846e-07, -8.74228e-08, 1.74846e-07, -1, 0, 0, 0)
+transform = Transform3D(-1, -2.6401e-14, 1.50996e-07, 0, 1, 1.74846e-07, -1.50996e-07, 1.74846e-07, -1, 0, 0, 0)
 
 [node name="BigRing" parent="Shotgun/Body" index="0"]
 transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0, 0.0371651, 0.284456)
@@ -799,7 +923,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00581162, 0.0158204)
 transform = Transform3D(-0.875105, -1.56319e-13, 7.5791e-08, 2.84217e-14, 0.875104, 1.78814e-07, -7.57907e-08, 0, -0.875104, 0, 0, 0)
 
 [node name="Pump" parent="Shotgun/Body" index="3"]
-transform = Transform3D(-1, 0, -1.50996e-07, -1.94818e-20, 1, 0, 1.50996e-07, 0, -1, 0, 0.00980163, 0.234765)
+transform = Transform3D(-1, 3.38813e-21, -1.50996e-07, -2.5411e-20, 1, 4.26326e-14, 1.50996e-07, 4.26326e-14, -1, 0, 0.00980163, 0.234765)
 
 [node name="HeatMeter" type="TextureProgressBar" parent="."]
 anchors_preset = 8
@@ -854,6 +978,7 @@ libraries = {
 }
 
 [node name="ChargeTree" type="AnimationTree" parent="."]
+deterministic = false
 libraries = {
 "": SubResource("AnimationLibrary_3oi0k")
 }
