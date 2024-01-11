@@ -2,6 +2,8 @@ using Godot;
 using System;
 using System.Linq.Expressions;
 
+//TODO: Deactivate stair checkers in the air!!
+
 public enum PlayerState
 {
 	Idle,

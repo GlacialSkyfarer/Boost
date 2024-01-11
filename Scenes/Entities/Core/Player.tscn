@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://ne5eavjh66m4"]
+[gd_scene load_steps=39 format=3 uid="uid://ne5eavjh66m4"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Core/Player.cs" id="1_33jtk"]
 [ext_resource type="Script" path="res://Scripts/Entities/Core/PlayerCamera.cs" id="2_lhodl"]
@@ -12,9 +12,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhsiv"]
 radius = 0.2
 height = 1.15
-
-[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_wlwxa"]
-length = 0.25
 
 [sub_resource type="Animation" id="Animation_0k3fl"]
 resource_name = "LeftWalk"
@@ -634,38 +631,6 @@ gunsOwned = Array[String](["Shotgun", "Revolver"])
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_xhsiv")
 
-[node name="StepRay1" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.325, -0.21)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.325, 0.21)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, 0.21, -0.325, 0)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 1, -4.37114e-08, 1.91069e-15, -0.21, -0.325, 0)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay5" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, 0.707107, -3.09086e-08, 0.148492, -0.325, -0.148492)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay6" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, 0.707107, -3.09086e-08, -0.148492, -0.325, 0.148492)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay7" type="CollisionShape3D" parent="."]
-transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, 0.148492, -0.325, 0.148492)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
-[node name="StepRay8" type="CollisionShape3D" parent="."]
-transform = Transform3D(-0.707107, -0.707107, 3.09086e-08, 0, -4.37114e-08, -1, 0.707107, -0.707107, 3.09086e-08, -0.148492, -0.325, -0.148492)
-shape = SubResource("SeparationRayShape3D_wlwxa")
-
 [node name="CameraHolder" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.307184, 0)
 script = ExtResource("2_lhodl")
@@ -761,23 +726,23 @@ transform = Transform3D(0.917717, 0, 0, 0, 0.917717, 0, 0, 0, 0.917717, 0, -0.57
 
 [node name="Skeleton3D" parent="BoostGoob/Armature" index="0"]
 bones/0/rotation = Quaternion(-5.37718e-08, -0.701947, 0.712229, 5.29956e-08)
-bones/1/position = Vector3(8.43065e-08, -0.290994, -0.519077)
+bones/1/position = Vector3(8.8841e-08, -0.29086, -0.509847)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06861e-09, 0.999915)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
-bones/3/rotation = Quaternion(0.108261, -7.09084e-11, 4.28099e-08, 0.994123)
-bones/4/rotation = Quaternion(-0.0916739, -3.4116e-11, -3.63146e-08, 0.995789)
+bones/3/rotation = Quaternion(0.123927, 6.68015e-10, 4.21197e-08, 0.992291)
+bones/4/rotation = Quaternion(-0.106449, 3.21726e-10, -3.56539e-08, 0.994318)
 bones/5/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
-bones/6/rotation = Quaternion(-0.0426377, 0.968774, -0.140961, -0.199471)
+bones/6/rotation = Quaternion(-0.0585028, 0.959046, -0.193943, -0.197978)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.203503, 0.00598874, 0.0131647, 0.978968)
+bones/7/rotation = Quaternion(-0.312281, 0.00581007, 0.0202015, 0.949757)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.722733, 0.0753211, -0.0273271, 0.686467)
+bones/8/rotation = Quaternion(0.760686, 0.0741518, -0.0241508, 0.644419)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.0327797, 0.941712, -0.0736544, 0.326619)
+bones/9/rotation = Quaternion(0.0575783, 0.935144, -0.128198, 0.3252)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.173691, -0.00602383, -0.0112361, 0.984718)
-bones/11/rotation = Quaternion(0.745776, 0.0294872, -0.0521904, 0.663495)
+bones/10/rotation = Quaternion(-0.293725, -0.00584624, -0.0190011, 0.955683)
+bones/11/rotation = Quaternion(0.786209, 0.0357204, -0.0493277, 0.614952)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
 bones/12/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)

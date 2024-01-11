@@ -1,3 +1,4 @@
+res://Textures/UI
 C:/Users/student/Documents/Lumi/GitHub/Boost/Maps
 res://Models/Guns/Materials
 C:/Users/student/AppData/Local/Programs/Microsoft VS Code
@@ -19,5 +20,3 @@ res://Trenchbroom
 res://Scenes/Utility
 res://Scripts/Entities/Utility
 res://Shaders
-res://Scenes/Maps
-res://Scenes/Entities/Core
