@@ -7,4 +7,3 @@ transparency = 1
 cull_mode = 2
 shading_mode = 0
 albedo_texture = ExtResource("1_3vcjy")
-texture_filter = 0

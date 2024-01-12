@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://dnn2tpoqq8phb"]
+[gd_scene load_steps=112 format=3 uid="uid://dnn2tpoqq8phb"]
 
 [ext_resource type="Shader" path="res://Shaders/ColorDegredation.gdshader" id="1_e80sx"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_w4meb"]
@@ -9,7 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cj22kfiuwmtc1" path="res://Trenchbroom/Textures/basic/tex_marble_tile.png" id="6_pcqbj"]
 [ext_resource type="Texture2D" uid="uid://ctbiq5tf1fw0k" path="res://Trenchbroom/Textures/basic/tex_striped_marble_wall.png" id="7_6d7w0"]
 [ext_resource type="Texture2D" uid="uid://dcb10mwybt7de" path="res://Trenchbroom/Textures/basic/tex_black_marble_tile.png" id="8_64n10"]
-[ext_resource type="PackedScene" uid="uid://c5a1ikn3y1wpd" path="res://Models/Characters/Infernus.blend" id="10_ovr5s"]
+[ext_resource type="PackedScene" uid="uid://c5a1ikn3y1wpd" path="res://Models/Characters/Infernus.blend" id="10_pxb2v"]
+[ext_resource type="Texture2D" uid="uid://b87m15se2exrp" path="res://Textures/Particles/tex_dust.png" id="11_m4hac"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6h425"]
 shader = ExtResource("1_e80sx")
@@ -378,6 +379,41 @@ volumetric_fog_length = 117.89
 volumetric_fog_detail_spread = 4.54715
 volumetric_fog_sky_affect = 0.705
 
+[sub_resource type="Gradient" id="Gradient_jf2gr"]
+colors = PackedColorArray(0, 0, 0, 1, 0.064027, 3.46662e-05, 0.242126, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_idk81"]
+gradient = SubResource("Gradient_jf2gr")
+
+[sub_resource type="Curve" id="Curve_x488v"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.623188, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ysgek"]
+curve = SubResource("Curve_x488v")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1l0er"]
+emission_shape = 1
+emission_sphere_radius = 0.3
+gravity = Vector3(0, -1.633, 0)
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_ysgek")
+color_initial_ramp = SubResource("GradientTexture1D_idk81")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7buta"]
+transparency = 1
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("11_m4hac")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_xcqto"]
+material = SubResource("StandardMaterial3D_7buta")
+
 [node name="Root" type="Node3D"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
@@ -692,5 +728,79 @@ directional_shadow_max_distance = 16.2
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_4pgaf")
 
-[node name="Infernus" parent="." instance=ExtResource("10_ovr5s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312852, -1)
+[node name="Infernus" parent="." instance=ExtResource("10_pxb2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51722, 3.63026, -1.08145)
+
+[node name="Skeleton3D" parent="Infernus/Armature" index="0"]
+bones/0/scale = Vector3(1, 1, 1)
+bones/1/rotation = Quaternion(0.716867, 4.07649e-14, 1.70914e-07, 0.69721)
+bones/2/rotation = Quaternion(-0.661869, -2.45125e-09, -1.60494e-07, 0.749619)
+bones/4/rotation = Quaternion(0.0794054, -1.175e-14, 1.89317e-08, 0.996842)
+bones/5/rotation = Quaternion(-0.215781, 4.60424e-11, -5.00956e-08, 0.976442)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.00381672, -1.19208e-07, 4.54977e-10, 0.999993)
+bones/7/rotation = Quaternion(0.00381672, -1.19208e-07, 4.54977e-10, 0.999993)
+bones/8/rotation = Quaternion(0.00381672, -1.19208e-07, 4.54977e-10, 0.999993)
+bones/9/rotation = Quaternion(0.00381672, -1.19208e-07, 4.54977e-10, 0.999993)
+bones/10/rotation = Quaternion(-0.0183153, -0.00268964, -0.772267, 0.635029)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(-0.0545749, 0.000724674, -0.448626, 0.892051)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(0.0215894, 0.147049, -0.151665, 0.977194)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.0294849, -0.00184411, 0.0549614, 0.998051)
+bones/14/rotation = Quaternion(0.0110354, 0.00354402, -0.0811267, 0.996636)
+bones/15/rotation = Quaternion(0.00590514, 0.00153297, -0.0700962, 0.997522)
+bones/16/rotation = Quaternion(0.0634279, 0.00132437, -0.091148, 0.993814)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.0191929, 0.00867125, -0.109683, 0.993743)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(0.336221, -0.00980964, -0.190202, 0.922325)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/rotation = Quaternion(0.0409945, -0.724387, 0.0299525, 0.687522)
+bones/22/scale = Vector3(1, 1, 1)
+bones/23/rotation = Quaternion(-0.0183155, 0.00268949, 0.772267, 0.635029)
+bones/24/rotation = Quaternion(-0.0545749, -0.00072468, 0.448627, 0.892051)
+bones/24/scale = Vector3(1, 1, 1)
+bones/25/rotation = Quaternion(0.0215993, -0.147048, 0.151599, 0.977204)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/rotation = Quaternion(-0.0294849, 0.00184411, -0.0549614, 0.998051)
+bones/27/scale = Vector3(1, 1, 1)
+bones/29/scale = Vector3(1, 1, 1)
+bones/30/rotation = Quaternion(-0.0182564, 0.00859592, 0.0600827, 0.997989)
+bones/30/scale = Vector3(1, 1, 1)
+bones/31/rotation = Quaternion(-0.0279136, -0.00697121, 0.0249372, 0.999275)
+bones/33/rotation = Quaternion(0.336221, 0.00980962, 0.190202, 0.922325)
+bones/33/scale = Vector3(1, 1, 1)
+bones/34/rotation = Quaternion(-0.309333, 0.0328318, -0.0646816, 0.948183)
+bones/35/rotation = Quaternion(0.0409945, 0.724387, -0.0299524, 0.687522)
+bones/35/scale = Vector3(1, 1, 1)
+bones/36/rotation = Quaternion(0.901069, -0.373988, -0.182191, -0.122536)
+bones/36/scale = Vector3(1, 1, 1)
+bones/37/rotation = Quaternion(0.727114, 0.293174, 0.55406, -0.27995)
+bones/37/scale = Vector3(1, 1, 1)
+bones/38/rotation = Quaternion(-0.144467, -0.1925, -0.269849, 0.932338)
+bones/38/scale = Vector3(1, 1, 1)
+
+[node name="eye1" parent="Infernus/Armature/Skeleton3D" index="0"]
+transform = Transform3D(1.60255, 6.2616e-09, 4.28162e-09, -7.32354e-09, 1.5128, 0.528797, -1.97576e-09, -0.528797, 1.5128, -0.165937, 1.23284, 0.276096)
+
+[node name="eye2" parent="Infernus/Armature/Skeleton3D" index="1"]
+transform = Transform3D(1.60255, 6.2616e-09, 4.28162e-09, -7.32354e-09, 1.5128, 0.528797, -1.97576e-09, -0.528797, 1.5128, 0.165937, 1.23284, 0.276096)
+
+[node name="eye3" parent="Infernus/Armature/Skeleton3D" index="2"]
+transform = Transform3D(1.60255, 6.2616e-09, 4.28162e-09, -7.32354e-09, 1.5128, 0.528797, -1.97576e-09, -0.528797, 1.5128, 0.0702148, 1.36674, 0.213389)
+
+[node name="eye4" parent="Infernus/Armature/Skeleton3D" index="3"]
+transform = Transform3D(1.60255, 6.2616e-09, 4.28162e-09, -7.32354e-09, 1.5128, 0.528797, -1.97576e-09, -0.528797, 1.5128, -0.0702146, 1.36674, 0.213389)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Infernus/Armature/Skeleton3D/Body" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.622891, 0)
+process_material = SubResource("ParticleProcessMaterial_1l0er")
+draw_pass_1 = SubResource("QuadMesh_xcqto")
+
+[node name="AnimationPlayer" parent="Infernus" index="1"]
+autoplay = "Idle"
+
+[editable path="Infernus"]
