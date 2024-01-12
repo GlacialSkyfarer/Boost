@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cj42k8bsabck5"
-path.s3tc="res://.godot/imported/Flash.png-ac8e46ae8940923f0ac20656160c6ffd.s3tc.ctex"
+uid="uid://dksw3nt426sny"
+path="res://.godot/imported/tex_infernusMagic.png-1e6bc023d1ed5b45c59f07e9eb11b43b.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/Entity/Utility/Flash.png"
-dest_files=["res://.godot/imported/Flash.png-ac8e46ae8940923f0ac20656160c6ffd.s3tc.ctex"]
+source_file="res://Textures/Entity/Characters/Prophets/tex_infernusMagic.png"
+dest_files=["res://.godot/imported/tex_infernusMagic.png-1e6bc023d1ed5b45c59f07e9eb11b43b.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

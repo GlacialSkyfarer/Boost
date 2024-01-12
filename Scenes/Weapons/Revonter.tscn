@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b54ilaggmsgaw" path="res://Scenes/Entities/Effects/HitParticles.tscn" id="4_kudbn"]
 [ext_resource type="PackedScene" uid="uid://b5w2hbobgvhxl" path="res://Models/Guns/Novalver.blend" id="5_8mw0t"]
 [ext_resource type="Texture2D" uid="uid://dw7v0ygf8eqhs" path="res://Textures/Guns/Revolvermain.png" id="6_2ao7b"]
-[ext_resource type="Texture2D" uid="uid://cj42k8bsabck5" path="res://Textures/Entity/Utility/Flash.png" id="6_2sbc3"]
+[ext_resource type="Texture2D" uid="uid://cj42k8bsabck5" path="res://Textures/Particles/Flash.png" id="6_2sbc3"]
 [ext_resource type="Texture2D" uid="uid://b2umbyycs0i1n" path="res://Textures/Guns/RevolverGrip.png" id="7_7xjcl"]
 [ext_resource type="Texture2D" uid="uid://cq27ag5f3bel6" path="res://Textures/UI/RevolverHeatCursor.png" id="7_ist4v"]
 [ext_resource type="Texture2D" uid="uid://4fs8ewtcvb0y" path="res://Textures/Guns/RevolverAccent.png" id="8_w0lk8"]

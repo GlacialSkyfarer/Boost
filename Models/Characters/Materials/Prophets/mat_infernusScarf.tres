@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bha250dwf4c0e"]
+
+[ext_resource type="Texture2D" uid="uid://ccpbh417miwpd" path="res://Textures/Entity/tex_noise.png" id="1_kdk8t"]
+
+[resource]
+albedo_color = Color(0.505882, 0.0862745, 1, 1)
+albedo_texture = ExtResource("1_kdk8t")
+uv1_scale = Vector3(2.5, 2.5, 2.5)
+uv1_triplanar = true
+texture_filter = 1

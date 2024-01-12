@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://dnn2tpoqq8phb"]
+[gd_scene load_steps=104 format=3 uid="uid://dnn2tpoqq8phb"]
 
 [ext_resource type="Shader" path="res://Shaders/ColorDegredation.gdshader" id="1_e80sx"]
 [ext_resource type="Script" path="res://addons/qodot/src/nodes/qodot_map.gd" id="1_w4meb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cj22kfiuwmtc1" path="res://Trenchbroom/Textures/basic/tex_marble_tile.png" id="6_pcqbj"]
 [ext_resource type="Texture2D" uid="uid://ctbiq5tf1fw0k" path="res://Trenchbroom/Textures/basic/tex_striped_marble_wall.png" id="7_6d7w0"]
 [ext_resource type="Texture2D" uid="uid://dcb10mwybt7de" path="res://Trenchbroom/Textures/basic/tex_black_marble_tile.png" id="8_64n10"]
+[ext_resource type="PackedScene" uid="uid://c5a1ikn3y1wpd" path="res://Models/Characters/Infernus.blend" id="10_ovr5s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6h425"]
 shader = ExtResource("1_e80sx")
@@ -690,3 +691,6 @@ directional_shadow_max_distance = 16.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_4pgaf")
+
+[node name="Infernus" parent="." instance=ExtResource("10_ovr5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.312852, -1)

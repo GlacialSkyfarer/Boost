@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dw1ovjru4p15" path="res://Textures/UI/ShotgunHeatCursor.png" id="3_3b2bj"]
 [ext_resource type="AudioStream" uid="uid://dpxeln5gvyqq4" path="res://Sounds/HL2 Weapons/shotgun_cock_first.wav" id="4_udpjw"]
 [ext_resource type="AudioStream" uid="uid://d22odqcdcxbvc" path="res://Sounds/HL2 Weapons/shotgun_cock_last.wav" id="5_baw4a"]
-[ext_resource type="Texture2D" uid="uid://cj42k8bsabck5" path="res://Textures/Entity/Utility/Flash.png" id="6_wy125"]
+[ext_resource type="Texture2D" uid="uid://cj42k8bsabck5" path="res://Textures/Particles/Flash.png" id="6_wy125"]
 
 [sub_resource type="Animation" id="Animation_wu614"]
 length = 0.001
