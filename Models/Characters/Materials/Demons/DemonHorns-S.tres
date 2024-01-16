@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b1ldakkeqgbbp"]
-
-[ext_resource type="Texture2D" uid="uid://cjs1p0rxagukb" path="res://Textures/Entity/Characters/Demons/DemonHorns-S.png" id="1_mghxh"]
-
-[resource]
-albedo_texture = ExtResource("1_mghxh")
-uv1_scale = Vector3(2.5, 2.5, 2.5)
-uv1_triplanar = true
-texture_filter = 1

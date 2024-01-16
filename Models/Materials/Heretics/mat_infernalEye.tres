@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b2n7wuwxcdm7k"]
+
+[ext_resource type="Texture2D" uid="uid://b6a8nanooh2np" path="res://Textures/Entity/Prophets/tex_infernusEyes.png" id="1_chsqi"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+albedo_texture = ExtResource("1_chsqi")
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true

@@ -1,0 +1,96 @@
+[gd_scene load_steps=10 format=3 uid="uid://bp8ajbu0nqkuv"]
+
+[ext_resource type="Texture2D" uid="uid://coy6x5rbh7yr8" path="res://Textures/UI/ani_bossBar.tres" id="1_5pqob"]
+[ext_resource type="Texture2D" uid="uid://crkehrq653ke3" path="res://Textures/UI/tex_bossBar_over.png" id="2_yoy0i"]
+[ext_resource type="Script" path="res://Scripts/Utility/HealthBar.cs" id="3_mfeyj"]
+
+[sub_resource type="Gradient" id="Gradient_igcc5"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_dqdhp"]
+font_names = PackedStringArray("Heavyweight")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5as2x"]
+line_spacing = 0.0
+font = SubResource("SystemFont_dqdhp")
+font_size = 32
+
+[sub_resource type="Animation" id="Animation_gcojc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 450, 110)]
+}
+
+[sub_resource type="Animation" id="Animation_lcu0x"]
+resource_name = "Spin"
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 450, 110), Rect2(450, 0, 450, 110), Rect2(900, 0, 450, 110), Rect2(0, 110, 450, 110), Rect2(450, 110, 450, 110), Rect2(900, 110, 450, 110), Rect2(0, 220, 450, 110), Rect2(450, 220, 450, 110), Rect2(0, 0, 450, 110)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04e66"]
+_data = {
+"RESET": SubResource("Animation_gcojc"),
+"Spin": SubResource("Animation_lcu0x")
+}
+
+[node name="HealthBar" type="TextureProgressBar"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.0
+offset_right = 225.0
+offset_bottom = 110.0
+grow_horizontal = 2
+scale = Vector2(0.65, 0.65)
+pivot_offset = Vector2(225, 0)
+max_value = 20.0
+step = 0.0
+value = 20.0
+texture_under = ExtResource("1_5pqob")
+texture_progress = ExtResource("2_yoy0i")
+texture_progress_offset = Vector2(54, 44)
+tint_progress = Color(1, 0.0588235, 0, 1)
+script = ExtResource("3_mfeyj")
+colorCurve = SubResource("Gradient_igcc5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122222
+anchor_top = 0.447552
+anchor_right = 0.98
+anchor_bottom = 0.747553
+grow_horizontal = 2
+grow_vertical = 2
+text = "TRAINING DUMMY"
+label_settings = SubResource("LabelSettings_5as2x")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Spin" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_04e66")
+}
+autoplay = "Spin"

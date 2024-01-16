@@ -1,22 +1,18 @@
-res://Models/Characters/Materials/Prophets
+res://Scripts/Utility
+res://Scenes/Utility
 res://Textures/UI
-C:/Users/student/Documents/Lumi/GitHub/Boost/Maps
-res://Models/Guns/Materials
-C:/Users/student/AppData/Local/Programs/Microsoft VS Code
-C:/Users/student/Downloads/Trenchbroom/games/Boost
-C:/Program Files/Blender Foundation/Blender 4.0
+C:/Users/Runic/Desktop/Games/TrenchBroom/games
+C:/Users/Runic/Desktop/Games/TrenchBroom/games/Boost
+C:/Users/Runic/Documents/GitHub/Boost/Maps
+res://Models/Materials/Guns
+res://Models/Materials/Bandit
+res://Models/Materials/Heretics
+res://Models/Materials/Heretics/Prophets
 res://Scripts/Entities/Projectiles
 res://Scenes/Weapons
-res://Scenes/Entities/Core/Projectiles
-res://Scripts/Utility
-res://Models/Characters/Materials/Player
 res://Scripts/Entities/Enemies
-res://Scenes/Entities/Enemies
-res://Models/Characters/Materials/Demons
 res://Scripts/Entities/Core
-res://Models/Characters/Materials
 res://Trenchbroom/Entities
 res://Trenchbroom/FGD
 res://Trenchbroom
-res://Scenes/Utility
 res://Scripts/Entities/Utility

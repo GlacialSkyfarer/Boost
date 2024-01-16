@@ -34,6 +34,9 @@ public partial class Revolver : Gun
 	WarpVoid currentVoid;
 
 	[Export]
+	public float damage = 0.5f;
+
+	[Export]
 	public float fireHeat = 1f;
 	[Export]
 	public float altFireHeat = 7.5f;
@@ -139,7 +142,14 @@ public partial class Revolver : Gun
 				currentVoid = null;
 
 				flash.Flash(Colors.Black, new(0,0,0,0), 0.5f);
-			} else {
+			} else if (col.IsInGroup("Enemy")) {
+
+				line.target = rayCast.GetCollisionPoint();
+				Actor a = col as Actor;
+				a.OnHit(damage, rayCast.GetCollisionPoint(), rayCast.GetCollisionNormal(), this);
+
+			} 
+			else {
 
 				line.target = rayCast.GetCollisionPoint();
 

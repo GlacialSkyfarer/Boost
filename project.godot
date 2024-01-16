@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="BOOST"
-run/main_scene="res://Scenes/Maps/TestMap-01.tscn"
+run/main_scene="res://Scenes/Maps/map_test_01.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
 run/max_fps=60
 config/icon="res://Textures/UI/img_icon.png"
 
 [autoload]
 
-FlashOverlay="*res://Scenes/Utility/FlashOverlay.tscn"
-SoundManager="*res://Scenes/Utility/SoundManager.tscn"
+FlashOverlay="*res://Scenes/Utility/scn_flash.tscn"
+SoundManager="*res://Scenes/Utility/scn_soundManager.tscn"
 
 [display]
 
@@ -136,15 +136,18 @@ Interact={
 
 3d_render/layer_1="Main"
 3d_render/layer_2="Playermodel"
+3d_render/layer_3="Bullets"
 3d_render/layer_19="Playermodel"
 3d_render/layer_20="Viewmodels"
 3d_physics/layer_1="Ground"
 3d_physics/layer_2="Player"
 3d_physics/layer_3="Enemies"
+3d_physics/layer_4="Giblets"
 3d_physics/layer_9="WarpPoint"
 
 [physics]
 
+3d/physics_engine="JoltPhysics3D"
 3d/default_gravity=16.0
 
 [rendering]

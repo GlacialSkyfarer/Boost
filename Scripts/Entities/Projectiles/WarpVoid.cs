@@ -46,7 +46,7 @@ public partial class WarpVoid : Projectile
 	public override void OnCollide()
 	{
 		
-		if ((shapeCast.GetCollider(0) as Node).IsInGroup("Ground")) {
+		if ((shapeCast.GetCollider(0) as CollisionObject3D).GetCollisionLayerValue(1)) {
 
 			Destroy();
 

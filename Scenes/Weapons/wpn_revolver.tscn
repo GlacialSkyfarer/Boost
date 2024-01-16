@@ -1,0 +1,1061 @@
+[gd_scene load_steps=33 format=3 uid="uid://cww26n8a5ylo0"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/Revolver.cs" id="1_f61li"]
+[ext_resource type="PackedScene" uid="uid://cb74mm42vy67t" path="res://Scenes/Entities/Projectiles/ent_revolverVoid.tscn" id="2_nw25o"]
+[ext_resource type="PackedScene" uid="uid://pbe484n2r2lu" path="res://Scenes/Entities/Effects/ent_line.tscn" id="3_b1rhe"]
+[ext_resource type="PackedScene" uid="uid://b54ilaggmsgaw" path="res://Scenes/Entities/Effects/ent_hitParticles.tscn" id="4_12oax"]
+[ext_resource type="PackedScene" uid="uid://b5w2hbobgvhxl" path="res://Models/Guns/mdl_revolver.blend" id="5_cocp3"]
+[ext_resource type="Texture2D" uid="uid://cj42k8bsabck5" path="res://Textures/Particles/tex_flash.png" id="6_2uxp2"]
+[ext_resource type="Texture2D" uid="uid://cq27ag5f3bel6" path="res://Textures/UI/tex_heatCursor_revolver.png" id="7_31v11"]
+
+[sub_resource type="Animation" id="Animation_g4g1i"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qjwnn"]
+resource_name = "SwapIn"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.353553, 1),
+"update": 0,
+"values": [Vector3(0.759497, 3.14159, -2.40714e-06), Vector3(0, 3.14159, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rvsh3"]
+_data = {
+"RESET": SubResource("Animation_g4g1i"),
+"SwapIn": SubResource("Animation_qjwnn")
+}
+
+[sub_resource type="Animation" id="Animation_7cw25"]
+resource_name = "Cooldown"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/Spinner:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/Spinner/Fuses:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-5.96046e-08, 0, -0.0357967)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/Spinner/FuseLight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-8.9407e-08, 0, -0.0374517)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver/Body/Spinner/FuseLight:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.084]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Novalver/Body/Hammer:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.000862, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-12.5664, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6ty33"]
+resource_name = "CooldownReset"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.277392, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-6.28319, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/Spinner:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.233258, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/Spinner/Fuses:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.517632, 1),
+"update": 0,
+"values": [Vector3(-5.96046e-08, 0, -0.0357967), Vector3(0, 0, -0.0109061)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver/Body/Spinner/FuseLight:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.378929, 1),
+"update": 0,
+"values": [3.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Novalver:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 1),
+"transitions": PackedFloat32Array(0.406126, 3.73213, 0.25, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(0.282743, 3.14159, 0), Vector3(0.18853, 3.14159, -4.54894e-07), Vector3(-6.28319, 3.14159, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0rv3n"]
+resource_name = "Fire"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.287175, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-18.8496, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/Trigger:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(0.378929, 1, 1),
+"update": 0,
+"values": [Vector3(-0.00151742, 1.35132e-05, 1.56977), Vector3(0.478675, 1.52434e-05, 1.56978), Vector3(-0.00151742, 1.35132e-05, 1.56977)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/Spinner/Fuses:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.15, 0.5, 1),
+"transitions": PackedFloat32Array(0.34151, 1, 1, 1.7411, 1),
+"update": 0,
+"values": [Vector3(0, 0, -0.011), Vector3(0, 0, -0.039), Vector3(0, 0, -0.037), Vector3(0, 0, -0.037), Vector3(0, 0, -0.011)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver/Body/Spinner:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 1),
+"transitions": PackedFloat32Array(1, 1e-05, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.0472), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Novalver:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.3),
+"transitions": PackedFloat32Array(0.170755, 2, 0.450625, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-0.696386, 3.14159, 0), Vector3(-0.251327, 3.14159, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MuzzleFlash:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MuzzleFlash:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.554, 0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Novalver/Body/Spinner/FuseLight:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 1),
+"transitions": PackedFloat32Array(1, 2.92817, 2.92817, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Flash:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Flash:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.15),
+"transitions": PackedFloat32Array(3.4822, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.1, 0.1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmldf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/Trigger:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00151742, 1.35132e-05, 1.56977)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/Spinner/Fuses:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.011)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver/Body/Spinner:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Novalver:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MuzzleFlash:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MuzzleFlash:light_energy")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Novalver/Body/Spinner/FuseLight:light_energy")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Flash:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WarpMuzzleFlash:light_energy")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WarpFlash:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Flash:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("WarpFlash:scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("WarpFlash2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("WarpFlash3:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("WarpFlash2:scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("WarpFlash3:scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.1, 0.1, 0.1)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Novalver/Body/Spinner/FuseLight:position")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-8.9407e-08, 0, -0.0374517)]
+}
+
+[sub_resource type="Animation" id="Animation_6rqhg"]
+resource_name = "WarpFire"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/Hammer:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.287175, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-28.2743, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/Trigger:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.00151742, 1.35132e-05, 1.56977), Vector3(0.478675, 1.52434e-05, 1.56978), Vector3(-0.00151742, 1.35132e-05, 1.56977)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/Spinner:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.406126, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 6.28319)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.25, 0.55, 0.6),
+"transitions": PackedFloat32Array(0.170755, 2, 2, 0.450625, 1),
+"update": 0,
+"values": [Vector3(0, 3.14159, 0), Vector3(-1.5708, 3.14159, 0), Vector3(-1.5708, 3.14159, 0), Vector3(-0.251327, 3.14159, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WarpMuzzleFlash:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.94, 0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("WarpFlash:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("WarpFlash:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(2.54912, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.1, 0.1, 0.1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("WarpFlash2:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("WarpFlash3:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("WarpFlash2:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(3.36359, 1),
+"update": 0,
+"values": [Vector3(1.25, 1.25, 1.25), Vector3(0.1, 0.1, 0.1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("WarpFlash3:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(3.24901, 1),
+"update": 0,
+"values": [Vector3(0.75, 0.75, 0.75), Vector3(0.1, 0.1, 0.1)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Novalver/Body/Spinner/Fuses:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.011)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yh524"]
+_data = {
+"Cooldown": SubResource("Animation_7cw25"),
+"CooldownReset": SubResource("Animation_6ty33"),
+"Fire": SubResource("Animation_0rv3n"),
+"RESET": SubResource("Animation_kmldf"),
+"WarpFire": SubResource("Animation_6rqhg")
+}
+
+[sub_resource type="Animation" id="Animation_4cssd"]
+resource_name = "Idle"
+
+[sub_resource type="Animation" id="Animation_5yadu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/WarpFuseL1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00996364, 0.0478811, 0.0582075)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/WarpFuseL2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00996364, 0.0478811, 0.0675996)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/WarpFuseL3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00996364, 0.0478811, 0.0767849)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver/Body/WarpFuseR1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00996364, 0.0478811, 0.0582075)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Novalver/Body/WarpFuseR2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00996364, 0.0478811, 0.0675996)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Novalver/Body/WarpFuseR3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00996364, 0.0478811, 0.0767849)]
+}
+
+[sub_resource type="Animation" id="Animation_wuamn"]
+resource_name = "Recharge"
+length = 6.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Novalver/Body/WarpFuseL1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 1, 2),
+"transitions": PackedFloat32Array(0.450626, 1, 2.14355, 1),
+"update": 0,
+"values": [Vector3(0.00996364, 0.0478811, 0.0582075), Vector3(0.0189919, 0.0558982, 0.0582075), Vector3(0.0189919, 0.0558982, 0.0582075), Vector3(0.00996364, 0.0478811, 0.0582075)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Novalver/Body/WarpFuseL2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 3, 4),
+"transitions": PackedFloat32Array(0.450626, 1, 3.73213, 1),
+"update": 0,
+"values": [Vector3(0.00996364, 0.0478811, 0.0675996), Vector3(0.0189919, 0.0558982, 0.0675996), Vector3(0.0189919, 0.0558982, 0.0675996), Vector3(0.00996364, 0.0478811, 0.0675996)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Novalver/Body/WarpFuseL3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 5, 6),
+"transitions": PackedFloat32Array(0.450626, 1, 3.24901, 1),
+"update": 0,
+"values": [Vector3(0.00996364, 0.0478811, 0.0767849), Vector3(0.0189919, 0.0558982, 0.0767849), Vector3(0.0189919, 0.0558982, 0.0767849), Vector3(0.00996364, 0.0478811, 0.0767849)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Novalver/Body/WarpFuseR1:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 1, 2),
+"transitions": PackedFloat32Array(0.450626, 1, 3.13834, 1),
+"update": 0,
+"values": [Vector3(-0.00996364, 0.0478811, 0.0582075), Vector3(-0.019, 0.056, 0.058), Vector3(-0.019, 0.056, 0.058), Vector3(-0.00996364, 0.0478811, 0.0582075)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Novalver/Body/WarpFuseR2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.05, 3, 4),
+"transitions": PackedFloat32Array(0.450626, 1, 3.13834, 1),
+"update": 0,
+"values": [Vector3(-0.00996364, 0.0478811, 0.0675996), Vector3(-0.019, 0.056, 0.0675996), Vector3(-0.019, 0.056, 0.0675996), Vector3(-0.00996364, 0.0478811, 0.0675996)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Novalver/Body/WarpFuseR3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.05, 5, 6),
+"transitions": PackedFloat32Array(0.450626, 1, 3.03143, 1),
+"update": 0,
+"values": [Vector3(-0.00996364, 0.0478811, 0.0767849), Vector3(-0.019, 0.056, 0.0767849), Vector3(-0.019, 0.056, 0.0767849), Vector3(-0.00996364, 0.0478811, 0.0767849)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ik3r7"]
+_data = {
+"Idle": SubResource("Animation_4cssd"),
+"RESET": SubResource("Animation_5yadu"),
+"Recharge": SubResource("Animation_wuamn")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tw6tj"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xyigc"]
+animation = &"Recharge"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mednv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8s8c1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_eydig"]
+states/RESET/node = SubResource("AnimationNodeAnimation_tw6tj")
+states/RESET/position = Vector2(320, 110)
+states/Recharge/node = SubResource("AnimationNodeAnimation_xyigc")
+states/Recharge/position = Vector2(477, 120)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_mednv"), "Recharge", "RESET", SubResource("AnimationNodeStateMachineTransition_8s8c1")]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j87ni"]
+load_path = "res://.godot/imported/Flash.png-ac8e46ae8940923f0ac20656160c6ffd.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q28dh"]
+transparency = 1
+albedo_color = Color(1, 0.65098, 0, 1)
+albedo_texture = SubResource("CompressedTexture2D_j87ni")
+emission_enabled = true
+emission = Color(1, 0.427451, 0, 1)
+emission_energy_multiplier = 4.34
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_lqxrc"]
+material = SubResource("StandardMaterial3D_q28dh")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xj0ie"]
+transparency = 1
+albedo_color = Color(0.568627, 0.470588, 1, 1)
+albedo_texture = ExtResource("6_2uxp2")
+emission_enabled = true
+emission = Color(0.498039, 0.00392157, 0.976471, 1)
+emission_energy_multiplier = 3.46
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_srfyq"]
+material = SubResource("StandardMaterial3D_xj0ie")
+size = Vector2(0.1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_63y7r"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("6_2uxp2")
+emission_enabled = true
+emission_energy_multiplier = 3.46
+texture_filter = 0
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_qd6ak"]
+material = SubResource("StandardMaterial3D_63y7r")
+size = Vector2(0.1, 0.1)
+
+[node name="Revolver" type="Node3D"]
+script = ExtResource("1_f61li")
+warpAnimator = NodePath("AnimationTree")
+overheatAnimatorPath = NodePath("OverheatAnimator")
+rayCastPath = NodePath("RayCast3D")
+rayOriginPath = NodePath("RayPoint")
+warpVoidScene = ExtResource("2_nw25o")
+warpVoidVelocity = 2.0
+damage = 2.0
+altFireHeat = 2.0
+lineScene = ExtResource("3_b1rhe")
+hitParticles = ExtResource("4_12oax")
+fireSound = "res://Sounds/HL2 Weapons/npc_smg1_fire1.wav"
+altFireSound = "res://Sounds/HL2 Weapons/superphys_launch3.wav"
+overheatSound = "res://Sounds/HL2 Weapons/crossbow_bolt_load1.wav"
+animatorPath = NodePath("MainAnimator")
+heatMeterPath = NodePath("HeatMeter")
+swapAnimatorPath = NodePath("SwapInAnimator")
+maxHeat = 6.0
+
+[node name="SwapInAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rvsh3")
+}
+
+[node name="MainAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yh524")
+}
+
+[node name="OverheatAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yh524")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ik3r7")
+}
+tree_root = SubResource("AnimationNodeStateMachine_eydig")
+anim_player = NodePath("../WarpFuseAnimator")
+
+[node name="WarpFuseAnimator" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ik3r7")
+}
+
+[node name="Novalver" parent="." instance=ExtResource("5_cocp3")]
+transform = Transform3D(-1, 0, 2.53518e-06, 0, 1, 0, -2.53518e-06, 0, -1, 0.153554, -0.105888, -0.167955)
+
+[node name="Hammer" parent="Novalver/Body" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.39746e-06, 0.0545151, -0.055525)
+
+[node name="Fuses" parent="Novalver/Body/Spinner" index="0"]
+transform = Transform3D(1, -9.93882e-19, 0, -9.93882e-19, 1, 0, 0, 0, 1, 0, 0, -0.011)
+
+[node name="FuseLight" type="OmniLight3D" parent="Novalver/Body/Spinner" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9407e-08, 0, -0.0374517)
+visible = false
+layers = 524289
+light_color = Color(1, 0.533333, 0, 1)
+light_energy = 0.0
+omni_range = 0.0610292
+
+[node name="Trigger" parent="Novalver/Body" index="2"]
+transform = Transform3D(0.00102633, -0.999999, 1.35132e-05, 0.999998, 0.00102635, 0.00151742, -0.00151743, 1.19558e-05, 0.999999, 0, 0.00861742, -0.0202015)
+
+[node name="WarpFuseL1" parent="Novalver/Body" index="3"]
+transform = Transform3D(-3.42856e-08, -0.32993, -0.47119, 0, 0.47119, -0.32993, -0.575216, 3.42855e-08, 6.85711e-08, 0.00996364, 0.0478811, 0.0582075)
+
+[node name="WarpFuseL2" parent="Novalver/Body" index="4"]
+transform = Transform3D(-3.42856e-08, -0.32993, -0.47119, 0, 0.47119, -0.32993, -0.575216, 3.42855e-08, 6.85711e-08, 0.00996364, 0.0478811, 0.0675996)
+
+[node name="WarpFuseL3" parent="Novalver/Body" index="5"]
+transform = Transform3D(-3.42856e-08, -0.32993, -0.47119, 0, 0.47119, -0.32993, -0.575216, 3.42855e-08, 6.85711e-08, 0.00996364, 0.0478811, 0.0767849)
+
+[node name="WarpFuseR1" parent="Novalver/Body" index="6"]
+transform = Transform3D(-6.85711e-08, 0.32993, 0.47119, 3.42856e-08, 0.47119, -0.32993, -0.575216, 0, -6.85711e-08, -0.00996364, 0.0478811, 0.0582075)
+
+[node name="WarpFuseR2" parent="Novalver/Body" index="7"]
+transform = Transform3D(-6.85711e-08, 0.32993, 0.47119, 3.42856e-08, 0.47119, -0.32993, -0.575216, 0, -6.85711e-08, -0.00996364, 0.0478811, 0.0675996)
+
+[node name="WarpFuseR3" parent="Novalver/Body" index="8"]
+transform = Transform3D(-6.85711e-08, 0.32993, 0.47119, 3.42856e-08, 0.47119, -0.32993, -0.575216, 0, -6.85711e-08, -0.00996364, 0.0478811, 0.0767849)
+
+[node name="Flash" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.15459, -0.0499532, -0.329061)
+visible = false
+layers = 524288
+mesh = SubResource("QuadMesh_lqxrc")
+skeleton = NodePath("../Novalver")
+
+[node name="WarpFlash" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.15459, -0.0499532, -0.329061)
+visible = false
+layers = 524288
+mesh = SubResource("QuadMesh_srfyq")
+skeleton = NodePath("../Novalver")
+
+[node name="WarpFlash2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0, 0.1, 0.15459, -0.0499532, -0.331208)
+visible = false
+layers = 524288
+mesh = SubResource("QuadMesh_qd6ak")
+skeleton = NodePath("../Novalver")
+
+[node name="WarpFlash3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, 0, 0.1, 0.15459, -0.0499532, -0.327623)
+visible = false
+layers = 524288
+mesh = SubResource("QuadMesh_qd6ak")
+skeleton = NodePath("../Novalver")
+
+[node name="MuzzleFlash" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15459, -0.0475348, -0.336374)
+visible = false
+layers = 524289
+light_color = Color(1, 0.533333, 0, 1)
+light_energy = 0.0
+omni_range = 1.86915
+
+[node name="WarpMuzzleFlash" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15459, -0.0475348, -0.336374)
+layers = 524289
+light_color = Color(0.356863, 0.211765, 1, 1)
+light_energy = 0.0
+omni_range = 1.86915
+
+[node name="RayPoint" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.15459, -0.0475348, -0.244562)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, 0)
+target_position = Vector3(0, 0, 50)
+collision_mask = 261
+collide_with_areas = true
+
+[node name="HeatMeter" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 15.0
+step = 0.0
+fill_mode = 8
+texture_progress = ExtResource("7_31v11")
+radial_initial_angle = 180.0
+
+[editable path="Novalver"]

@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cj7biugohbwha"]
-
-[ext_resource type="Texture2D" uid="uid://dphrknoma7dkd" path="res://Textures/Entity/Characters/Demons/DemonEye-S.png" id="1_ucjgt"]
-
-[resource]
-albedo_texture = ExtResource("1_ucjgt")

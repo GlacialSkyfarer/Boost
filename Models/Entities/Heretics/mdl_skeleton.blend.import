@@ -1,0 +1,81 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c2ty2sgx0htnv"
+path="res://.godot/imported/mdl_skeleton.blend-62f0080f338feb7c00c8396ba9469d04.scn"
+
+[deps]
+
+source_file="res://Models/Entities/Heretics/mdl_skeleton.blend"
+dest_files=["res://.godot/imported/mdl_skeleton.blend-62f0080f338feb7c00c8396ba9469d04.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+import_script/path=""
+_subresources={
+"materials": {
+"Bone": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Heretics/mat_skeletonBones.tres"
+},
+"Cloth": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Heretics/mat_infernalCloth.tres"
+},
+"Eye": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Heretics/mat_infernalEye.tres"
+},
+"Leather": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Heretics/mat_leather.tres"
+},
+"Ribs": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Heretics/mat_skeletonRibs.tres"
+}
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Eye/Eye": {
+"mesh_instance/cast_shadow": 0
+},
+"PATH:Armature/Skeleton3D/Skeleton": {
+"mesh_instance/cast_shadow": 0
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
+blender/nodes/visible=0
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true

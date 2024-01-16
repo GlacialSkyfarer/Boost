@@ -1,3 +1,5 @@
+AtlasTexture
+AnimatedTexture
 StandardMaterial3D
 QodotFGDPointClass
 QodotFGDFile

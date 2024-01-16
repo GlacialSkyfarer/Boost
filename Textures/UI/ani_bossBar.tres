@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://coy6x5rbh7yr8"]
+
+[ext_resource type="Texture2D" uid="uid://bswqf7vritlo3" path="res://Textures/UI/tex_bossBar.png" id="1_rj4ky"]
+
+[resource]
+atlas = ExtResource("1_rj4ky")
+region = Rect2(0, 0, 450, 110)

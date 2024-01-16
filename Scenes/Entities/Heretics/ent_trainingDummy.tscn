@@ -1,0 +1,80 @@
+[gd_scene load_steps=15 format=3 uid="uid://4g4gtjs1wq1y"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Enemies/Dummy.cs" id="1_53ohj"]
+[ext_resource type="PackedScene" uid="uid://dl8y33dkd87if" path="res://Models/Entities/Heretics/mdl_trainingDummy.blend" id="1_i2reg"]
+[ext_resource type="PackedScene" uid="uid://dgwr6a10egqg0" path="res://Scenes/Entities/Effects/Gibs/gib_trainingDummy.tscn" id="2_xr1xs"]
+[ext_resource type="Texture2D" uid="uid://b87m15se2exrp" path="res://Textures/Particles/tex_dust.png" id="3_72cv8"]
+[ext_resource type="PackedScene" uid="uid://d0u6pv6c03pl1" path="res://Scenes/Utility/scn_damageIndicator.tscn" id="3_ot7fb"]
+[ext_resource type="Script" path="res://Scripts/Utility/TimedDestroyParticles.cs" id="5_xlaxs"]
+[ext_resource type="PackedScene" uid="uid://bp8ajbu0nqkuv" path="res://Scenes/Utility/scn_healthBar.tscn" id="7_mu1rv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m7tqn"]
+radius = 0.152605
+height = 1.24966
+
+[sub_resource type="Gradient" id="Gradient_6tyi5"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fq5gh"]
+gradient = SubResource("Gradient_6tyi5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kkmgc"]
+direction = Vector3(0, 0, 1)
+initial_velocity_min = 0.3
+initial_velocity_max = 0.5
+gravity = Vector3(0, -0.5, 0)
+scale_min = 0.5
+scale_max = 1.5
+color_ramp = SubResource("GradientTexture1D_fq5gh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pw6ta"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.890196, 0.819608, 1)
+albedo_texture = ExtResource("3_72cv8")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_jkru7"]
+material = SubResource("StandardMaterial3D_pw6ta")
+size = Vector2(0.15, 0.15)
+
+[sub_resource type="Gradient" id="Gradient_rbnqc"]
+offsets = PackedFloat32Array(0.0308642, 0.104938, 0.425926)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1)
+
+[node name="EntTrainingDummy" type="CharacterBody3D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_53ohj")
+hitParticlesPath = NodePath("HitParticles")
+gibletScene = ExtResource("2_xr1xs")
+gibletVelocity = 5.0
+damageNumber = ExtResource("3_ot7fb")
+
+[node name="mdl_trainingDummy" parent="." instance=ExtResource("1_i2reg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100073, 0)
+shape = SubResource("CapsuleShape3D_m7tqn")
+
+[node name="HitParticles" type="GPUParticles3D" parent="."]
+emitting = false
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_kkmgc")
+draw_pass_1 = SubResource("QuadMesh_jkru7")
+script = ExtResource("5_xlaxs")
+active = false
+
+[node name="HealthBar" parent="." instance=ExtResource("7_mu1rv")]
+visible = false
+actorPath = NodePath("..")
+colorCurve = SubResource("Gradient_rbnqc")
+
+[editable path="mdl_trainingDummy"]

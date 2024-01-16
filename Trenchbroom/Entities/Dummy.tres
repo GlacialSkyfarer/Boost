@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="QodotFGDPointClass" load_steps=3 format=3 uid="uid://1001c1eu3tln"]
+
+[ext_resource type="PackedScene" uid="uid://4g4gtjs1wq1y" path="res://Scenes/Entities/Heretics/ent_trainingDummy.tscn" id="1_amfun"]
+[ext_resource type="Script" path="res://addons/qodot/src/resources/game-definitions/fgd/qodot_fgd_point_class.gd" id="2_4uotp"]
+
+[resource]
+script = ExtResource("2_4uotp")
+scene_file = ExtResource("1_amfun")
+apply_rotation_on_map_build = true
+classname = "heretic_dummy"
+description = "Training Dummy."
+qodot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.890196, 0.733333, 0.666667, 1),
+"size": AABB(-4, -4, -10, 4, 4, 10)
+}
+node_class = ""
+transient_node = false

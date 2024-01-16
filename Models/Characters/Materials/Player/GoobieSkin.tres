@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://667adr4m80rw"]
-
-[ext_resource type="Texture2D" uid="uid://8l2qdjci0uv7" path="res://Textures/Entity/Characters/Player/PlayerMain.png" id="1_sxntg"]
-
-[resource]
-albedo_texture = ExtResource("1_sxntg")
-uv1_scale = Vector3(2.5, 2.5, 2.5)
-uv1_triplanar = true

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0u6pv6c03pl1"]
+
+[ext_resource type="Script" path="res://Scripts/Utility/DamageIndicator.cs" id="1_x0v6f"]
+
+[node name="Label3D" type="Label3D"]
+billboard = 1
+no_depth_test = true
+texture_filter = 0
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "1"
+font_size = 36
+outline_size = 5
+script = ExtResource("1_x0v6f")

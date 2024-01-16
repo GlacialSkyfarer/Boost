@@ -27,6 +27,8 @@ public partial class Shotgun : Gun
 	public float bulletSpread = 20f;
 	[Export]
 	public uint bulletCount = 10;
+	[Export]
+	public float totalDamage = 1;
 
 	[Export(PropertyHint.File)]
 	public string fireSound;
@@ -73,6 +75,7 @@ public partial class Shotgun : Gun
 
 			PlayerBullet p = bulletScene.Instantiate<PlayerBullet>();
 			player.GetParent().AddChild(p);
+			p.damage = totalDamage / bulletCount;
 			p.GlobalPosition = GlobalPosition;
 			float currentSpread = bulletSpread / (1 + ((chargeLevel - 1) / 2));
 			float randX = Mathf.DegToRad((float)GD.RandRange(-currentSpread, currentSpread));

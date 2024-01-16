@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://pbe484n2r2lu"]
+
+[ext_resource type="Script" path="res://Scripts/Entities/Utility/Line3D.cs" id="1_khp76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kvrbg"]
+cull_mode = 2
+albedo_color = Color(1, 1, 0, 1)
+emission_enabled = true
+emission = Color(1, 0.901961, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_lb1x7"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_kvrbg")
+size = Vector2(0.1, 1)
+
+[node name="Line3D" type="Node3D"]
+script = ExtResource("1_khp76")
+linePaths = Array[NodePath]([NodePath("Line1"), NodePath("Line2")])
+color = Color(1, 1, 0, 0)
+
+[node name="Line1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("QuadMesh_lb1x7")
+
+[node name="Line2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 1, -4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1.91069e-15, 0, 0, 0)
+layers = 4
+cast_shadow = 0
+mesh = SubResource("QuadMesh_lb1x7")

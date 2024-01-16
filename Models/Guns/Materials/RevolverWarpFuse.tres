@@ -1,9 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://gqlfhbq656rw"]
-
-[ext_resource type="Texture2D" uid="uid://ccnt5s30nry4f" path="res://Textures/Guns/RevolverWarpFuse.png" id="1_ldpnf"]
-[ext_resource type="Texture2D" uid="uid://bjt0ucckne5xf" path="res://Textures/Guns/RevolverWarpFuseEmission.png" id="2_rpbwk"]
-
-[resource]
-albedo_texture = ExtResource("1_ldpnf")
-emission_enabled = true
-emission_texture = ExtResource("2_rpbwk")

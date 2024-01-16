@@ -44,6 +44,9 @@ public partial class Player : Actor
 
 	[ExportSubgroup("Jumping")]
 	[Export]
+	int maxJumps = 2;
+	int jumps = 2;
+	[Export]
 	public float jumpHeight = 50f;
 	[Export]
 	public float maximumCoyoteTime = 0.2f;
@@ -76,7 +79,7 @@ public partial class Player : Actor
 		foreach (string gun in gunsOwned) 
 		{
 
-			Gun g = GD.Load<PackedScene>("res://Scenes/Weapons/" + gun + ".tscn").Instantiate<Gun>();
+			Gun g = GD.Load<PackedScene>("res://Scenes/Weapons/wpn_" + gun + ".tscn").Instantiate<Gun>();
 			vmHolder.AddChild(g);
 			guns.Add(g);
 			gunsSpawned.Add(gun);
@@ -106,7 +109,7 @@ public partial class Player : Actor
 			for (int i = 1; i < gunsOwned.Count - gunsSpawned.Count; i++) 
 			{
 
-				Gun g = GD.Load<PackedScene>("res://Scenes/Weapons/" + gunsOwned[gunsOwned.Count - i] + ".tscn").Instantiate<Gun>();
+				Gun g = GD.Load<PackedScene>("res://Scenes/Weapons/wpn_" + gunsOwned[gunsOwned.Count - i] + ".tscn").Instantiate<Gun>();
 				vmHolder.AddChild(g);
 				guns.Add(g);
 				gunsSpawned.Add(gunsOwned[i]);
@@ -153,6 +156,8 @@ public partial class Player : Actor
 			case PlayerState.Idle:
 			{
 
+				jumps = maxJumps;
+
 				if (IsOnFloor()) {
 
 					coyoteTime = maximumCoyoteTime;
@@ -167,6 +172,7 @@ public partial class Player : Actor
 
 					if (jumpBuffer > 0f) {
 
+						jumps--;
 						velocity.Y = jumpHeight;
 						jumpBuffer = 0f;
 						coyoteTime = 0f;
@@ -189,6 +195,8 @@ public partial class Player : Actor
 			case PlayerState.Walking:
 			{
 
+				jumps = maxJumps;
+
 				if (IsOnFloor()) coyoteTime = maximumCoyoteTime;
 
 				if (coyoteTime <= 0f) {
@@ -199,6 +207,7 @@ public partial class Player : Actor
 
 					if (jumpBuffer > 0f) {
 
+						jumps--;
 						velocity.Y = jumpHeight;
 						jumpBuffer = 0f;
 						coyoteTime = 0f;
@@ -227,6 +236,16 @@ public partial class Player : Actor
 					currentState = PlayerState.Idle;
 
 				} else {
+
+					if (jumps > 0 && jumpBuffer > 0f) {
+						
+						jumps--;
+						Vector3 flatVel = new(velocity.X, 0, velocity.Y);
+						velocity = new(movementDirection.X * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f), jumpHeight * 0.7f, movementDirection.Z * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f));
+						jumpBuffer = 0f;
+						currentState = PlayerState.Jumping;
+
+					};
 
 					velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * airTraction);
 
@@ -257,6 +276,16 @@ public partial class Player : Actor
 					currentState = PlayerState.Idle;
 
 				} else {
+
+					if (jumps > 0 && jumpBuffer > 0f) {
+						
+						jumps--;
+						Vector3 flatVel = new(velocity.X, 0, velocity.Y);
+						velocity = new(movementDirection.X * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f), jumpHeight * 0.7f, movementDirection.Z * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f));
+						jumpBuffer = 0f;
+						currentState = PlayerState.Jumping;
+
+					};
 
 					velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * airTraction);
 
