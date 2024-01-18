@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://ne5eavjh66m4"]
+[gd_scene load_steps=46 format=3 uid="uid://ne5eavjh66m4"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Core/Player.cs" id="1_rh620"]
 [ext_resource type="Script" path="res://Scripts/Entities/Core/PlayerCamera.cs" id="2_mxw58"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://crck65i8ig0fi" path="res://Textures/UI/tex_cursor.png" id="6_7l30r"]
 [ext_resource type="PackedScene" uid="uid://dysogfiamu7gc" path="res://Models/Entities/mdl_bandit.blend" id="7_3uk8d"]
 [ext_resource type="Script" path="res://Scripts/Entities/Core/PlayerAnimator.cs" id="8_kvr6d"]
+[ext_resource type="Texture2D" uid="uid://b852suo7m06bd" path="res://Textures/UI/ani_playerHealthbar.tres" id="9_5s126"]
+[ext_resource type="Texture2D" uid="uid://bvnkgib2xdjcu" path="res://Textures/UI/tex_playerHealthbar_over.png" id="10_3rkp7"]
+[ext_resource type="Script" path="res://Scripts/Utility/HealthBar.cs" id="11_4srcs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhsiv"]
 radius = 0.2
@@ -617,6 +620,48 @@ nodes/Walk/node = SubResource("AnimationNodeAnimation_kcddq")
 nodes/Walk/position = Vector2(-440, 260)
 node_connections = [&"AerialBlend", 0, &"Fall", &"AerialBlend", 1, &"GroundedBlend", &"AerialBlend", 2, &"Jump", &"GroundedBlend", 0, &"Idle", &"GroundedBlend", 1, &"Walk", &"output", 0, &"AerialBlend"]
 
+[sub_resource type="Gradient" id="Gradient_ytdbe"]
+offsets = PackedFloat32Array(0, 0.320988, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.878432, 0, 0.26726, 1, 0.78, 0, 0.247, 1)
+
+[sub_resource type="Animation" id="Animation_maui2"]
+resource_name = "Spinny"
+length = 0.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 128, 256), Rect2(128, 0, 128, 256), Rect2(256, 0, 128, 256), Rect2(0, 256, 128, 256), Rect2(128, 256, 128, 256), Rect2(256, 256, 128, 256), Rect2(0, 512, 128, 256), Rect2(0, 0, 128, 256)]
+}
+
+[sub_resource type="Animation" id="Animation_swbel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 128, 256)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_njemj"]
+_data = {
+"RESET": SubResource("Animation_swbel"),
+"Spinny": SubResource("Animation_maui2")
+}
+
 [node name="BoostGoob" type="CharacterBody3D"]
 collision_layer = 2
 collision_mask = 5
@@ -725,25 +770,28 @@ texture = ExtResource("6_7l30r")
 [node name="BoostGoob" parent="." instance=ExtResource("7_3uk8d")]
 transform = Transform3D(0.917717, 0, 0, 0, 0.917717, 0, 0, 0, 0.917717, 0, -0.575, 0)
 
+[node name="Armature" parent="BoostGoob" index="0"]
+visible = false
+
 [node name="Skeleton3D" parent="BoostGoob/Armature" index="0"]
 bones/0/rotation = Quaternion(-5.37718e-08, -0.701947, 0.712229, 5.29956e-08)
-bones/1/position = Vector3(8.73622e-08, -0.290856, -0.509588)
+bones/1/position = Vector3(8.6552e-08, -0.29094, -0.515347)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06861e-09, 0.999915)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
-bones/3/rotation = Quaternion(0.124589, 6.96125e-10, 4.21193e-08, 0.992208)
-bones/4/rotation = Quaternion(-0.107073, 3.35268e-10, -3.56531e-08, 0.994251)
+bones/3/rotation = Quaternion(0.114609, 2.72722e-10, 4.21241e-08, 0.993411)
+bones/4/rotation = Quaternion(-0.0976603, 1.31355e-10, -3.56631e-08, 0.99522)
 bones/5/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
-bones/6/rotation = Quaternion(-0.0591092, 0.958618, -0.19593, -0.197914)
+bones/6/rotation = Quaternion(-0.0498302, 0.964722, -0.1652, -0.198841)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.316323, 0.00580184, 0.020463, 0.948413)
+bones/7/rotation = Quaternion(-0.25349, 0.00591665, 0.0163983, 0.967181)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.762074, 0.0740984, -0.0240184, 0.642788)
+bones/8/rotation = Quaternion(0.740322, 0.0748432, -0.0259537, 0.667569)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.0584865, 0.934841, -0.130154, 0.325133)
+bones/9/rotation = Quaternion(0.0443326, 0.939073, -0.0993107, 0.326059)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.298018, -0.00583805, -0.0192788, 0.954348)
-bones/11/rotation = Quaternion(0.787631, 0.0359524, -0.0492358, 0.613124)
+bones/10/rotation = Quaternion(-0.230216, -0.0059522, -0.0148927, 0.973008)
+bones/11/rotation = Quaternion(0.764992, 0.0323724, -0.0507822, 0.641217)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
 bones/12/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)
@@ -769,5 +817,30 @@ script = ExtResource("8_kvr6d")
 cameraAnimatorPath = NodePath("../CameraHolder/Camera/CameraAnimator")
 vmAnimatorPath = NodePath("../VMDisplay/VMViewport/CamFollow/VMCamera/VMTree")
 playerPath = NodePath("..")
+
+[node name="HealthBar" type="TextureProgressBar" parent="."]
+offset_left = 44.0
+offset_top = 202.0
+offset_right = 172.0
+offset_bottom = 458.0
+rotation = 0.345975
+scale = Vector2(0.6, 0.6)
+max_value = 20.0
+step = 0.0
+value = 20.0
+fill_mode = 3
+texture_under = ExtResource("9_5s126")
+texture_progress = ExtResource("10_3rkp7")
+texture_progress_offset = Vector2(51, 16)
+tint_progress = Color(0.94902, 0, 0.34902, 1)
+script = ExtResource("11_4srcs")
+actorPath = NodePath("..")
+colorCurve = SubResource("Gradient_ytdbe")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HealthBar"]
+libraries = {
+"": SubResource("AnimationLibrary_njemj")
+}
+autoplay = "Spinny"
 
 [editable path="BoostGoob"]

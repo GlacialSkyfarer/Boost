@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://dl63qh82ipse4"]
+
+[ext_resource type="Texture2D" uid="uid://bja1v8snknxy5" path="res://Textures/UI/tex_heatBar.png" id="1_l86h2"]
+
+[resource]
+atlas = ExtResource("1_l86h2")
+region = Rect2(0, 0, 128, 180)

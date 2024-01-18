@@ -69,6 +69,8 @@ public partial class Player : Actor
     public override void _Ready()
     {
 
+		base._Ready();
+
 		coyoteTime = 0f;
 		jumpBuffer = 0f;
 		Velocity = Vector3.Zero;

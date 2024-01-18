@@ -40,6 +40,7 @@ enabled=PackedStringArray("res://addons/Mirror/plugin.cfg", "res://addons/qodot/
 [file_customization]
 
 folder_colors={
+"res://Fonts/": "purple",
 "res://Maps/": "red",
 "res://Models/": "purple",
 "res://Scenes/": "red",
