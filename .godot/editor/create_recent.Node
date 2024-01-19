@@ -1,10 +1,10 @@
+GPUParticles3D
 AnimationPlayer
 TextureProgressBar
 Label
 Control
 Label3D
 RigidBody3D
-GPUParticles3D
 CollisionShape3D
 CharacterBody3D
 Area3D

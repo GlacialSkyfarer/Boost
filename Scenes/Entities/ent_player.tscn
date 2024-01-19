@@ -624,6 +624,21 @@ node_connections = [&"AerialBlend", 0, &"Fall", &"AerialBlend", 1, &"GroundedBle
 offsets = PackedFloat32Array(0, 0.320988, 1)
 colors = PackedColorArray(1, 0, 0, 1, 0.878432, 0, 0.26726, 1, 0.78, 0, 0.247, 1)
 
+[sub_resource type="Animation" id="Animation_swbel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 128, 256)]
+}
+
 [sub_resource type="Animation" id="Animation_maui2"]
 resource_name = "Spinny"
 length = 0.7
@@ -641,21 +656,6 @@ tracks/0/keys = {
 "values": [Rect2(0, 0, 128, 256), Rect2(128, 0, 128, 256), Rect2(256, 0, 128, 256), Rect2(0, 256, 128, 256), Rect2(128, 256, 128, 256), Rect2(256, 256, 128, 256), Rect2(0, 512, 128, 256), Rect2(0, 0, 128, 256)]
 }
 
-[sub_resource type="Animation" id="Animation_swbel"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture_under:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 128, 256)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_njemj"]
 _data = {
 "RESET": SubResource("Animation_swbel"),
@@ -669,7 +669,6 @@ floor_block_on_wall = false
 script = ExtResource("1_rh620")
 vmHolderPath = NodePath("VMDisplay/VMViewport/CamFollow")
 movementSpeed = 7.0
-airTraction = 0.4
 jumpHeight = 6.0
 gunsOwned = Array[String](["revolver", "shotgun"])
 maxHealth = 20.0
@@ -770,28 +769,25 @@ texture = ExtResource("6_7l30r")
 [node name="BoostGoob" parent="." instance=ExtResource("7_3uk8d")]
 transform = Transform3D(0.917717, 0, 0, 0, 0.917717, 0, 0, 0, 0.917717, 0, -0.575, 0)
 
-[node name="Armature" parent="BoostGoob" index="0"]
-visible = false
-
 [node name="Skeleton3D" parent="BoostGoob/Armature" index="0"]
 bones/0/rotation = Quaternion(-5.37718e-08, -0.701947, 0.712229, 5.29956e-08)
-bones/1/position = Vector3(8.6552e-08, -0.29094, -0.515347)
+bones/1/position = Vector3(8.80116e-08, -0.290895, -0.512286)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06861e-09, 0.999915)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
-bones/3/rotation = Quaternion(0.114609, 2.72722e-10, 4.21241e-08, 0.993411)
-bones/4/rotation = Quaternion(-0.0976603, 1.31355e-10, -3.56631e-08, 0.99522)
+bones/3/rotation = Quaternion(0.119784, 4.92199e-10, 4.21221e-08, 0.9928)
+bones/4/rotation = Quaternion(-0.102541, 2.37048e-10, -3.56583e-08, 0.994729)
 bones/5/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
-bones/6/rotation = Quaternion(-0.0498302, 0.964722, -0.1652, -0.198841)
+bones/6/rotation = Quaternion(-0.0548489, 0.96154, -0.181903, -0.198355)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.25349, 0.00591665, 0.0163983, 0.967181)
+bones/7/rotation = Quaternion(-0.287727, 0.0058575, 0.0186132, 0.957514)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.740322, 0.0748432, -0.0259537, 0.667569)
+bones/8/rotation = Quaternion(0.752221, 0.0744594, -0.0249308, 0.654215)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.0443326, 0.939073, -0.0993107, 0.326059)
+bones/9/rotation = Quaternion(0.0520601, 0.936895, -0.116246, 0.325584)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.230216, -0.0059522, -0.0148927, 0.973008)
-bones/11/rotation = Quaternion(0.764992, 0.0323724, -0.0507822, 0.641217)
+bones/10/rotation = Quaternion(-0.267463, -0.00589338, -0.0173022, 0.963395)
+bones/11/rotation = Quaternion(0.777479, 0.0343178, -0.0499078, 0.625985)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
 bones/12/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)
