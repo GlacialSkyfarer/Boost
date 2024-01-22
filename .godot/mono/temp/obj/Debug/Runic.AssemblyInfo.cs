@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Runic")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4dc09ce397e76b568dac26a1aa4941575eafd4f5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Runic")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Runic")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
