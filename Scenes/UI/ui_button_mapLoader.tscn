@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdvo73e4iftb6"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MapLoaderButton.cs" id="1_reb4t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q3ajp"]
+bg_color = Color(0.266667, 0.266667, 0.266667, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="MapLoaderButton" type="Button"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_q3ajp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_q3ajp")
+text = "map_test_01.tscn"
+text_overrun_behavior = 3
+script = ExtResource("1_reb4t")
+sceneName = "map_test_01.tscn"
+
+[connection signal="pressed" from="." to="." method="ButtonPressed"]

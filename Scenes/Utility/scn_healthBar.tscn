@@ -18,7 +18,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/path = NodePath("Underlay:texture_under:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,7 +36,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture_under:region")
+tracks/0/path = NodePath("Underlay:texture_under:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -66,11 +66,11 @@ pivot_offset = Vector2(225, 0)
 max_value = 20.0
 step = 0.0
 value = 20.0
-texture_under = ExtResource("1_5pqob")
 texture_progress = ExtResource("2_yoy0i")
 texture_progress_offset = Vector2(54, 44)
 tint_progress = Color(1, 0.0588235, 0, 1)
 script = ExtResource("3_mfeyj")
+underlayPath = NodePath("Underlay")
 colorCurve = SubResource("Gradient_igcc5")
 
 [node name="Label" type="Label" parent="."]
@@ -93,3 +93,18 @@ libraries = {
 "": SubResource("AnimationLibrary_04e66")
 }
 autoplay = "Spin"
+
+[node name="Underlay" type="TextureProgressBar" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 20.0
+step = 0.0
+value = 20.0
+texture_under = ExtResource("1_5pqob")
+texture_progress = ExtResource("2_yoy0i")
+texture_progress_offset = Vector2(54, 44)

@@ -1,0 +1,14 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+uid="uid://bx87hx0dgj0m1"
+path="res://.godot/imported/map_eden_test_01.map-9996c7ec6186d8598acf7098f4fae1f2.tres"
+
+[deps]
+
+source_file="res://Maps/map_eden_test_01.map"
+dest_files=["res://.godot/imported/map_eden_test_01.map-9996c7ec6186d8598acf7098f4fae1f2.tres"]
+
+[params]
+

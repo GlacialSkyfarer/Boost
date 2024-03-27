@@ -39,6 +39,8 @@ public partial class Player : Actor
 	public float groundTraction = 1f;
 	[Export]
 	public float airTraction = 0.3f;
+	[Export]
+	public float highSpeedTractionMultiplier = 0.1f;
 
 	[ExportGroup("Vertical Movement")]
 
@@ -172,6 +174,8 @@ public partial class Player : Actor
 
 				} else {
 
+					Vector3 flatVel = new(velocity.X, 0, velocity.Z);
+
 					if (jumpBuffer > 0f) {
 
 						jumps--;
@@ -186,7 +190,7 @@ public partial class Player : Actor
 
 					} else {
 
-						velocity = velocity.Lerp(new(0, velocity.Y, 0), 0.1f * groundTraction);
+						velocity = velocity.Lerp(new(0, velocity.Y, 0), 0.1f * groundTraction * (flatVel.Length() > movementSpeed * 1.5f ? highSpeedTractionMultiplier : 1));
 
 					}
 
@@ -207,6 +211,8 @@ public partial class Player : Actor
 
 				} else {
 
+					Vector3 flatVel = new(velocity.X, 0, velocity.Z);
+
 					if (jumpBuffer > 0f) {
 
 						jumps--;
@@ -221,7 +227,7 @@ public partial class Player : Actor
 
 					} else {
 
-						velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * groundTraction);
+						velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * groundTraction * (flatVel.Length() > movementSpeed * 1.5f ? highSpeedTractionMultiplier : 1));
 
 					}
 				} 
@@ -239,17 +245,18 @@ public partial class Player : Actor
 
 				} else {
 
+					Vector3 flatVel = new(velocity.X, 0, velocity.Z);
 					if (jumps > 0 && jumpBuffer > 0f) {
 						
 						jumps--;
-						Vector3 flatVel = new(velocity.X, 0, velocity.Y);
-						velocity = new(movementDirection.X * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f), jumpHeight * 0.7f, movementDirection.Z * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f));
+						Vector3 maxVel = movementDirection.Normalized() * Mathf.Max(flatVel.Length(), movementSpeed);
+						velocity = new(maxVel.X, jumpHeight * 0.7f, maxVel.Z);
 						jumpBuffer = 0f;
 						currentState = PlayerState.Jumping;
 
 					};
 
-					velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * airTraction);
+					velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * airTraction * (flatVel.Length() > movementSpeed * 1.5f ? highSpeedTractionMultiplier : 1));
 
 					if (velocity.Y <= 0f)
 					{
@@ -279,17 +286,18 @@ public partial class Player : Actor
 
 				} else {
 
+					Vector3 flatVel = new(velocity.X, 0, velocity.Z);
 					if (jumps > 0 && jumpBuffer > 0f) {
 						
 						jumps--;
-						Vector3 flatVel = new(velocity.X, 0, velocity.Y);
-						velocity = new(movementDirection.X * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f), jumpHeight * 0.7f, movementDirection.Z * Mathf.Max(flatVel.Length(), movementSpeed * 0.5f));
+						Vector3 maxVel = movementDirection.Normalized() * Mathf.Max(flatVel.Length(), movementSpeed);
+						velocity = new(maxVel.X, jumpHeight * 0.7f, maxVel.Z);
 						jumpBuffer = 0f;
 						currentState = PlayerState.Jumping;
 
 					};
 
-					velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * airTraction);
+					velocity = velocity.Lerp(new(movementDirection.X * movementSpeed, velocity.Y, movementDirection.Z * movementSpeed), 0.1f * airTraction * (flatVel.Length() > movementSpeed * 1.5f ? highSpeedTractionMultiplier : 1));
 
 				}
 

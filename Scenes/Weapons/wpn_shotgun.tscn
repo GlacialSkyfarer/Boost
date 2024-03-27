@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=3 uid="uid://cm223efwmwvxq"]
+[gd_scene load_steps=49 format=3 uid="uid://cm223efwmwvxq"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/Shotgun.cs" id="1_reoud"]
 [ext_resource type="PackedScene" uid="uid://bb6kkah2yctaa" path="res://Scenes/Entities/Projectiles/ent_shotgunBullet.tscn" id="2_lk1yn"]
@@ -971,12 +971,6 @@ animation = &"Transition3"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o7m1v"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4jl4l"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ho0ap"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2ei5p"]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_j77k1"]
 switch_mode = 2
 advance_mode = 2
@@ -988,12 +982,6 @@ advance_mode = 2
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_d6leu"]
 switch_mode = 2
 advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gkc4j"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_o5nir"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_70ex3"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l14i2"]
 switch_mode = 2
@@ -1017,8 +1005,8 @@ states/Transition2/node = SubResource("AnimationNodeAnimation_rps2s")
 states/Transition2/position = Vector2(376, 62)
 states/Transition3/node = SubResource("AnimationNodeAnimation_6sikb")
 states/Transition3/position = Vector2(646, 62)
-transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_o7m1v"), "Idle1", "Transition2", SubResource("AnimationNodeStateMachineTransition_4jl4l"), "Idle2", "Transition3", SubResource("AnimationNodeStateMachineTransition_ho0ap"), "Idle3", "Transition1", SubResource("AnimationNodeStateMachineTransition_2ei5p"), "Transition1", "Idle1", SubResource("AnimationNodeStateMachineTransition_j77k1"), "Transition2", "Idle2", SubResource("AnimationNodeStateMachineTransition_ollrc"), "Transition3", "Idle3", SubResource("AnimationNodeStateMachineTransition_d6leu"), "Idle1", "Transition1", SubResource("AnimationNodeStateMachineTransition_gkc4j"), "Idle2", "Transition1", SubResource("AnimationNodeStateMachineTransition_o5nir"), "Overheated", "OverheatTransition", SubResource("AnimationNodeStateMachineTransition_70ex3"), "OverheatTransition", "Idle1", SubResource("AnimationNodeStateMachineTransition_l14i2")]
-graph_offset = Vector2(-18, 75)
+transitions = ["Start", "Idle1", SubResource("AnimationNodeStateMachineTransition_o7m1v"), "Transition1", "Idle1", SubResource("AnimationNodeStateMachineTransition_j77k1"), "Transition2", "Idle2", SubResource("AnimationNodeStateMachineTransition_ollrc"), "Transition3", "Idle3", SubResource("AnimationNodeStateMachineTransition_d6leu"), "OverheatTransition", "Idle1", SubResource("AnimationNodeStateMachineTransition_l14i2")]
+graph_offset = Vector2(-57, 92)
 
 [node name="Shotgun" type="Node3D"]
 script = ExtResource("1_reoud")

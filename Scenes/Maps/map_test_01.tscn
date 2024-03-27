@@ -2532,6 +2532,10 @@ transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -15.25, 
 
 [node name="entity_3_heretic_dummy" parent="SubViewportContainer/SubViewport/QodotMap" instance=ExtResource("13_bc4hd")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -15.5, 5.375, 0)
+maxHealth = 20.0
+
+[node name="HealthBar" parent="SubViewportContainer/SubViewport/QodotMap/entity_3_heretic_dummy" index="3"]
+visible = true
 
 [node name="entity_4_heretic_dummy" parent="SubViewportContainer/SubViewport/QodotMap" instance=ExtResource("13_bc4hd")]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -15.25, 5.375, -0.75)
@@ -2557,7 +2561,11 @@ light_color = Color(0.886275, 0.929412, 1, 1)
 shadow_enabled = true
 shadow_blur = 0.192
 directional_shadow_mode = 0
+directional_shadow_fade_start = 1.0
 directional_shadow_max_distance = 16.2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport"]
 environment = SubResource("Environment_4pgaf")
+
+[editable path="SubViewportContainer/SubViewport/QodotMap/entity_3_heretic_dummy"]
+[editable path="SubViewportContainer/SubViewport/QodotMap/entity_3_heretic_dummy/mdl_trainingDummy"]

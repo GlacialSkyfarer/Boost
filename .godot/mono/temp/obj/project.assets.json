@@ -94,11 +94,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
+      "projectUniqueName": "c:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
       "projectName": "Runic",
-      "projectPath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
+      "projectPath": "c:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
       "packagesPath": "C:\\Users\\Runic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\.godot\\mono\\temp\\obj\\",
+      "outputPath": "c:\\Users\\Runic\\Documents\\GitHub\\Boost\\.godot\\mono\\temp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\Runic\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"

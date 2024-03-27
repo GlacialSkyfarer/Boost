@@ -169,7 +169,7 @@ nodes/WalkBlend/node = SubResource("AnimationNodeBlend2_0lihl")
 nodes/WalkBlend/position = Vector2(80, 100)
 node_connections = [&"WalkBlend", 0, &"Idle", &"WalkBlend", 1, &"Walk", &"output", 0, &"WalkBlend"]
 
-[sub_resource type="Animation" id="Animation_5d585"]
+[sub_resource type="Animation" id="Animation_qqxya"]
 resource_name = "Fall-loop"
 length = 1.25
 loop_mode = 1
@@ -272,7 +272,7 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, 0.00277237, -0.15753, 0.137056)
 
-[sub_resource type="Animation" id="Animation_hije6"]
+[sub_resource type="Animation" id="Animation_8ad6l"]
 resource_name = "Idle-loop"
 length = 1.25
 loop_mode = 1
@@ -375,7 +375,7 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, -0.101319, -0.157769, 0.143175)
 
-[sub_resource type="Animation" id="Animation_pnct2"]
+[sub_resource type="Animation" id="Animation_occ3d"]
 resource_name = "Jump-loop"
 length = 1.25
 loop_mode = 1
@@ -478,7 +478,7 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, 0.00277237, -0.15753, 0.137056)
 
-[sub_resource type="Animation" id="Animation_27ni4"]
+[sub_resource type="Animation" id="Animation_4puri"]
 resource_name = "Run-loop"
 length = 0.625
 loop_mode = 1
@@ -581,12 +581,12 @@ tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat32Array(0, 1, -0.00446658, -0.250621, 0.0186657, 0.0333333, 1, -0.0102907, -0.239341, 0.0319305, 0.0666667, 1, -0.0212732, -0.217866, 0.0620541, 0.1, 1, -0.0338364, -0.19292, 0.105998, 0.133333, 1, -0.0445238, -0.171017, 0.160724, 0.166667, 1, -0.0500001, -0.158464, 0.223194, 0.2, 1, -0.0513161, -0.154263, 0.287979, 0.233333, 1, -0.0516731, -0.152442, 0.345164, 0.266667, 1, -0.0515116, -0.15208, 0.388237, 0.3, 1, -0.050937, -0.152288, 0.410728, 0.333333, 1, -0.0497194, -0.152211, 0.406206, 0.366667, 1, -0.0437373, -0.151987, 0.365505, 0.4, 1, -0.0356834, -0.15294, 0.308856, 0.433333, 1, -0.0268847, -0.155946, 0.244064, 0.466667, 1, -0.0186084, -0.163257, 0.178511, 0.5, 1, -0.0120625, -0.178507, 0.119158, 0.533333, 1, -0.00817653, -0.20483, 0.0738804, 0.566667, 1, -0.00583976, -0.229155, 0.0417237, 0.6, 1, -0.00474437, -0.244839, 0.0241655, 0.625, 1, -0.00446658, -0.250621, 0.0186657)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_am4oy"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbwef"]
 _data = {
-"Fall": SubResource("Animation_5d585"),
-"Idle": SubResource("Animation_hije6"),
-"Jump": SubResource("Animation_pnct2"),
-"Run": SubResource("Animation_27ni4")
+"Fall": SubResource("Animation_qqxya"),
+"Idle": SubResource("Animation_8ad6l"),
+"Jump": SubResource("Animation_occ3d"),
+"Run": SubResource("Animation_4puri")
 }
 
 [sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_812wp"]
@@ -621,8 +621,8 @@ nodes/Walk/position = Vector2(-440, 260)
 node_connections = [&"AerialBlend", 0, &"Fall", &"AerialBlend", 1, &"GroundedBlend", &"AerialBlend", 2, &"Jump", &"GroundedBlend", 0, &"Idle", &"GroundedBlend", 1, &"Walk", &"output", 0, &"AerialBlend"]
 
 [sub_resource type="Gradient" id="Gradient_ytdbe"]
-offsets = PackedFloat32Array(0, 0.320988, 1)
-colors = PackedColorArray(1, 0, 0, 1, 0.878432, 0, 0.26726, 1, 0.78, 0, 0.247, 1)
+offsets = PackedFloat32Array(0, 0.41358, 1)
+colors = PackedColorArray(0.984802, 0.602542, 0, 1, 0.878432, 0, 0.26726, 1, 0.78, 0, 0.247, 1)
 
 [sub_resource type="Animation" id="Animation_swbel"]
 length = 0.001
@@ -669,8 +669,10 @@ floor_block_on_wall = false
 script = ExtResource("1_rh620")
 vmHolderPath = NodePath("VMDisplay/VMViewport/CamFollow")
 movementSpeed = 7.0
+airTraction = 0.5
+highSpeedTractionMultiplier = 0.075
 jumpHeight = 6.0
-gunsOwned = Array[String](["revolver", "shotgun"])
+gunsOwned = Array[String](["wrench", "revolver", "shotgun"])
 maxHealth = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -771,39 +773,43 @@ transform = Transform3D(0.917717, 0, 0, 0, 0.917717, 0, 0, 0, 0.917717, 0, -0.57
 
 [node name="Skeleton3D" parent="BoostGoob/Armature" index="0"]
 bones/0/rotation = Quaternion(-5.37718e-08, -0.701947, 0.712229, 5.29956e-08)
-bones/1/position = Vector3(7.93806e-08, -0.290961, -0.5168)
+bones/1/position = Vector3(8.16101e-08, -0.290893, -0.512124)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06861e-09, 0.999915)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
-bones/3/rotation = Quaternion(0.112128, -5.71454e-10, 4.89164e-08, 0.993694)
-bones/4/rotation = Quaternion(-0.0953623, -2.74313e-10, -4.20802e-08, 0.995443)
-bones/5/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
-bones/6/rotation = Quaternion(-0.0472242, 0.96626, -0.156462, -0.199078)
-bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(-0.235506, 0.00594451, 0.015235, 0.971735)
+bones/3/rotation = Quaternion(0.120058, -2.35143e-10, 4.89138e-08, 0.992767)
+bones/4/rotation = Quaternion(-0.102754, -1.14262e-10, -4.20734e-08, 0.994707)
+bones/5/rotation = Quaternion(7.90481e-08, 0.998751, -0.0499555, 6.90903e-08)
+bones/6/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
+bones/7/rotation = Quaternion(-0.0551017, 0.961371, -0.182741, -0.198329)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(0.734024, 0.0750263, -0.026465, 0.674447)
+bones/8/rotation = Quaternion(-0.289439, 0.00585433, 0.0187239, 0.956996)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.0402279, 0.940096, -0.0902542, 0.326276)
+bones/9/rotation = Quaternion(0.752813, 0.074439, -0.0248781, 0.653539)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(-0.210255, -0.00597988, -0.0136014, 0.977534)
-bones/11/rotation = Quaternion(0.758241, 0.0313429, -0.0512631, 0.6492)
-bones/11/scale = Vector3(1, 1, 1)
-bones/12/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
-bones/12/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)
+bones/10/rotation = Quaternion(0.0524455, 0.936778, -0.117086, 0.325558)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(-0.269308, -0.00589022, -0.0174215, 0.962879)
+bones/12/rotation = Quaternion(0.778094, 0.0344152, -0.0498657, 0.625219)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/position = Vector3(0.0564802, -0.158425, 0.153285)
-bones/13/rotation = Quaternion(0.717563, -2.47428e-08, 0.0145149, 0.696342)
-bones/14/position = Vector3(0.068243, -0.0549507, -0.0219023)
-bones/14/rotation = Quaternion(0.00730929, 0.691015, 0.722769, 0.00698828)
-bones/14/scale = Vector3(1, 1, 1)
-bones/15/position = Vector3(-0.101319, -0.157769, 0.143175)
-bones/15/rotation = Quaternion(0.717563, 4.68107e-09, -0.0145149, 0.696342)
+bones/13/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
+bones/13/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/position = Vector3(0.0564802, -0.158425, 0.153285)
+bones/14/rotation = Quaternion(0.717563, -2.47428e-08, 0.0145149, 0.696342)
+bones/15/position = Vector3(0.068243, -0.0549507, -0.0219023)
+bones/15/rotation = Quaternion(0.00730929, 0.691015, 0.722769, 0.00698828)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/position = Vector3(-0.101319, -0.157769, 0.143175)
+bones/16/rotation = Quaternion(0.717563, 4.68107e-09, -0.0145149, 0.696342)
+
+[node name="Circle" parent="BoostGoob/Armature/Skeleton3D" index="0"]
+transform = Transform3D(1, -3.00408e-07, 2.27815e-07, 3.32308e-07, 0.987724, -0.156212, -1.78091e-07, 0.156212, 0.987724, -6.09474e-08, 0.558439, 0.105107)
 
 [node name="PMAnimator" type="AnimationTree" parent="."]
 root_node = NodePath("../BoostGoob")
 libraries = {
-"": SubResource("AnimationLibrary_am4oy")
+"": SubResource("AnimationLibrary_mbwef")
 }
 tree_root = SubResource("AnimationNodeBlendTree_vge4x")
 anim_player = NodePath("../BoostGoob/AnimationPlayer")
@@ -825,15 +831,28 @@ max_value = 20.0
 step = 0.0
 value = 20.0
 fill_mode = 3
-texture_under = ExtResource("9_5s126")
 texture_progress = ExtResource("10_3rkp7")
 texture_progress_offset = Vector2(51, 16)
 tint_progress = Color(0.94902, 0, 0.34902, 1)
 script = ExtResource("11_4srcs")
 actorPath = NodePath("..")
+underlayPath = NodePath("Underlay")
 colorCurve = SubResource("Gradient_ytdbe")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HealthBar"]
+[node name="Underlay" type="TextureProgressBar" parent="HealthBar"]
+z_index = -1
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 256.0
+max_value = 20.0
+step = 0.0
+value = 20.0
+fill_mode = 3
+texture_under = ExtResource("9_5s126")
+texture_progress = ExtResource("10_3rkp7")
+texture_progress_offset = Vector2(51, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HealthBar/Underlay"]
 libraries = {
 "": SubResource("AnimationLibrary_njemj")
 }

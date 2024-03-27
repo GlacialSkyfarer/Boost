@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://crltje3h30r0c"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MapLoader.cs" id="1_1xwjh"]
+[ext_resource type="PackedScene" uid="uid://bdvo73e4iftb6" path="res://Scenes/UI/ui_button_mapLoader.tscn" id="2_mnjx2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mmst4"]
+line_spacing = 1.0
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+outline_size = 10
+
+[sub_resource type="Theme" id="Theme_lg621"]
+VBoxContainer/constants/separation = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w0fl5"]
+bg_color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 77.0
+offset_right = 236.0
+offset_bottom = 284.0
+text = "MAP
+SELECT"
+label_settings = SubResource("LabelSettings_mmst4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+anchor_left = 0.461659
+anchor_top = 0.091922
+anchor_right = 0.949922
+anchor_bottom = 0.916435
+horizontal_scroll_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lg621")
+theme_override_styles/panel = SubResource("StyleBoxFlat_w0fl5")
+
+[node name="MapLoaderBox" type="VBoxContainer" parent="ScrollContainer/PanelContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+script = ExtResource("1_1xwjh")
+buttonScene = ExtResource("2_mnjx2")

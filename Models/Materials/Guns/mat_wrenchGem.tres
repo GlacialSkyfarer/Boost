@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://7j5uddqk6qyk"]
+
+[ext_resource type="Texture2D" uid="uid://ccpbh417miwpd" path="res://Textures/Utility/tex_noise.png" id="1_a6rm4"]
+
+[resource]
+albedo_color = Color(0.298039, 0.027451, 0.560784, 1)
+albedo_texture = ExtResource("1_a6rm4")
+roughness = 0.37
+clearcoat_enabled = true
+clearcoat = 0.58
+clearcoat_roughness = 0.17
+subsurf_scatter_strength = 1.0
+subsurf_scatter_transmittance_color = Color(0.372549, 0, 1, 1)
+uv1_scale = Vector3(10, 10, 10)
+uv1_triplanar = true

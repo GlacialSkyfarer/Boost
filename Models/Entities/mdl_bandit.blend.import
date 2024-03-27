@@ -45,6 +45,10 @@ _subresources={
 }
 },
 "nodes": {
+"PATH:Armature/Skeleton3D/Circle/Circle": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 2
+},
 "PATH:Armature/Skeleton3D/Goob": {
 "mesh_instance/cast_shadow": 0,
 "mesh_instance/layers": 2

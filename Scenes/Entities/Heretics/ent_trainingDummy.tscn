@@ -45,7 +45,7 @@ size = Vector2(0.15, 0.15)
 
 [sub_resource type="Gradient" id="Gradient_rbnqc"]
 offsets = PackedFloat32Array(0.0308642, 0.104938, 0.425926)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 1)
+colors = PackedColorArray(0.336209, 0.164163, 0, 1, 1, 1, 0, 1, 1, 0, 0, 1)
 
 [node name="EntTrainingDummy" type="CharacterBody3D" groups=["Enemy"]]
 collision_layer = 4
