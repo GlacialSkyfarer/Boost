@@ -651,6 +651,26 @@ _data = {
 "WarpFire": SubResource("Animation_6rqhg")
 }
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tw6tj"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xyigc"]
+animation = &"Recharge"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mednv"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8s8c1"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_eydig"]
+states/RESET/node = SubResource("AnimationNodeAnimation_tw6tj")
+states/RESET/position = Vector2(320, 110)
+states/Recharge/node = SubResource("AnimationNodeAnimation_xyigc")
+states/Recharge/position = Vector2(477, 120)
+transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_mednv"), "Recharge", "RESET", SubResource("AnimationNodeStateMachineTransition_8s8c1")]
+
 [sub_resource type="Animation" id="Animation_4cssd"]
 resource_name = "Idle"
 
@@ -813,26 +833,6 @@ _data = {
 "Recharge": SubResource("Animation_wuamn")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tw6tj"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xyigc"]
-animation = &"Recharge"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mednv"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8s8c1"]
-switch_mode = 2
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_eydig"]
-states/RESET/node = SubResource("AnimationNodeAnimation_tw6tj")
-states/RESET/position = Vector2(320, 110)
-states/Recharge/node = SubResource("AnimationNodeAnimation_xyigc")
-states/Recharge/position = Vector2(477, 120)
-transitions = ["Start", "RESET", SubResource("AnimationNodeStateMachineTransition_mednv"), "Recharge", "RESET", SubResource("AnimationNodeStateMachineTransition_8s8c1")]
-
 [sub_resource type="Gradient" id="Gradient_fmddq"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
@@ -953,9 +953,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ik3r7")
-}
 tree_root = SubResource("AnimationNodeStateMachine_eydig")
 anim_player = NodePath("../WarpFuseAnimator")
 
