@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDFile" load_steps=4 format=3 uid="uid://w614bulabppn"]
+
+[ext_resource type="Resource" uid="uid://crgpdahjaj" path="res://addons/func_godot/fgd/func_godot_fgd.tres" id="1_hdmwh"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_file.gd" id="1_u1ii7"]
+[ext_resource type="Resource" uid="uid://cyjjhrosdxkpi" path="res://Trenchbroom/FGD/Entities/ent_info_playerStart.tres" id="2_cork2"]
+
+[resource]
+script = ExtResource("1_u1ii7")
+export_file = false
+model_key_word_supported = true
+fgd_name = "Boost"
+base_fgd_files = Array[Resource]([ExtResource("1_hdmwh")])
+entity_definitions = Array[Resource]([ExtResource("2_cork2")])

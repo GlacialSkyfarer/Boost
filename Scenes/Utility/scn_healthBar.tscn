@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://coy6x5rbh7yr8" path="res://Textures/UI/ani_bossBar.tres" id="1_5pqob"]
 [ext_resource type="Texture2D" uid="uid://crkehrq653ke3" path="res://Textures/UI/tex_bossBar_over.png" id="2_yoy0i"]
-[ext_resource type="Script" path="res://Scripts/Utility/HealthBar.cs" id="3_mfeyj"]
+[ext_resource type="Script" path="res://Scripts/UI/HealthBar.cs" id="3_mfeyj"]
 [ext_resource type="FontFile" uid="uid://klburd7a8hnk" path="res://Fonts/fnt_heavyweight.TTF" id="4_8gxhx"]
 
 [sub_resource type="Gradient" id="Gradient_igcc5"]

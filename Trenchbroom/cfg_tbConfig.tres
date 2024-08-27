@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="TrenchBroomGameConfig" load_steps=6 format=3 uid="uid://daqivxk0gqeop"]
+
+[ext_resource type="Resource" uid="uid://b4xhdj0e16lop" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_clip.tres" id="1_twvhw"]
+[ext_resource type="Resource" uid="uid://ca7377sfgj074" path="res://addons/func_godot/game_config/trenchbroom/tb_face_tag_skip.tres" id="2_c0nug"]
+[ext_resource type="Resource" uid="uid://w614bulabppn" path="res://Trenchbroom/FGD/fgd_boost.tres" id="3_3gy4d"]
+[ext_resource type="Texture2D" uid="uid://bm64e5g14xlmd" path="res://Textures/UI/img_icon.png" id="4_oyue8"]
+[ext_resource type="Script" path="res://addons/func_godot/src/trenchbroom/trenchbroom_game_config.gd" id="5_f1kdf"]
+
+[resource]
+script = ExtResource("5_f1kdf")
+export_file = false
+game_name = "Boost"
+icon = ExtResource("4_oyue8")
+map_formats = Array[Dictionary]([{
+"format": "Valve",
+"initialmap": "initial_valve.map"
+}, {
+"format": "Standard",
+"initialmap": "initial_standard.map"
+}, {
+"format": "Quake2",
+"initialmap": "initial_quake2.map"
+}, {
+"format": "Quake3"
+}])
+texture_exclusion_patterns = Array[String](["*_albedo", "*_ao", "*_emission", "*_height", "*_metallic", "*_normal", "*_orm", "*_roughness", "*_sss"])
+fgd_file = ExtResource("3_3gy4d")
+entity_scale = "32"
+default_uv_scale = Vector2(0.25, 0.25)
+brush_tags = Array[Resource]([])
+brushface_tags = Array[Resource]([ExtResource("1_twvhw"), ExtResource("2_c0nug")])

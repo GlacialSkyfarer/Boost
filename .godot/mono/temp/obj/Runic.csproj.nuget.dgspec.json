@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj": {}
+    "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj": {
+    "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
+        "projectUniqueName": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj",
         "projectName": "Runic",
-        "projectPath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
-        "packagesPath": "C:\\Users\\Runic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\.godot\\mono\\temp\\obj\\",
+        "projectPath": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj",
+        "packagesPath": "/home/glacialskyfarer/.nuget/packages/",
+        "outputPath": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Users\\Runic\\AppData\\Roaming\\Godot\\mono\\GodotNuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Runic\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Users\\Runic\\AppData\\Roaming\\NuGet\\config\\Godot.Offline.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/glacialskyfarer/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -46,15 +40,15 @@
           "dependencies": {
             "Godot.SourceGenerators": {
               "target": "Package",
-              "version": "[4.2.2, )"
+              "version": "[4.3.0, )"
             },
             "GodotSharp": {
               "target": "Package",
-              "version": "[4.2.2, )"
+              "version": "[4.3.0, )"
             },
             "GodotSharpEditor": {
               "target": "Package",
-              "version": "[4.2.2, )"
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
@@ -63,23 +57,14 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
+              "version": "[6.0.32, 6.0.32]"
             }
           ],
           "frameworkReferences": {
@@ -87,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.132/RuntimeIdentifierGraph.json"
         }
       }
     }

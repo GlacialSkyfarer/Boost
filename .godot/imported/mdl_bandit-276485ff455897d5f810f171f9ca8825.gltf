@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.0.44",
+		"generator":"Khronos glTF Blender I/O v4.1.63",
 		"version":"2.0"
 	},
 	"scene":0,
@@ -2753,19 +2753,6 @@
 				"metallicFactor":0,
 				"roughnessFactor":1
 			}
-		},
-		{
-			"name":"Cloth",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0.15192505717277527,
-					0.015508923679590225,
-					0,
-					1
-				],
-				"metallicFactor":0,
-				"roughnessFactor":1
-			}
 		}
 	],
 	"meshes":[
@@ -2820,7 +2807,7 @@
 						"TEXCOORD_0":24
 					},
 					"indices":25,
-					"material":3
+					"material":1
 				}
 			]
 		}

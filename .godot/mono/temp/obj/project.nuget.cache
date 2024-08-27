@@ -1,15 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Ml6Z+VKAq72WFlznG0gJbKqaAEiXZxzVMA8R1iqaCAeHNawVurFDXXPxcHNJvDK7ILFnWz8Jk2+KY6wXLIyI3Q==",
+  "dgSpecHash": "WucYADOx4sdl6v6QkRgKhOMj3lwiPKgM2pdQsa5ATiKg7o2JcQQLmi6S1OIsgY1BlaMKxcTJ67s0uQPj5DEUTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Runic\\Documents\\GitHub\\Boost\\Runic.csproj",
+  "projectFilePath": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Runic\\.nuget\\packages\\godot.sourcegenerators\\4.2.2\\godot.sourcegenerators.4.2.2.nupkg.sha512",
-    "C:\\Users\\Runic\\.nuget\\packages\\godotsharp\\4.2.2\\godotsharp.4.2.2.nupkg.sha512",
-    "C:\\Users\\Runic\\.nuget\\packages\\godotsharpeditor\\4.2.2\\godotsharpeditor.4.2.2.nupkg.sha512",
-    "C:\\Users\\Runic\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Runic\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
-    "C:\\Users\\Runic\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
+    "/home/glacialskyfarer/.nuget/packages/godot.sourcegenerators/4.3.0/godot.sourcegenerators.4.3.0.nupkg.sha512",
+    "/home/glacialskyfarer/.nuget/packages/godotsharp/4.3.0/godotsharp.4.3.0.nupkg.sha512",
+    "/home/glacialskyfarer/.nuget/packages/godotsharpeditor/4.3.0/godotsharpeditor.4.3.0.nupkg.sha512",
+    "/home/glacialskyfarer/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.32/microsoft.aspnetcore.app.ref.6.0.32.nupkg.sha512"
   ],
   "logs": []
 }

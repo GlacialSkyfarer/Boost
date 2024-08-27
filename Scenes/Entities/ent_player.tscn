@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://ne5eavjh66m4"]
+[gd_scene load_steps=33 format=3 uid="uid://ne5eavjh66m4"]
 
 [ext_resource type="Script" path="res://Scripts/Entities/Core/Player.cs" id="1_rh620"]
 [ext_resource type="Script" path="res://Scripts/Entities/Core/PlayerCamera.cs" id="2_mxw58"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/Entities/Core/PlayerAnimator.cs" id="8_kvr6d"]
 [ext_resource type="Texture2D" uid="uid://b852suo7m06bd" path="res://Textures/UI/ani_playerHealthbar.tres" id="9_5s126"]
 [ext_resource type="Texture2D" uid="uid://bvnkgib2xdjcu" path="res://Textures/UI/tex_playerHealthbar_over.png" id="10_3rkp7"]
-[ext_resource type="Script" path="res://Scripts/Utility/HealthBar.cs" id="11_4srcs"]
+[ext_resource type="Script" path="res://Scripts/UI/HealthBar.cs" id="11_4srcs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhsiv"]
 radius = 0.2
@@ -28,7 +28,6 @@ animation = &"LeftWalk"
 [sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_4on8o"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_d2iuo"]
-graph_offset = Vector2(-170.182, 7.18182)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_prgq7")
 nodes/Animation/position = Vector2(-200, 40)
 "nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_l2we8")
@@ -95,80 +94,6 @@ _data = {
 "RightWalk": SubResource("Animation_505qe")
 }
 
-[sub_resource type="Animation" id="Animation_x8fmo"]
-resource_name = "Idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VMDisplay/VMViewport/CamFollow/VMCamera:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.002, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_tnjqr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VMDisplay/VMViewport/CamFollow/VMCamera:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0.0116877, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_xntvw"]
-resource_name = "Walk"
-loop_mode = 1
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VMDisplay/VMViewport/CamFollow/VMCamera:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0.003, 0), Vector3(-0.003, 0, 0), Vector3(0, 0.003, 0), Vector3(0.003, 0, 0), Vector3(0, 0.003, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_wqlad"]
-_data = {
-"Idle": SubResource("Animation_x8fmo"),
-"RESET": SubResource("Animation_tnjqr"),
-"Walk": SubResource("Animation_xntvw")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cg7a8"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_egk3j"]
-animation = &"Walk"
-
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_0lihl"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_mmdl1"]
-graph_offset = Vector2(-208, 41)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_cg7a8")
-nodes/Idle/position = Vector2(-120, 80)
-nodes/Walk/node = SubResource("AnimationNodeAnimation_egk3j")
-nodes/Walk/position = Vector2(-120, 220)
-nodes/WalkBlend/node = SubResource("AnimationNodeBlend2_0lihl")
-nodes/WalkBlend/position = Vector2(80, 100)
-node_connections = [&"WalkBlend", 0, &"Idle", &"WalkBlend", 1, &"Walk", &"output", 0, &"WalkBlend"]
-
 [sub_resource type="AnimationNodeBlend3" id="AnimationNodeBlend3_812wp"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w7ilu"]
@@ -186,8 +111,9 @@ animation = &"Jump"
 animation = &"Run"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vge4x"]
+graph_offset = Vector2(-320, 20.8772)
 nodes/AerialBlend/node = SubResource("AnimationNodeBlend3_812wp")
-nodes/AerialBlend/position = Vector2(149, 144)
+nodes/AerialBlend/position = Vector2(200, 160)
 nodes/Fall/node = SubResource("AnimationNodeAnimation_w7ilu")
 nodes/Fall/position = Vector2(20, 100)
 nodes/GroundedBlend/node = SubResource("AnimationNodeBlend2_p1chi")
@@ -198,6 +124,7 @@ nodes/Jump/node = SubResource("AnimationNodeAnimation_3kkic")
 nodes/Jump/position = Vector2(-20, 300)
 nodes/Walk/node = SubResource("AnimationNodeAnimation_kcddq")
 nodes/Walk/position = Vector2(-440, 260)
+nodes/output/position = Vector2(380, 160)
 node_connections = [&"AerialBlend", 0, &"Fall", &"AerialBlend", 1, &"GroundedBlend", &"AerialBlend", 2, &"Jump", &"GroundedBlend", 0, &"Idle", &"GroundedBlend", 1, &"Walk", &"output", 0, &"AerialBlend"]
 
 [sub_resource type="Gradient" id="Gradient_ytdbe"]
@@ -247,12 +174,11 @@ collision_layer = 2
 collision_mask = 5
 floor_block_on_wall = false
 script = ExtResource("1_rh620")
-vmHolderPath = NodePath("VMDisplay/VMViewport/CamFollow")
 movementSpeed = 7.0
 airTraction = 0.5
 highSpeedTractionMultiplier = 0.075
 jumpHeight = 6.0
-gunsOwned = Array[String](["wrench", "revolver", "shotgun"])
+cutJumpMult = 0.7
 maxHealth = 20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -269,6 +195,7 @@ angleLimit = 75.0
 cull_mask = 524285
 fov = 100.0
 near = 0.001
+far = 10000.0
 script = ExtResource("3_0jcix")
 
 [node name="CameraAnimator" type="AnimationTree" parent="CameraHolder/Camera"]
@@ -310,22 +237,9 @@ script = ExtResource("5_78nai")
 targetPath = NodePath("../../../CameraHolder/Camera")
 
 [node name="VMCamera" type="Camera3D" parent="VMDisplay/VMViewport/CamFollow"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0116877, 0)
 cull_mask = 524288
 near = 0.001
-
-[node name="VMAnimator" type="AnimationPlayer" parent="VMDisplay/VMViewport/CamFollow/VMCamera"]
-root_node = NodePath("../../../../..")
-libraries = {
-"": SubResource("AnimationLibrary_wqlad")
-}
-autoplay = "Idle"
-
-[node name="VMTree" type="AnimationTree" parent="VMDisplay/VMViewport/CamFollow/VMCamera"]
-root_node = NodePath("../../../../..")
-tree_root = SubResource("AnimationNodeBlendTree_mmdl1")
-anim_player = NodePath("../VMAnimator")
-parameters/WalkBlend/blend_amount = 0
+far = 10.0
 
 [node name="Cursor" type="TextureRect" parent="."]
 z_index = 101
@@ -347,38 +261,38 @@ transform = Transform3D(0.917717, 0, 0, 0, 0.917717, 0, 0, 0, 0.917717, 0, -0.57
 
 [node name="Skeleton3D" parent="BoostGoob/Armature" index="0"]
 bones/0/rotation = Quaternion(-5.37718e-08, -0.701947, 0.712229, 5.29956e-08)
-bones/1/position = Vector3(8.57639e-08, -0.290852, -0.509308)
+bones/1/position = Vector3(8.47402e-08, -0.290995, -0.519146)
 bones/1/rotation = Quaternion(-0.013016, 2.38398e-07, -5.06861e-09, 0.999915)
 bones/1/scale = Vector3(1, 1, 1)
 bones/2/rotation = Quaternion(-0.734898, -1.57783e-07, -4.17442e-07, 0.678178)
-bones/3/rotation = Quaternion(0.125047, 6.82981e-10, 4.24183e-08, 0.992151)
-bones/4/rotation = Quaternion(-0.107505, 3.28939e-10, -3.59354e-08, 0.994205)
+bones/3/rotation = Quaternion(0.214066, 1.59029e-08, 8.16687e-08, 0.976819)
+bones/4/rotation = Quaternion(-0.0742882, 3.49791e-09, -3.45563e-08, 0.997237)
 bones/5/rotation = Quaternion(7.90481e-08, 0.998751, -0.0499555, 6.90903e-08)
 bones/6/rotation = Quaternion(0.749019, -7.89819e-08, 3.80969e-07, 0.662549)
-bones/7/rotation = Quaternion(-0.0595357, 0.958314, -0.197327, -0.197868)
+bones/7/rotation = Quaternion(-0.0651056, 0.879731, -0.46593, -0.0688768)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(-0.319343, 0.0057956, 0.0206584, 0.947396)
+bones/8/rotation = Quaternion(-0.624271, 0.00477249, 0.0403843, 0.780149)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.763048, 0.0740604, -0.0239249, 0.641639)
+bones/9/rotation = Quaternion(0.408038, 0.0670345, -0.038901, 0.909669)
 bones/9/scale = Vector3(1, 1, 1)
-bones/10/rotation = Quaternion(0.0591653, 0.934612, -0.131614, 0.325083)
+bones/10/rotation = Quaternion(0.00335849, 0.959622, -0.281274, -0.000460038)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(-0.301222, -0.00583188, -0.0194861, 0.953337)
-bones/12/rotation = Quaternion(0.788691, 0.036126, -0.0491677, 0.611755)
+bones/11/rotation = Quaternion(-0.194709, -0.00599964, -0.0125958, 0.980762)
+bones/12/rotation = Quaternion(0.281705, -0.206228, 0.0623399, 0.935)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/position = Vector3(-0.0850582, -0.0270233, -0.0223084)
-bones/13/rotation = Quaternion(-0.00730945, 0.691015, 0.722769, -0.0069882)
+bones/13/position = Vector3(-0.0850582, 0.0289468, -0.0908223)
+bones/13/rotation = Quaternion(-0.00730946, 0.691015, 0.722769, -0.0069882)
 bones/13/scale = Vector3(1, 1, 1)
-bones/14/position = Vector3(0.0564802, -0.158425, 0.153285)
+bones/14/position = Vector3(0.0223134, -0.160825, 0.192924)
 bones/14/rotation = Quaternion(0.717563, -2.47428e-08, 0.0145149, 0.696342)
-bones/15/position = Vector3(0.068243, -0.0549507, -0.0219023)
+bones/15/position = Vector3(0.068243, 0.0645188, -0.0334099)
 bones/15/rotation = Quaternion(0.00730929, 0.691015, 0.722769, 0.00698828)
 bones/15/scale = Vector3(1, 1, 1)
-bones/16/position = Vector3(-0.101319, -0.157769, 0.143175)
+bones/16/position = Vector3(0.00277238, -0.15753, 0.137056)
 bones/16/rotation = Quaternion(0.717563, 4.68107e-09, -0.0145149, 0.696342)
 
 [node name="Circle" parent="BoostGoob/Armature/Skeleton3D" index="0"]
-transform = Transform3D(1, -3.00807e-07, 2.30293e-07, 3.32998e-07, 0.987801, -0.155719, -1.80642e-07, 0.15572, 0.987801, -6.87357e-08, 0.555343, 0.103065)
+transform = Transform3D(1, -3.00268e-07, 2.2726e-07, 2.78354e-07, 0.995855, 0.0909524, -2.53628e-07, -0.0909522, 0.995856, -6.22947e-08, 0.56159, 0.0204865)
 
 [node name="PMAnimator" type="AnimationTree" parent="."]
 root_node = NodePath("../BoostGoob")
@@ -388,7 +302,6 @@ parameters/AerialBlend/blend_amount = 0.0
 parameters/GroundedBlend/blend_amount = 0.0
 script = ExtResource("8_kvr6d")
 cameraAnimatorPath = NodePath("../CameraHolder/Camera/CameraAnimator")
-vmAnimatorPath = NodePath("../VMDisplay/VMViewport/CamFollow/VMCamera/VMTree")
 playerPath = NodePath("..")
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]

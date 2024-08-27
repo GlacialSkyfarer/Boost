@@ -1,0 +1,23 @@
+// Game: Boost
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"classname" "worldspawn"
+"_tb_textures" "Textures/Eden;Textures/Test;Textures/basic;Textures/special;textures"
+"_tb_mod" "Maps;FGD;Models;StudioModels;Textures"
+// brush 0
+{
+( -448 -16 0 ) ( -448 -15 0 ) ( -448 -16 1 ) Test/TestRoom-W [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 2 2
+( -8 -512 0 ) ( -8 -512 1 ) ( -7 -512 0 ) Test/TestRoom-W [ 1 0 0 0 ] [ 0 0 -1 0 ] 0 2 2
+( -8 -16 -8 ) ( -7 -16 -8 ) ( -8 -15 -8 ) Test/TestRoom-W [ -1 0 0 0 ] [ 0 -1 0 0 ] 0 2 2
+( 8 40 0 ) ( 8 41 0 ) ( 9 40 0 ) Test/TestRoom-W [ 1 0 0 0 ] [ 0 -1 0 0 ] 0 2 2
+( 8 512 4 ) ( 9 512 4 ) ( 8 512 5 ) Test/TestRoom-W [ -1 0 0 0 ] [ 0 0 -1 0 ] 0 2 2
+( 576 40 4 ) ( 576 40 5 ) ( 576 41 4 ) Test/TestRoom-W [ 0 1 0 0 ] [ 0 0 -1 0 ] 0 2 2
+}
+}
+// entity 1
+{
+"classname" "info_playerStart"
+"origin" "0 0 20"
+}

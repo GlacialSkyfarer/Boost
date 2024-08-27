@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bid62f8t4jyne"]
 
-[ext_resource type="Script" path="res://Scripts/Utility/FlashOverlay.cs" id="1_qtmoa"]
+[ext_resource type="Script" path="res://Scripts/UI/FlashOverlay.cs" id="1_qtmoa"]
 
 [node name="Flash" type="ColorRect" groups=["FlashOverlay"]]
 z_index = 100

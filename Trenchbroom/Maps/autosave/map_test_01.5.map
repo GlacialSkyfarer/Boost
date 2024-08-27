@@ -1,0 +1,23 @@
+// Game: Boost
+// Format: Valve
+// entity 0
+{
+"mapversion" "220"
+"classname" "worldspawn"
+"_tb_textures" "Textures/Eden;Textures/Test;Textures/basic;Textures/special;textures"
+"_tb_mod" "Maps;FGD;Models;StudioModels;Textures"
+// brush 0
+{
+( -2560 -2560 -16 ) ( -2560 -2520 -16 ) ( -2560 -2560 -15 ) Eden/tex_eden_bricks [ 0 -0.025 0 0 ] [ 0 0 -1 0 ] 0 0.03125 0.03125
+( -2560 -2560 -16 ) ( -2560 -2560 -15 ) ( -2520 -2560 -16 ) Eden/tex_eden_bricks [ 0.025 0 0 0 ] [ 0 0 -1 0 ] 0 0.03125 0.03125
+( -2560 -2560 -16 ) ( -2520 -2560 -16 ) ( -2560 -2520 -16 ) Eden/tex_eden_bricks [ -0.025 0 0 0 ] [ 0 -0.025 0 0 ] 0 0.03125 0.03125
+( 2560 2560 0 ) ( 2560 2600 0 ) ( 2600 2560 0 ) Eden/tex_eden_bricks [ 0.025 0 0 0 ] [ 0 -0.025 0 0 ] 0 0.03125 0.03125
+( 2560 2560 16 ) ( 2600 2560 16 ) ( 2560 2560 17 ) Eden/tex_eden_bricks [ -0.025 0 0 0 ] [ 0 0 -1 0 ] 0 0.03125 0.03125
+( 2560 2560 16 ) ( 2560 2560 17 ) ( 2560 2600 16 ) Eden/tex_eden_bricks [ 0 0.025 0 0 ] [ 0 0 -1 0 ] 0 0.03125 0.03125
+}
+}
+// entity 1
+{
+"classname" "info_playerStart"
+"origin" "0 0 20"
+}

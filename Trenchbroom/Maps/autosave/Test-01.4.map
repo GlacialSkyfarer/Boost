@@ -1,0 +1,68 @@
+// Game: Generic
+// Format: Standard
+// entity 0
+{
+"classname" "worldspawn"
+"_tb_textures" "textures;textures/Test;textures/special"
+// brush 0
+{
+( 72 56 40 ) ( 72 88 8 ) ( 72 88 40 ) Test/TestRoom-G 0 0 0 4 4
+( 104 56 40 ) ( 72 56 8 ) ( 72 56 40 ) Test/TestRoom-G 0 0 0 4 4
+( 104 88 8 ) ( 72 56 8 ) ( 104 56 8 ) Test/TestRoom-G 0 0 0 4 4
+( 104 88 40 ) ( 72 56 40 ) ( 72 88 40 ) Test/TestRoom-G 0 0 0 4 4
+( 104 88 40 ) ( 72 88 8 ) ( 104 88 8 ) Test/TestRoom-G 0 0 0 4 4
+( 104 88 40 ) ( 104 56 8 ) ( 104 56 40 ) Test/TestRoom-G 0 0 0 4 4
+}
+// brush 1
+{
+( -120 -24 -8 ) ( -120 -23 -8 ) ( -120 -24 -7 ) Test/TestRoom-G 0 16 0 4 4
+( -120 -56 8 ) ( -56 -56 136 ) ( -56 -56 8 ) Test/TestRoom-G -16 16 0 4 4
+( 16 -24 -8 ) ( 17 -24 -8 ) ( 16 -23 -8 ) Test/TestRoom-G -16 0 0 4 4
+( 80 24 8 ) ( 80 25 8 ) ( 81 24 8 ) Test/TestRoom-G -16 0 0 4 4
+( 80 120 40 ) ( 81 120 40 ) ( 80 120 41 ) Test/TestRoom-G -16 16 0 4 4
+( 120 24 40 ) ( 120 24 41 ) ( 120 25 40 ) Test/TestRoom-G 0 16 0 4 4
+}
+// brush 2
+{
+( 32 -16 48 ) ( 32 -15 48 ) ( 32 -16 49 ) Test/TestRoom-G 16 0 0 4 4
+( 32 -16 48 ) ( 32 -16 49 ) ( 33 -16 48 ) Test/TestRoom-G -8 0 0 4 4
+( 32 -16 48 ) ( 33 -16 48 ) ( 32 -15 48 ) Test/TestRoom-G -8 -16 0 4 4
+( 80 24 56 ) ( 80 25 56 ) ( 81 24 56 ) Test/TestRoom-G -8 -16 0 4 4
+( 80 24 168 ) ( 81 24 168 ) ( 80 24 169 ) Test/TestRoom-G -8 0 0 4 4
+( 80 24 168 ) ( 80 24 169 ) ( 80 25 168 ) Test/TestRoom-G 16 0 0 4 4
+}
+// brush 3
+{
+( -48 48 48 ) ( -48 49 48 ) ( -48 48 49 ) Test/TestRoom-G -16 0 0 4 4
+( -48 64 48 ) ( -48 64 49 ) ( -47 64 48 ) Test/TestRoom-G 8 0 0 4 4
+( -48 48 48 ) ( -47 48 48 ) ( -48 49 48 ) Test/TestRoom-G 8 16 0 4 4
+( 0 88 56 ) ( 0 89 56 ) ( 1 88 56 ) Test/TestRoom-G 8 16 0 4 4
+( 0 88 168 ) ( 1 88 168 ) ( 0 88 169 ) Test/TestRoom-G 8 0 0 4 4
+( 0 88 168 ) ( 0 88 169 ) ( 0 89 168 ) Test/TestRoom-G -16 0 0 4 4
+}
+// brush 4
+{
+( -72 -48 48 ) ( -72 -47 48 ) ( -72 -48 49 ) Test/TestRoom-G 16 0 0 4 4
+( -96 -32 48 ) ( -96 -32 49 ) ( -95 -32 48 ) Test/TestRoom-G 24 0 0 4 4
+( -96 -48 48 ) ( -95 -48 48 ) ( -96 -47 48 ) Test/TestRoom-G 24 -16 0 4 4
+( -48 -8 56 ) ( -48 -7 56 ) ( -47 -8 56 ) Test/TestRoom-G 24 -16 0 4 4
+( -48 -8 168 ) ( -47 -8 168 ) ( -48 -8 169 ) Test/TestRoom-G 24 0 0 4 4
+( -48 -8 168 ) ( -48 -8 169 ) ( -48 -7 168 ) Test/TestRoom-G 16 0 0 4 4
+}
+// brush 5
+{
+( 40 88 8 ) ( 72 88 40 ) ( 72 56 40 ) Test/TestRoom-G 0 0 0 4 4
+( 72 56 8 ) ( 72 88 8 ) ( 40 88 8 ) Test/TestRoom-G 0 0 0 4 4
+( 72 88 8 ) ( 72 88 40 ) ( 40 88 8 ) Test/TestRoom-G 0 0 0 4 4
+( 40 24 8 ) ( 72 56 40 ) ( 72 56 8 ) Test/TestRoom-G 0 0 0 4 4
+( 72 56 40 ) ( 72 88 40 ) ( 72 88 8 ) Test/TestRoom-G 0 0 0 4 4
+}
+// brush 6
+{
+( 72 56 8 ) ( 72 56 40 ) ( 40 24 8 ) Test/TestRoom-G 0 0 0 4 4
+( 104 24 8 ) ( 40 24 8 ) ( 72 56 40 ) Test/TestRoom-G 0 0 0 4 4
+( 104 24 8 ) ( 104 56 8 ) ( 72 56 8 ) Test/TestRoom-G 0 0 0 4 4
+( 104 56 8 ) ( 104 56 40 ) ( 72 56 40 ) Test/TestRoom-G 0 0 0 4 4
+( 104 24 8 ) ( 104 56 40 ) ( 104 56 8 ) Test/TestRoom-G 0 0 0 4 4
+}
+}

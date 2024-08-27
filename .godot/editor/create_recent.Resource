@@ -1,6 +1,8 @@
+FuncGodotFGDModelPointClass
+FuncGodotFGDEntityClass
+TrenchBroomGameConfig
+FuncGodotFGDFile
 AtlasTexture
 AnimatedTexture
 StandardMaterial3D
-QodotFGDPointClass
-QodotFGDFile
 Shader

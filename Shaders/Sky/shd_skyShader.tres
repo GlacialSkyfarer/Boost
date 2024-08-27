@@ -81,7 +81,7 @@ void sky() {
 	c = (v_angle - (PI * 0.5)) / (PI * 0.5);
 	vec3 ground = mix(ground_horizon_color.rgb, ground_bottom_color.rgb, clamp(1.0 - pow(1.0 - c, 1.0 / ground_curve), 0.0, 1.0));
 	ground *= ground_energy;
-	
+
 	vec2 skyUV = EYEDIR.xz / EYEDIR.y;
 	vec3 clouds = texture(cloudTexture, skyUV * cloudScale + (TIME * cloudDirection * cloudSpeed)).rgb - texture(cloudTexture2, skyUV * cloudScale + (TIME * cloudDirection2 * cloudSpeed)).rgb;
 	clouds = clouds - smoothstep(0.0, EYEDIR.y, cloudHeight);

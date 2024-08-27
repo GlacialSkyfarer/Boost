@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.ComponentModel;
 
-public partial class Dummy : Actor
+public partial class Dummy : LivingActor
 {
 
 	[Export]

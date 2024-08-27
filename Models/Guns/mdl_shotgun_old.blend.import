@@ -1,0 +1,112 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dhhv26xkgf5vr"
+path="res://.godot/imported/mdl_shotgun_old.blend-53245279ddb7dac1d728f8d3359266c6.scn"
+
+[deps]
+
+source_file="res://Models/Guns/mdl_shotgun_old.blend"
+dest_files=["res://.godot/imported/mdl_shotgun_old.blend-53245279ddb7dac1d728f8d3359266c6.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Accent": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_gunAccent.tres"
+},
+"FuseEmission": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_shotgunWater.tres"
+},
+"Grating": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_gunGrating.tres"
+},
+"Grip": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_gunGrip.tres"
+},
+"Hole.001": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_shotgunGlass.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_gunMetal.tres"
+},
+"Trim": {
+"use_external/enabled": true,
+"use_external/path": "res://Models/Materials/Guns/mat_gunTrim.tres"
+}
+},
+"nodes": {
+"PATH:Body": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+},
+"PATH:Body/BigRing": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+},
+"PATH:Body/BigRing/SmallRing": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+},
+"PATH:Body/Cube": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+},
+"PATH:Body/Fuse": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+},
+"PATH:Body/Fuse/Fuse_001": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+},
+"PATH:Body/Pump": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/layers": 524288
+}
+}
+}
+blender/nodes/visible=0
+blender/nodes/active_collection_only=false
+blender/nodes/punctual_lights=true
+blender/nodes/cameras=true
+blender/nodes/custom_properties=true
+blender/nodes/modifiers=1
+blender/meshes/colors=false
+blender/meshes/uvs=true
+blender/meshes/normals=true
+blender/meshes/tangents=true
+blender/meshes/skins=2
+blender/meshes/export_bones_deforming_mesh_only=false
+blender/materials/unpack_enabled=true
+blender/materials/export_materials=1
+blender/animation/limit_playback=true
+blender/animation/always_sample=true
+blender/animation/group_tracks=true

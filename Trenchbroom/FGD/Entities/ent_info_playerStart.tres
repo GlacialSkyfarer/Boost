@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="FuncGodotFGDModelPointClass" load_steps=3 format=3 uid="uid://cyjjhrosdxkpi"]
+
+[ext_resource type="PackedScene" uid="uid://c1dotjifgys10" path="res://Scenes/Utility/scn_playerStart.tscn" id="1_qlxcp"]
+[ext_resource type="Script" path="res://addons/func_godot/src/fgd/func_godot_fgd_model_point_class.gd" id="1_yqy04"]
+
+[resource]
+script = ExtResource("1_yqy04")
+target_map_editor = 1
+models_sub_folder = ""
+scale_expression = ""
+generate_size_property = false
+generate_gd_ignore_file = false
+scene_file = ExtResource("1_qlxcp")
+apply_rotation_on_map_build = true
+classname = "info_playerStart"
+description = "The point the player will start when loading the map."
+func_godot_internal = false
+base_classes = Array[Resource]([])
+class_properties = {}
+class_property_descriptions = {}
+meta_properties = {
+"color": Color(0.480466, 0, 0.19392, 1),
+"model": "\"StudioModels/info_playerStart.glb\"",
+"size": AABB(-8, -8, -20, 8, 8, 20)
+}
+node_class = ""
+name_property = ""

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://tufjtjgpoher"]
+
+[ext_resource type="Texture2D" uid="uid://bp0g8nwctor36" path="res://Trenchbroom/Textures/Test/TestRoom-W.png" id="1_kmrt4"]
+
+[resource]
+albedo_texture = ExtResource("1_kmrt4")
+texture_filter = 0
