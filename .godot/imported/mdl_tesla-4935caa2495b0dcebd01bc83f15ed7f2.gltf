@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.1.63",
+		"generator":"Khronos glTF Blender I/O v4.2.57",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -266,12 +266,6 @@
 			},
 			"name":"Hole.001",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					1,
-					0.36098381876945496,
-					0.4375039339065552,
-					1
-				],
 				"metallicFactor":0,
 				"roughnessFactor":0.9
 			}
@@ -303,12 +297,6 @@
 			},
 			"name":"Hole",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0,
-					0,
-					0,
-					1
-				],
 				"metallicFactor":0,
 				"roughnessFactor":0.9
 			}

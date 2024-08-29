@@ -1,8 +1,11 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.0.44",
+		"generator":"Khronos glTF Blender I/O v4.2.57",
 		"version":"2.0"
 	},
+	"extensionsUsed":[
+		"KHR_materials_clearcoat"
+	],
 	"scene":0,
 	"scenes":[
 		{
@@ -71,6 +74,11 @@
 	"materials":[
 		{
 			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_clearcoat":{
+					"clearcoatRoughnessFactor":1
+				}
+			},
 			"name":"Main.001",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0
@@ -91,6 +99,11 @@
 		},
 		{
 			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_clearcoat":{
+					"clearcoatRoughnessFactor":1
+				}
+			},
 			"name":"Accent",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0

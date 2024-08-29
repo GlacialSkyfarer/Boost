@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj": {}
+    "C:\\Users\\student\\Documents\\GitHub\\Boost\\Runic.csproj": {}
   },
   "projects": {
-    "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj": {
+    "C:\\Users\\student\\Documents\\GitHub\\Boost\\Runic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj",
+        "projectUniqueName": "C:\\Users\\student\\Documents\\GitHub\\Boost\\Runic.csproj",
         "projectName": "Runic",
-        "projectPath": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/Runic.csproj",
-        "packagesPath": "/home/glacialskyfarer/.nuget/packages/",
-        "outputPath": "/home/glacialskyfarer/Desktop/Games/Dev/Projects/Boost/.godot/mono/temp/obj/",
+        "projectPath": "C:\\Users\\student\\Documents\\GitHub\\Boost\\Runic.csproj",
+        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\student\\Documents\\GitHub\\Boost\\.godot\\mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/glacialskyfarer/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -57,22 +57,17 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.32, 6.0.32]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.132/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.425\\RuntimeIdentifierGraph.json"
         }
       }
     }

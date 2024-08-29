@@ -23,15 +23,23 @@ public partial class MapLoader : VBoxContainer
 			string fileName = dir.GetNext();
 			while (fileName != "") {
 
-				if (fileName.Contains(".tscn.remap")) {
+				if (fileName.Contains(".tscn")) {
+					
+					if (fileName.Contains(".tscn.remap")) {
 
-					fileName = fileName.Replace(".remap", "");
+						fileName = fileName.Replace(".remap", "");
 
+					}
+
+					GD.Print("Found scene: " + fileName);
+					mapNames.Add(fileName);
+					
+				} else {
+					
+					GD.PushWarning("File is not a scene. Skipping.");
+					
 				}
-
-				GD.Print("Found scene: " + fileName);
-				mapNames.Add(fileName);
-
+				
 				fileName = dir.GetNext();
 
 			}

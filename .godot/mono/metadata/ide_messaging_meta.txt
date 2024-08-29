@@ -1,2 +1,0 @@
-﻿42917
-/home/glacialskyfarer/Desktop/Games/Dev/Godot_v4.2.2-stable_mono_linux_x86_64/Godot4.x86_64

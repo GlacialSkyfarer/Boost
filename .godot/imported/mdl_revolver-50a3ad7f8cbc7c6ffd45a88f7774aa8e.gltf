@@ -1,9 +1,10 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.0.44",
+		"generator":"Khronos glTF Blender I/O v4.2.57",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
+		"KHR_materials_clearcoat",
 		"KHR_materials_unlit"
 	],
 	"scene":0,
@@ -210,6 +211,11 @@
 	"materials":[
 		{
 			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_clearcoat":{
+					"clearcoatRoughnessFactor":1
+				}
+			},
 			"name":"Grip",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0
@@ -217,6 +223,11 @@
 		},
 		{
 			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_clearcoat":{
+					"clearcoatRoughnessFactor":1
+				}
+			},
 			"name":"Main.001",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0
@@ -224,13 +235,11 @@
 		},
 		{
 			"doubleSided":true,
-			"name":"Accent",
-			"pbrMetallicRoughness":{
-				"metallicFactor":0
-			}
-		},
-		{
-			"doubleSided":true,
+			"extensions":{
+				"KHR_materials_clearcoat":{
+					"clearcoatRoughnessFactor":1
+				}
+			},
 			"name":"Accent",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0
@@ -256,12 +265,6 @@
 			},
 			"name":"Hole",
 			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0,
-					0,
-					0,
-					1
-				],
 				"metallicFactor":0,
 				"roughnessFactor":0.9
 			}
@@ -277,20 +280,6 @@
 					1
 				],
 				"roughnessFactor":0.21568629145622253
-			}
-		},
-		{
-			"doubleSided":true,
-			"name":"Main.001",
-			"pbrMetallicRoughness":{
-				"metallicFactor":0
-			}
-		},
-		{
-			"doubleSided":true,
-			"name":"Grip",
-			"pbrMetallicRoughness":{
-				"metallicFactor":0
 			}
 		}
 	],
@@ -340,7 +329,7 @@
 						"TEXCOORD_0":17
 					},
 					"indices":18,
-					"material":3
+					"material":2
 				},
 				{
 					"attributes":{
@@ -349,7 +338,7 @@
 						"TEXCOORD_0":21
 					},
 					"indices":22,
-					"material":4
+					"material":3
 				}
 			]
 		},
@@ -364,7 +353,7 @@
 						"TANGENT":26
 					},
 					"indices":27,
-					"material":4
+					"material":3
 				},
 				{
 					"attributes":{
@@ -374,7 +363,7 @@
 						"TANGENT":31
 					},
 					"indices":32,
-					"material":5
+					"material":4
 				}
 			]
 		},
@@ -388,7 +377,7 @@
 						"TEXCOORD_0":35
 					},
 					"indices":36,
-					"material":3
+					"material":2
 				},
 				{
 					"attributes":{
@@ -397,7 +386,7 @@
 						"TEXCOORD_0":39
 					},
 					"indices":40,
-					"material":4
+					"material":3
 				}
 			]
 		},
@@ -412,7 +401,7 @@
 						"TANGENT":44
 					},
 					"indices":45,
-					"material":3
+					"material":2
 				}
 			]
 		},
@@ -427,7 +416,7 @@
 						"TANGENT":49
 					},
 					"indices":50,
-					"material":6
+					"material":5
 				},
 				{
 					"attributes":{
@@ -437,7 +426,7 @@
 						"TANGENT":54
 					},
 					"indices":55,
-					"material":5
+					"material":4
 				}
 			]
 		},
@@ -451,7 +440,7 @@
 						"TEXCOORD_0":58
 					},
 					"indices":59,
-					"material":7
+					"material":1
 				},
 				{
 					"attributes":{
@@ -460,7 +449,7 @@
 						"TEXCOORD_0":62
 					},
 					"indices":63,
-					"material":8
+					"material":0
 				},
 				{
 					"attributes":{
@@ -469,7 +458,7 @@
 						"TEXCOORD_0":66
 					},
 					"indices":67,
-					"material":3
+					"material":2
 				},
 				{
 					"attributes":{
@@ -478,7 +467,7 @@
 						"TEXCOORD_0":70
 					},
 					"indices":71,
-					"material":4
+					"material":3
 				}
 			]
 		}
